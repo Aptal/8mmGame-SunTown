@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public StoreTile[] storeTiles;
     public GrassTile[] grassTiles;
     public HubTile hubTile;
-
+    public TextMeshProUGUI showCnt;
     public Unit selectedUnit;
 
     private void Awake()

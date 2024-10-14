@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class HubTile : Tile
 {
@@ -19,7 +21,7 @@ public class HubTile : Tile
     // Update is called once per frame
     void Update()
     {
-        
+        GameManager.Instance.showCnt.text = totalSun.ToString();
     }
 
     public int ReceiveSun(int sheepHasSun)

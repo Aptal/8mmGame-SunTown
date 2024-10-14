@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
@@ -27,6 +28,7 @@ public class Unit : MonoBehaviour
 
     [SerializeField]
     public int hasSun = 0;
+    public TextMeshProUGUI sheepSunCnt;//显示当前羊群携带阳光数量
 
     public int sheepCnt = 6;
 
