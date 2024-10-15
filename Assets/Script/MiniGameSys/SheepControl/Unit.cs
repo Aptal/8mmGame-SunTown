@@ -51,15 +51,15 @@ public class Unit : MonoBehaviour
     protected void OnMouseEnter()
     {
         if (!canCtrl) return;
-        transform.localScale += Vector3.one * 0.1f;
-        //spriteRenderer.sortingOrder = 25;
+        if(spriteRenderer.sortingOrder > 10)
+            transform.localScale += Vector3.one * 0.1f;
     }
 
     protected void OnMouseExit()
     {
         if (!canCtrl) return;
-        transform.localScale -= Vector3.one * 0.1f;
-        //spriteRenderer.sortingOrder = 0;
+        if(spriteRenderer.sortingOrder > 10)
+            transform.localScale -= Vector3.one * 0.1f;
     }
     protected void OnMouseDown()
     {
@@ -153,14 +153,27 @@ public class Unit : MonoBehaviour
 
     IEnumerator MoveCo(Transform _trans)
     {
-        while (Vector2.Distance(transform.position, _trans.position) > 0.0001f)
+        //while (Vector2.Distance(transform.position, _trans.position) > 0.0001f)
+        //{
+        //    transform.position = Vector2.MoveTowards(transform.position, _trans.position, moveSpeed * Time.deltaTime);
+        //    yield return new WaitForSeconds(0);
+        //}
+        Vector2 startPosition = transform.position;
+        Vector2 targetPosition = _trans.position;
+        float elapsedTime = 0f;
+        float moveDuration = 1f / moveSpeed;  // 根据moveSpeed调整移动时间
+
+        while (elapsedTime < moveDuration)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _trans.position, moveSpeed * Time.deltaTime);
-            yield return new WaitForSeconds(0);
+            transform.position = Vector2.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+
+        transform.position = targetPosition; // 保证最终位置精准
     }
 
-    protected void ResetTiles()
+    public  void ResetTiles()
     {
         GameManager.Instance.hubTile.ResetTile();
         for(int i = 0; i < GameManager.Instance.storeTiles.Length; i++)

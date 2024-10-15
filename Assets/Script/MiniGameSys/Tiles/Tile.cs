@@ -7,7 +7,6 @@ public class Tile : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     //[SerializeField] private Sprite[] sprites;
 
-    public bool isSunny = true;
     public bool canGo = false;
     public Color highlightColor;
     public LayerMask obLayerMask;
@@ -23,14 +22,20 @@ public class Tile : MonoBehaviour
 
     protected void OnMouseEnter()
     {
-        transform.localScale += Vector3.one * 0.25f;
-        //spriteRenderer.sortingOrder = 25;
+        if(spriteRenderer.sortingOrder < 10)
+        {
+            transform.localScale += Vector3.one * 0.25f;
+            spriteRenderer.sortingOrder = 10;
+        }
     }
 
     protected void OnMouseExit()
     {
-        transform.localScale -= Vector3.one * 0.25f;
-        //spriteRenderer.sortingOrder = 0;
+        if(spriteRenderer.sortingOrder >= 10)
+        {
+            transform.localScale -= Vector3.one * 0.25f;
+            spriteRenderer.sortingOrder = 5;
+        }
     }
 
     protected void CheckObstacle()
@@ -53,9 +58,9 @@ public class Tile : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
-    protected void OnMouseDown()
-    {
-        if (canGo && GameManager.Instance.selectedUnit != null && GameManager.Instance.selectedUnit.canCtrl)
-            GameManager.Instance.selectedUnit.Move(this.transform);
-    }
+    //protected void OnMouseDown()
+    //{
+    //    if (canGo && GameManager.Instance.selectedUnit != null && GameManager.Instance.selectedUnit.canCtrl)
+    //        GameManager.Instance.selectedUnit.Move(this.transform);
+    //}
 }

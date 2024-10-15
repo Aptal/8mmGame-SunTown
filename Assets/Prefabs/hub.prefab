@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1146294888782229543}
   - component: {fileID: 3199897615030487447}
   - component: {fileID: 1409965676989708395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,8 @@ MonoBehaviour:
   obLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  sheep2hubV: 3
+  totalSun: 0
 --- !u!61 &1409965676989708395
 BoxCollider2D:
   m_ObjectHideFlags: 0

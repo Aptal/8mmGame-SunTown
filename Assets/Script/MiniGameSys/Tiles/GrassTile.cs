@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class GrassTile : Tile
 {
-    static int grass = 0;
-
+    public bool isSunny = true;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = 5;
     }
-    //private void OnMouseDown()
-    //{
-    //    Debug.Log(123);
-    //}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 检查碰撞的对象是否是阴影板
+        if (other.CompareTag("Shadow"))
+        {
+            // 草地被阴影遮挡，设置为无阳光照射
+            isSunny = false;
+            spriteRenderer.color = Color.blue;
+        }
+    }
+
+    // 当阴影板离开草地时调用
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Shadow"))
+        {
+            // 草地恢复阳光
+            isSunny = true;
+            spriteRenderer.color = Color.white;
+        }
+    }
 }
