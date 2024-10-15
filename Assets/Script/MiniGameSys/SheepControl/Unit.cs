@@ -45,7 +45,7 @@ public class Unit : MonoBehaviour
     {
         canCtrl = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        transform.position = GameManager.Instance.grassTiles[ Random.Range(0, 8) ].transform.position;
+        //transform.position = GameManager.Instance.grassTiles[ Random.Range(0, 8) ].transform.position;
     }
 
     protected void OnMouseEnter()

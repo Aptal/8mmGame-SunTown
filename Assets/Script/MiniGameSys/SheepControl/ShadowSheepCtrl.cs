@@ -9,7 +9,7 @@ public class ShadowSheepCtrl : Unit
         canCtrl = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = 25;
-        transform.position = GameManager.Instance.grassTiles[Random.Range(0, 8)].transform.position;
+        //transform.position = GameManager.Instance.grassTiles[Random.Range(0, 8)].transform.position;
         sheepSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
     }
 
