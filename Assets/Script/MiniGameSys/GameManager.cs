@@ -48,10 +48,12 @@ public class GameManager : MonoBehaviour
             if (hitSheep.collider != null)
             {
                 Unit sheep = hitSheep.collider.GetComponent<Unit>();
-                if (!sheep.canCtrl)
-                    return;
-                // 选中羊群
-                Debug.Log("sheep");
+                if(sheep != null)
+                {
+                    sheep.SelectSheep();
+                    Debug.Log("sheep");
+
+                }
                 return; // 成功选中羊群后，不继续检测
             }
 

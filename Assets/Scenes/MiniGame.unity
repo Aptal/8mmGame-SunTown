@@ -2952,7 +2952,7 @@ BoxCollider2D:
     m_Bits: 32
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 896
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -4070,14 +4070,6 @@ PrefabInstance:
     - target: {fileID: 4194717909237656653, guid: 278bf001e57cc83468ca158c5b14d5ed, type: 3}
       propertyPath: m_Name
       value: ShadowSheep
-      objectReference: {fileID: 0}
-    - target: {fileID: 5640731234629697112, guid: 278bf001e57cc83468ca158c5b14d5ed, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -854
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448825844815322585, guid: 278bf001e57cc83468ca158c5b14d5ed, type: 3}
-      propertyPath: m_text
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

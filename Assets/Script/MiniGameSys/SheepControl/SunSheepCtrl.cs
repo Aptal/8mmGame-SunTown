@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class SunSheepCtrl : Unit
 {
-    // Start is called before the first frame update
     void Start()
     {
         canCtrl = true;
@@ -15,7 +13,6 @@ public class SunSheepCtrl : Unit
         sheepSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
     }
 
-    // Update is called once per frame
     void Update()
     {
         sheepSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
@@ -33,8 +30,8 @@ public class SunSheepCtrl : Unit
             
             if(curType == PosType.store && preType == PosType.store)
             {
-                if(!GameManager.Instance.storeTiles[posIndex].pushButtion.IsActive())
-                    GameManager.Instance.storeTiles[posIndex].EnableButtion();
+                //if(!GameManager.Instance.storeTiles[posIndex].pushButtion.IsActive())
+                //    GameManager.Instance.storeTiles[posIndex].EnableButtion();
                 if (GameManager.Instance.storeTiles[posIndex].opt == StoreOpt.push)
                 {
                     hasSun -= GameManager.Instance.storeTiles[posIndex].StoreSun(hasSun);
@@ -46,11 +43,11 @@ public class SunSheepCtrl : Unit
             }   
             else
             {
-                for(int i = 0; i < 4; ++i)
-                {
-                    if (GameManager.Instance.storeTiles[i].pushButtion.IsActive())
-                        GameManager.Instance.storeTiles[i].DisableButtion();
-                }
+                //for(int i = 0; i < 4; ++i)
+                //{
+                //    if (GameManager.Instance.storeTiles[i].pushButtion.IsActive())
+                //        GameManager.Instance.storeTiles[i].DisableButtion();
+                //}
                 if (curType == PosType.grass && preType == PosType.grass && GameManager.Instance.grassTiles[posIndex].isSunny)
                 {
                     hasSun = Mathf.Min(hasSun + productV, sunLimit);

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 611990590031054062}
   - component: {fileID: 8330236390412295654}
   - component: {fileID: 7554940450627107342}
-  - component: {fileID: 5110358076006823694}
+  - component: {fileID: 8816509503659177696}
+  - component: {fileID: -7630253281244130591}
   m_Layer: 9
   m_Name: ShadowSheep
   m_TagString: Untagged
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 5
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,7 +133,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.07, y: 2.14}
   m_EdgeRadius: 0
---- !u!114 &5110358076006823694
+--- !u!50 &8816509503659177696
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194717909237656653}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-7630253281244130591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,22 +169,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4194717909237656653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391868fb1bb45204b9a199a6fcb0caa1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5148a9a63cbd7be4b9fcab3df7db531a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: 2
-  moveSpeed: 0.002
+  moveRange: 4.5
+  moveSpeed: 0.5
   productV: 1
   sunLimit: 10
   hasSun: 0
-  sheepSunCnt: {fileID: 0}
+  sheepSunCnt: {fileID: 9129774416570356336}
   sheepCnt: 6
-  posIndex: -1
+  posIndex: -2
   preType: 0
   curType: 0
   canCtrl: 1
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!1 &7848048961303027911
+  selectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+--- !u!1 &4702089115926808748
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,23 +192,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5640731234629697112}
-  - component: {fileID: 3148552548807322485}
-  - component: {fileID: 8448825844815322585}
+  - component: {fileID: 7638206060237292057}
+  - component: {fileID: 1571216109473134471}
+  - component: {fileID: 9129774416570356336}
   m_Layer: 9
-  m_Name: sheepHasSun
+  m_Name: shadowSheepHasSun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5640731234629697112
+--- !u!224 &7638206060237292057
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7848048961303027911}
+  m_GameObject: {fileID: 4702089115926808748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -190,24 +218,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -803, y: -339}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3148552548807322485
+--- !u!222 &1571216109473134471
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7848048961303027911}
+  m_GameObject: {fileID: 4702089115926808748}
   m_CullTransparentMesh: 1
---- !u!114 &8448825844815322585
+--- !u!114 &9129774416570356336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7848048961303027911}
+  m_GameObject: {fileID: 4702089115926808748}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -221,7 +249,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
@@ -321,7 +351,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5640731234629697112}
+  - {fileID: 7638206060237292057}
   m_Father: {fileID: 611990590031054062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

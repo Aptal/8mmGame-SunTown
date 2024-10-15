@@ -61,7 +61,7 @@ public class Unit : MonoBehaviour
         if(spriteRenderer.sortingOrder > 10)
             transform.localScale -= Vector3.one * 0.1f;
     }
-    protected void OnMouseDown()
+    public void SelectSheep()
     {
         if (!canCtrl) return;
 

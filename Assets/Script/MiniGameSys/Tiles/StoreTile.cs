@@ -36,13 +36,6 @@ public class StoreTile : Tile
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //DisableButtion();
-        //Vector3 f = new Vector3(2, 0, 0);
-        //storeSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        //pullButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) - f;
-        //pushButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) + f;
-        //Debug.Log("pull "+pullButtion.transform.position);
-        //Debug.Log("push " + pushButtion.transform.position);
         storeSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
     }
 
@@ -61,7 +54,7 @@ public class StoreTile : Tile
         opt = StoreOpt.push;
     }
 
-    public void EnableButtion()
+    private void EnableButtion()
     {
         pushButtion.gameObject.SetActive(true);
         popButtion.gameObject.SetActive(true);
@@ -70,7 +63,24 @@ public class StoreTile : Tile
         pushButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) + f;
     }
 
-    public void DisableButtion()
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //羊群到达临时仓库
+        if (other.CompareTag("Player"))
+        {
+            EnableButtion();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        //羊群离开临时仓库
+        if (other.CompareTag("Player"))
+        {
+            DisableButtion();
+        }
+    }
+    private void DisableButtion()
     {
         popButtion.gameObject.SetActive(false);
         pushButtion.gameObject.SetActive(false);
