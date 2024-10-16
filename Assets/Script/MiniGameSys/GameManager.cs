@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public HubTile hubTile;
     public TextMeshProUGUI showCnt;
     public Unit selectedUnit;
+    public Unit[] showUnits;
 
     [SerializeField] Timer timer1;
     [SerializeField] ShadowControl shadow;
@@ -168,6 +169,13 @@ public class GameManager : MonoBehaviour
             if (hitSheep.collider != null)
             {
                 Unit sheep = hitSheep.collider.GetComponent<Unit>();
+                if(sheep.isFlag)
+                {
+                    sheep.isBeingDragged = true;
+                    selectedUnit = sheep;
+                    Debug.Log("flag");
+                    return;
+                }
                 if(sheep != null)
                 {
                     sheep.SelectSheep();
@@ -184,7 +192,11 @@ public class GameManager : MonoBehaviour
                 Tile tile = hitTile.collider.GetComponent<Tile>();
                 if(tile != null)
                 {
-                    if (tile.canGo && selectedUnit != null && selectedUnit.canCtrl)
+                    if(selectedUnit != null && selectedUnit.isFlag)
+                    {
+                        selectedUnit.PlaceOnGrassTile(hitTile.transform.position);
+                    }
+                    else if (tile.canGo && selectedUnit != null && selectedUnit.canCtrl)
                     {
                         // 如果Tile可走，且有选中的羊群，执行移动
                         selectedUnit.Move(hitTile.transform);
@@ -201,4 +213,46 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+/*    public void HandleCollision(List<Unit> collidingUnits)
+    {
+        // 随机选择一个羊群继续前进
+        int randomIndex = Random.Range(0, collidingUnits.Count);
+        Unit chosenUnit = collidingUnits[randomIndex];
+
+        for (int i = 0; i < collidingUnits.Count; i++)
+        {
+            if (i == randomIndex)
+            {
+                // 随机选择的羊继续前进，不做处理
+                continue;
+            }
+            else
+            {
+                // 其他的羊变成旗帜
+                collidingUnits[i].hasSun = 0;
+                collidingUnits[i].BecomeFlag();
+            }
+        }
+    }
+
+    // 示例碰撞检测，调用 HandleCollision
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        List<Unit> collidingUnits = new List<Unit>();
+
+        foreach (var contact in collision.contacts)
+        {
+            Unit unit = contact.collider.GetComponent<Unit>();
+            if (unit != null)
+            {
+                collidingUnits.Add(unit);
+            }
+        }
+
+        if (collidingUnits.Count > 1)
+        {
+            HandleCollision(collidingUnits);
+        }
+    }*/
 }

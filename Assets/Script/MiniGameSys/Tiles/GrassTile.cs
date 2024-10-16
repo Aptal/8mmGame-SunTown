@@ -32,4 +32,14 @@ public class GrassTile : Tile
             spriteRenderer.color = Color.white;
         }
     }
+
+    //private void OnMouseUpAsButton()
+    //{
+    //    // 如果有旗帜拖拽到草地，则恢复为羊
+    //    Unit flagSheep = FindObjectOfType<Unit>(); // 获取当前场景中的羊
+    //    if (flagSheep != null && flagSheep.isFlag)
+    //    {
+    //        flagSheep.PlaceOnGrassTile(transform.position); // 将旗帜放置到草地上
+    //    }
+    //}
 }

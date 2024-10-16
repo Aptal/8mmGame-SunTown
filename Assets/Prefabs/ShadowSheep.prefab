@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7630253281244130591}
   m_Layer: 9
   m_Name: ShadowSheep
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,9 @@ MonoBehaviour:
   posIndex: -2
   preType: 0
   curType: 0
+  sheepSprite: {fileID: 21300000, guid: bf4f3afcb6335dd4288f87993c05fc4a, type: 3}
+  flagSprite: {fileID: 21300000, guid: f92605f60800cab4db0f0d3c1685d62b, type: 3}
+  isFlag: 0
   canCtrl: 1
   selectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
 --- !u!1 &4702089115926808748

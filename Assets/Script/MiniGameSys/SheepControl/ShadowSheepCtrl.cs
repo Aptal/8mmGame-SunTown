@@ -8,8 +8,9 @@ public class ShadowSheepCtrl : Unit
     {
         canCtrl = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = sheepSprite;
         spriteRenderer.sortingOrder = 25;
-        //transform.position = GameManager.Instance.grassTiles[Random.Range(0, 8)].transform.position;
+        sheepCollider = GetComponent<Collider2D>();
         sheepSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
     }
 
@@ -42,7 +43,7 @@ public class ShadowSheepCtrl : Unit
             }
             else
             {
-                if (curType == PosType.grass && preType == PosType.grass && (!GameManager.Instance.grassTiles[posIndex].isSunny))
+                if (curType == PosType.grass && preType == PosType.grass && (!GameManager.Instance.grassTiles[posIndex].isSunny) && !isFlag)
                 {
                     hasSun = Mathf.Min(hasSun + productV, sunLimit);
                 }

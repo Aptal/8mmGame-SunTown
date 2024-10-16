@@ -10,11 +10,9 @@ public class Tile : MonoBehaviour
     public bool canGo = false;
     public Color highlightColor;
     public LayerMask obLayerMask;
-    static private int debugcnt = 0;
 
     void Start()
     {
-        //Debug.Log("road : " + debugcnt++);
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         CheckObstacle();
