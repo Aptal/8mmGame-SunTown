@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GrassTile[] grassTiles;
     public SunSheepCtrl[] sunSheep;
     public ShadowSheepCtrl[] shadowSheep;
+    public RunSheepCtrl[] runSheep;
 
     public HubTile hubTile;
     public TextMeshProUGUI showCnt;
@@ -67,18 +68,24 @@ public class GameManager : MonoBehaviour
         List<Unit> selectedSheep = new List<Unit>();
         selectedSheep.Add(sunSheep[Random.Range(0, sunSheep.Length)]);
         selectedSheep.Add(shadowSheep[Random.Range(0, shadowSheep.Length)]);
+        selectedSheep.Add(runSheep[Random.Range(0, runSheep.Length)]);
 
-        // 剩余的6个随机挑选羊
+
+        // 剩余的5个随机挑选羊
         List<Unit> allSheep = new List<Unit>();
         allSheep.AddRange(sunSheep);
         allSheep.AddRange(shadowSheep);
+        allSheep.AddRange(runSheep);
+
 
         // 移除已选择的羊
         allSheep.Remove(selectedSheep[0]); // 移除已经选中的阳光羊
         allSheep.Remove(selectedSheep[1]); // 移除已经选中的阴影羊
+        allSheep.Remove(selectedSheep[2]); // 移除已经选中的跑跑羊
 
-        // 从剩余的羊中挑选6个
-        for (int i = 0; i < 6; i++)
+
+        // 从剩余的羊中挑选5个
+        for (int i = 0; i < 5; i++)
         {
             int randomIndex = Random.Range(0, allSheep.Count);
             selectedSheep.Add(allSheep[randomIndex]);
