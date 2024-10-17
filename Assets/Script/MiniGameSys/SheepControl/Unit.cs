@@ -78,7 +78,7 @@ public class Unit : MonoBehaviour
         Unit otherSheep = other.GetComponent<Unit>();
 
         // 确保两个碰撞对象都是羊群，且当前羊群没有变成旗帜
-        if (otherSheep != null && !isFlag)
+        if (otherSheep != null && !isFlag && !otherSheep.isFlag)
         {
             HandleCollisionWithOtherSheep(otherSheep);
         }
