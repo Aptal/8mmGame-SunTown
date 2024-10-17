@@ -20,6 +20,13 @@ public class Unit : MonoBehaviour
     protected float moveRange = 4.5f;
     [SerializeField]
     protected float moveSpeed = 0.2f;
+    [Header("kStore(羊在草地和仓库间的系数，speed*k)")]
+    [SerializeField]
+    protected float kStore = 0.5f;
+    [Header("kHub(羊在中枢和仓库间的系数，speed*k)")]
+    [SerializeField]
+    protected float kHub = 0.25f;
+
     [SerializeField]
     public int productV = 1;
 
@@ -305,6 +312,11 @@ public class Unit : MonoBehaviour
         canCtrl = true;
     }
 
+    bool ComparePos(Vector2 pos, Vector2 pos2)
+    {
+        return pos == pos2;
+    }
+
     IEnumerator MoveCo(Transform _trans)
     {
         //while (Vector2.Distance(transform.position, _trans.position) > 0.0001f)
@@ -314,8 +326,52 @@ public class Unit : MonoBehaviour
         //}
         Vector2 startPosition = transform.position;
         Vector2 targetPosition = _trans.position;
+
+        int type1 = -1, type2 = -1;
+        for(int i = 0; i < GameManager.Instance.grassTiles.Length; i++)
+        {
+            if(type1 == -1 && ComparePos(startPosition, GameManager.Instance.grassTiles[i].transform.position))
+            {
+                type1 = 1;
+            }
+            if (type2 == -1 && ComparePos(targetPosition, GameManager.Instance.grassTiles[i].transform.position))
+            {
+                type2 = 1;
+            }
+        }
+        for (int i = 0; i < GameManager.Instance.storeTiles.Length; i++)
+        {
+            if (type1 == -1 && ComparePos(startPosition, GameManager.Instance.storeTiles[i].transform.position))
+            {
+                type1 = 2;
+            }
+            if (type2 == -1 && ComparePos(targetPosition, GameManager.Instance.storeTiles[i].transform.position))
+            {
+                type2 = 2;
+            }
+        }
+        if (type1 == -1 && ComparePos(startPosition, GameManager.Instance.hubTile.transform.position))
+        {
+            type1 = 3;
+        }
+        if (type2 == -1 && ComparePos(targetPosition, GameManager.Instance.hubTile.transform.position))
+        {
+            type2 = 3;
+        }
+        float k = 1;
+        if(type1 == 3 ||  type2 == 3)
+        {
+            k = kHub;
+        }   
+        else if(type1 == 2 || type2 == 2)
+        {
+            k = kStore;
+        }
+
+        //moveSpeed *= k;
+        float v = moveSpeed * k;
         float elapsedTime = 0f;
-        float moveDuration = 1f / moveSpeed;  // 根据moveSpeed调整移动时间
+        float moveDuration = 1f / v;  // 根据moveSpeed (v)调整移动时间
 
         while (elapsedTime < moveDuration)
         {
@@ -325,6 +381,7 @@ public class Unit : MonoBehaviour
         }
 
         transform.position = targetPosition; // 保证最终位置精准
+        //moveSpeed /= k; //复原
     }
 
     public  void ResetTiles()

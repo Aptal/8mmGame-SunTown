@@ -173,7 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRange: 4.5
-  moveSpeed: 0.4
+  moveSpeed: 1
+  kStore: 0.5
+  kHub: 0.25
   productV: 0
   sunLimit: 20
   hasSun: 0
