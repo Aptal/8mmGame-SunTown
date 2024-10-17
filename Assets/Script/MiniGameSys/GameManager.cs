@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     public Unit selectedUnit;
     public Unit[] showUnits;
 
-    [SerializeField] Timer timer1;
-    [SerializeField] ShadowControl shadow;
+    [SerializeField] public Timer timer1;
+    [SerializeField] public ShadowControl shadow;
 
     private void Awake()
     {
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
                 return; // 成功选中羊群后，不继续检测
             }
 
-            // 检查Tile层（草地等）
+            // 检查Tile层（草地/仓库等）
             RaycastHit2D hitTile = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Tile"));
             if (hitTile.collider != null)
             {
@@ -200,6 +200,9 @@ public class GameManager : MonoBehaviour
                     {
                         // 如果Tile可走，且有选中的羊群，执行移动
                         selectedUnit.Move(hitTile.transform);
+
+                        selectedUnit.ResetTiles();
+                        selectedUnit = null;
                     }
                 }
                 return;

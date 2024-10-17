@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
 
     public int Duration { get; private set; }
 
+    [Header("游戏持续时间")]
+    [SerializeField]
     private int remainingDuration;
 
     private void Awake()
@@ -42,6 +44,7 @@ public class Timer : MonoBehaviour
         {
             UpdateUI(remainingDuration);
             remainingDuration--;
+            Duration = remainingDuration;
             yield return new WaitForSeconds(1f);
         }
         End();
