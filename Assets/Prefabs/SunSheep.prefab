@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1302613481
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 59d1c93754496ba499f3884ad2ed3581, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2c7225528a6475418f536da87f65bef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.71, y: 2.45}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 2.71, y: 2.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRange: 4.5
   moveSpeed: 0.2
+  kStore: 0.5
+  kHub: 0.25
   productV: 1
   sunLimit: 10
   hasSun: 0
@@ -155,7 +157,7 @@ MonoBehaviour:
   posIndex: -2
   preType: 0
   curType: 0
-  sheepSprite: {fileID: 21300000, guid: 59d1c93754496ba499f3884ad2ed3581, type: 3}
+  sheepSprite: {fileID: 21300000, guid: b2c7225528a6475418f536da87f65bef, type: 3}
   flagSprite: {fileID: 21300000, guid: f92605f60800cab4db0f0d3c1685d62b, type: 3}
   isFlag: 0
   isBeingDragged: 0
