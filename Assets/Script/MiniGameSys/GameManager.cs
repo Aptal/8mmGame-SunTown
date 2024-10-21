@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
                     Debug.Log("flag");
                     return;
                 }
-                if(sheep != null)
+                if(sheep != null && !sheep.isSelected)
                 {
                     sheep.SelectSheep();
                     Debug.Log("sheep");
@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
                     {
                         // 如果Tile可走，且有选中的羊群，执行移动
                         selectedUnit.Move(hitTile.transform);
-
+                        //selectedUnit.isSelected = false;
                         selectedUnit.ResetTiles();
                         selectedUnit = null;
                     }
@@ -218,6 +218,7 @@ public class GameManager : MonoBehaviour
             //取消选中所有元素
             if(selectedUnit != null) 
             {
+                selectedUnit.isSelected = false;
                 selectedUnit.ResetTiles();
                 selectedUnit = null;
             }

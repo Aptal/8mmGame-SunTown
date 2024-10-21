@@ -54,6 +54,7 @@ public class Unit : MonoBehaviour
     protected Collider2D sheepCollider;
 
     public bool canCtrl = true;
+    public bool isSelected = false;
     public Color selectedColor = Color.gray;
 
     void Start()
@@ -224,8 +225,8 @@ public class Unit : MonoBehaviour
 
     public void SelectSheep()
     {
-        if (!canCtrl) return;
-
+        if (isSelected) return;
+        isSelected = true;
         spriteRenderer.color = selectedColor; 
         if(GameManager.Instance.selectedUnit ==  null)
             GameManager.Instance.selectedUnit = this;
@@ -381,6 +382,10 @@ public class Unit : MonoBehaviour
         }
 
         transform.position = targetPosition; // 保证最终位置精准
+        if (transform.position == _trans.position)
+        {
+            isSelected = false;
+        }
         //moveSpeed /= k; //复原
     }
 
