@@ -8,14 +8,14 @@ public class Tile : MonoBehaviour
     //[SerializeField] private Sprite[] sprites;
 
     public bool canGo = false;
-    public Color highlightColor;
+    public Color highlightColor = Color.gray;
     public LayerMask obLayerMask;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        CheckObstacle();
+        //CheckObstacle();
     }
 
     protected void OnMouseEnter()

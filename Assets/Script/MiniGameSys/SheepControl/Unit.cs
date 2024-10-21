@@ -17,7 +17,7 @@ public enum PosType
 public class Unit : MonoBehaviour
 {
     [SerializeField]
-    protected float moveRange = 4.5f;
+    protected float moveRange = 6f;
     [SerializeField]
     protected float moveSpeed = 0.2f;
     [Header("kStore(羊在草地和仓库间的系数，speed*k)")]
@@ -54,7 +54,7 @@ public class Unit : MonoBehaviour
     protected Collider2D sheepCollider;
 
     public bool canCtrl = true;
-    public Color selectedColor;
+    public Color selectedColor = Color.gray;
 
     void Start()
     {

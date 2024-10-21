@@ -35,6 +35,7 @@ public class ShadowControl : MonoBehaviour
     void Start()
     {
         shadowImg.transform.position = GameManager.Instance.hubTile.transform.position;
+
         rotationSpeed = defaultRotationSpeed; // 初始速度
     }
 
@@ -70,10 +71,12 @@ public class ShadowControl : MonoBehaviour
     {
         isEffectActive = true;
         int effectIndex = Random.Range(0, 4); // 随机选择逆转、2倍速、0.5倍速、停止
+        Debug.Log("debug1: " + effectIndex + ", " + preEffectIndex);
         if(effectIndex == preEffectIndex)
         {
             effectIndex = Random.Range(0, 3);
-            if(effectIndex == preEffectIndex)
+            Debug.Log("debug2: " + effectIndex);
+            if (effectIndex == preEffectIndex)
             {
                 effectIndex = 3;
             }
@@ -140,17 +143,66 @@ public class ShadowControl : MonoBehaviour
     // 显示效果提示图标
     private void ShowEffectIcon(string text)
     {
-        // 显示图标
+        /*// 显示图标
         effectIcon.SetActive(true);
         effectIcon.GetComponentInChildren<TextMeshProUGUI>().text = text;
 
-        // 1秒后隐藏图标
+        // 5秒后隐藏图标
+        StartCoroutine(HideEffectIcon());*/
+        //Debug.Log(effectIcon.transform.position);
+        
+        //effectIcon.transform.position = Camera.main.ScreenToWorldPoint(offScreenPosition);
+        effectIcon.SetActive(true);
+        effectIcon.GetComponentInChildren<TextMeshProUGUI>().text = text;
+
+        // 启动滑入动画
+        StartCoroutine(SlideInEffect());
+    }
+
+    private IEnumerator SlideInEffect()
+    {
+        Vector3 offScreenPosition = new Vector3(0, 5, 0);
+        Vector3 targetPosition = effectIcon.transform.position + offScreenPosition;
+
+        //Debug.Log(targetPosition);
+        //Debug.Log(effectIcon.transform.position);
+        float duration = 8f; // 滑入持续时间
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            effectIcon.transform.position = Vector3.Lerp(effectIcon.transform.position, targetPosition, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        effectIcon.transform.position = targetPosition; // 确保最终位置准确
+
+        // 5秒后隐藏图标
+        //yield return new WaitForSeconds(3f);
         StartCoroutine(HideEffectIcon());
     }
 
     private IEnumerator HideEffectIcon()
     {
+        /*yield return new WaitForSeconds(5f);
+        effectIcon.SetActive(false);*/
         yield return new WaitForSeconds(1f);
-        effectIcon.SetActive(false);
+
+        Vector3 offScreenPosition = new Vector3(0, 5, 0);
+        Vector3 targetPosition = effectIcon.transform.position - offScreenPosition;
+        float duration = 8f; // 滑出持续时间
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            effectIcon.transform.position = Vector3.Lerp(effectIcon.transform.position, targetPosition, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        effectIcon.SetActive(false); // 隐藏图标
+        isEffectActive = false;
     }
 }
