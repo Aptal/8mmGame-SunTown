@@ -44,12 +44,15 @@ public class Unit : MonoBehaviour
     public PosType curType = PosType.errorType;
     protected float totalTime = 0;
 
-    protected SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer { get; protected set; }
 
     [SerializeField] protected Sprite sheepSprite;  // 原羊的图片
+    [SerializeField] protected Sprite dieSheepSprite;   // 复活羊的图片
+
     [SerializeField] protected Sprite flagSprite;   // 旗帜的图片
     public bool isFlag = false;  // 是否处于旗帜状态
     public bool isBeingDragged = false; // 是否正在被拖动
+
     protected Vector3 stopPosition; // 记录碰撞时的位置
     protected Collider2D sheepCollider;
 
@@ -114,7 +117,7 @@ public class Unit : MonoBehaviour
         //canCtrl = false; // 不允许继续控制
         //sheepCollider.enabled = false; // 暂时禁用碰撞
         GetComponent<SpriteRenderer>().sprite = flagSprite; // 改变图片为旗帜
-        
+
         stopPosition = transform.position; 
         // 停止移动，将位置固定
         StopAllCoroutines();
@@ -124,11 +127,21 @@ public class Unit : MonoBehaviour
     // 当玩家点击旗帜并将其放置在草地时，恢复为羊的状态
     public void PlaceOnGrassTile(Vector3 grassTilePosition)
     {
+        transform.position = grassTilePosition; // 将旗帜移动到指定草地
+        
+        StartCoroutine(WaitReLife(2.0f));
+    }
+
+    IEnumerator WaitReLife(float duration)
+    {
+        spriteRenderer.sprite = dieSheepSprite;
+        yield return new WaitForSeconds(2f);
         // 恢复羊的状态
         isFlag = false;
+        spriteRenderer.color = Color.white;
         canCtrl = true;
-        transform.position = grassTilePosition; // 将旗帜移动到指定草地
-        GetComponent<SpriteRenderer>().sprite = sheepSprite; // 改变图片为羊
+        spriteRenderer.sprite = sheepSprite;
+        //GetComponent<SpriteRenderer>().sprite = sheepSprite; // 改变图片为羊
         sheepCollider.enabled = true; // 重新启用碰撞
     }
 
@@ -233,6 +246,7 @@ public class Unit : MonoBehaviour
         if (GameManager.Instance.selectedUnit != this)
         {
             GameManager.Instance.selectedUnit.spriteRenderer.color = Color.white;
+            GameManager.Instance.selectedUnit.isSelected = false;
             GameManager.Instance.selectedUnit = this;
         }
         ShowWalkableRoad();
@@ -354,7 +368,6 @@ public class Unit : MonoBehaviour
         canCtrl = false;
         spriteRenderer.color = Color.white;
         StartCoroutine(MoveCo(_trans));
-        canCtrl = true;
     }
 
     bool ComparePos(Vector2 pos, Vector2 pos2)
@@ -429,6 +442,7 @@ public class Unit : MonoBehaviour
         if (transform.position == _trans.position)
         {
             isSelected = false;
+            canCtrl = true;
         }
         //moveSpeed /= k; //复原
     }

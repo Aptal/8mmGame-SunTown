@@ -422,6 +422,7 @@ public class GameManager : MonoBehaviour
                 {
                     sheep.isBeingDragged = true;
                     selectedUnit = sheep;
+                    selectedUnit.spriteRenderer.color = selectedUnit.selectedColor;
                     Debug.Log("flag");
                     return;
                 }
@@ -443,7 +444,8 @@ public class GameManager : MonoBehaviour
                 {
                     if(selectedUnit != null && selectedUnit.isFlag)
                     {
-                        selectedUnit.PlaceOnGrassTile(hitTile.transform.position);
+                        if(hitTile.collider.GetComponent<GrassTile>())
+                            selectedUnit.PlaceOnGrassTile(hitTile.transform.position);
                     }
                     else if (tile.canGo && selectedUnit != null && selectedUnit.canCtrl)
                     {

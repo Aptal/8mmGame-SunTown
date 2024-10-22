@@ -158,7 +158,8 @@ MonoBehaviour:
   preType: 0
   curType: 0
   sheepSprite: {fileID: 21300000, guid: b2c7225528a6475418f536da87f65bef, type: 3}
-  flagSprite: {fileID: 21300000, guid: f92605f60800cab4db0f0d3c1685d62b, type: 3}
+  dieSheepSprite: {fileID: 21300000, guid: 507ebf7e9dd464443985a0dc015e67f6, type: 3}
+  flagSprite: {fileID: 21300000, guid: e1afe196f6be3dd4b861ebaa220ec70c, type: 3}
   isFlag: 0
   isBeingDragged: 0
   canCtrl: 1
