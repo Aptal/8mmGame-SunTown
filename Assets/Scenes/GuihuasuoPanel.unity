@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 1790588781}
   - component: {fileID: 1790588780}
   m_Layer: 5
-  m_Name: Image
+  m_Name: image_lockIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 1946510954}
   - component: {fileID: 1946510953}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: GuihuasuoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

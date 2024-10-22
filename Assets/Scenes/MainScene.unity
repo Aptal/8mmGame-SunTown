@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 784819145}
   - component: {fileID: 784819144}
   m_Layer: 5
-  m_Name: TMP_task_title3
+  m_Name: text_task_title3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2627,7 +2627,7 @@ GameObject:
   - component: {fileID: 1387658834}
   - component: {fileID: 1387658833}
   m_Layer: 5
-  m_Name: Image_icon
+  m_Name: Image_optionIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2777,7 +2777,7 @@ GameObject:
   - component: {fileID: 1430736173}
   - component: {fileID: 1430736172}
   m_Layer: 5
-  m_Name: TMP_task_title
+  m_Name: text_task_title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2911,7 +2911,7 @@ GameObject:
   - component: {fileID: 1490012614}
   - component: {fileID: 1490012613}
   m_Layer: 5
-  m_Name: TMP_task_title2
+  m_Name: text_task_title2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3680,7 +3680,7 @@ GameObject:
   - component: {fileID: 2089195737}
   - component: {fileID: 2089195736}
   m_Layer: 5
-  m_Name: TMP_sunCount
+  m_Name: text_sunCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
