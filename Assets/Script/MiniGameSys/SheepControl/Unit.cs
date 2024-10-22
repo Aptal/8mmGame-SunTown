@@ -55,7 +55,7 @@ public class Unit : MonoBehaviour
 
     public bool canCtrl = true;
     public bool isSelected = false;
-    public Color selectedColor = Color.gray;
+    public Color selectedColor = Color.yellow;
 
     void Start()
     {
@@ -268,14 +268,58 @@ public class Unit : MonoBehaviour
 
     protected void ShowWalkableRoad()
     {
-        //Debug.Log(transform.position);
-
         curType = GetCurInfo();
-        //Debug.Log(curType.ToString());
-        //hub
-        //Debug.Log("hub : " + GameManager.Instance.hubTile.transform.position);
-        
-        if (curType == PosType.store && Vector2.Distance(transform.position, GameManager.Instance.hubTile.transform.position) <= moveRange)
+
+        List<int> indexList = new List<int>();
+        if(curType == PosType.hub)
+        {
+            indexList = GameManager.Instance.hubTile.arrivePos;
+            for (int i = 0; i < indexList.Count; ++i)
+            {
+                GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].canGo = true;
+                GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].HighlightTile();
+            }
+        }
+        else if(curType == PosType.store)
+        {
+            indexList = GameManager.Instance.storeTiles[posIndex].arrivePos;
+            for (int i = 0; i < indexList.Count; ++i)
+            {
+                if (indexList[i] >= GameManager.Instance.grassTiles.Length + GameManager.Instance.storeTiles.Length)
+                {
+                    GameManager.Instance.hubTile.canGo = true;
+                    GameManager.Instance.hubTile.HighlightTile();
+                }
+                else if (indexList[i] >= GameManager.Instance.grassTiles.Length)
+                {
+                    GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].canGo = true;
+                    GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].HighlightTile();
+                }
+                else
+                {
+                    GameManager.Instance.grassTiles[indexList[i]].canGo = true;
+                    GameManager.Instance.grassTiles[indexList[i]].HighlightTile();
+                }
+            }
+        }
+        else
+        {
+            indexList = GameManager.Instance.grassTiles[posIndex].arrivePos;
+            for (int i = 0; i < indexList.Count; ++i)
+            {
+                if (indexList[i] >= GameManager.Instance.grassTiles.Length)
+                {
+                    GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].canGo = true;
+                    GameManager.Instance.storeTiles[indexList[i] - GameManager.Instance.grassTiles.Length].HighlightTile();
+                }
+                else
+                {
+                    GameManager.Instance.grassTiles[indexList[i]].canGo = true;
+                    GameManager.Instance.grassTiles[indexList[i]].HighlightTile();
+                }
+            }
+        }
+        /*if (curType == PosType.store && Vector2.Distance(transform.position, GameManager.Instance.hubTile.transform.position) <= moveRange)
         {
             GameManager.Instance.hubTile.canGo = true;
             GameManager.Instance.hubTile.HighlightTile();
@@ -300,7 +344,7 @@ public class Unit : MonoBehaviour
                 GameManager.Instance.storeTiles[i].canGo = true;
                 GameManager.Instance.storeTiles[i].HighlightTile();
             }
-        }
+        }*/
 
     }
 
@@ -391,6 +435,7 @@ public class Unit : MonoBehaviour
 
     public  void ResetTiles()
     {
+        spriteRenderer.color = Color.white;
         GameManager.Instance.hubTile.ResetTile();
         for(int i = 0; i < GameManager.Instance.storeTiles.Length; i++)
         {

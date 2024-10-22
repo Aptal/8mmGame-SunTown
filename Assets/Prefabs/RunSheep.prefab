@@ -189,6 +189,7 @@ MonoBehaviour:
   isFlag: 0
   isBeingDragged: 0
   canCtrl: 1
+  isSelected: 0
   selectedColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
 --- !u!1 &6790869143818169545
 GameObject:

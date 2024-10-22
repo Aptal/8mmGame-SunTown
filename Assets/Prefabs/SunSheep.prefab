@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.506, y: 0.514, z: 0}
-  m_LocalScale: {x: 0.35169524, y: 0.36432672, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 212094483651116564}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b9d1b6aea72b64686cf09c19660ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: 4.5
+  moveRange: 6
   moveSpeed: 0.2
   kStore: 0.5
   kHub: 0.25
@@ -162,6 +162,7 @@ MonoBehaviour:
   isFlag: 0
   isBeingDragged: 0
   canCtrl: 1
+  isSelected: 0
   selectedColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
 --- !u!50 &-7784063889245850318
 Rigidbody2D:

@@ -8,8 +8,11 @@ public class Tile : MonoBehaviour
     //[SerializeField] private Sprite[] sprites;
 
     public bool canGo = false;
-    public Color highlightColor = Color.gray;
+    protected Color highlightColor = Color.yellow;
     public LayerMask obLayerMask;
+
+    public List<int> arrivePos = new List<int>();
+    public int id = -1;
 
     void Start()
     {
@@ -54,6 +57,7 @@ public class Tile : MonoBehaviour
     public void ResetTile()
     {
         spriteRenderer.color = Color.white;
+        canGo = false;
     }
 
     //protected void OnMouseDown()

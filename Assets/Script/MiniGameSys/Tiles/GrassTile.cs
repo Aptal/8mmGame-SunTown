@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrassTile : Tile
 {
     public bool isSunny = true;
+    public Color shadowColor = Color.gray;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,7 +19,7 @@ public class GrassTile : Tile
         {
             // 草地被阴影遮挡，设置为无阳光照射
             isSunny = false;
-            spriteRenderer.color = Color.blue;
+            spriteRenderer.color = shadowColor;
         }
     }
 
@@ -29,10 +30,17 @@ public class GrassTile : Tile
         {
             // 草地恢复阳光
             isSunny = true;
-            spriteRenderer.color = Color.white;
+            ResetTile();
         }
     }
-
+    public void ResetTile()
+    {
+        if (isSunny)
+            spriteRenderer.color = Color.white;
+        else
+            spriteRenderer.color = shadowColor;
+        canGo = false;
+    }
     //private void OnMouseUpAsButton()
     //{
     //    // 如果有旗帜拖拽到草地，则恢复为羊
