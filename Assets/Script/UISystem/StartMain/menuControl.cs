@@ -23,7 +23,7 @@ public class menuControl : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    //閫氳繃鐐瑰嚮鎸夐挳瀹炵幇鐣岄潰璺宠浆
+    //通过点击按钮实现界面跳转
     public void Jump()
     {
         SceneManager.LoadScene(1);
