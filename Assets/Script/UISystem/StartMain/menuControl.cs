@@ -22,6 +22,12 @@ public class menuControl : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    //通过点击按钮实现界面跳转
+    public void Jump()
+    {
+        SceneManager.LoadScene(1);
+    }
     //continue game
 
     //game settings
