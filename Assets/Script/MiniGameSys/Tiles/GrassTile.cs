@@ -6,10 +6,13 @@ public class GrassTile : Tile
 {
     public bool isSunny = true;
     public Color shadowColor = Color.gray;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = 5;
+        changingTime = 1f;
+        spriteRenderer.sprite = open2Close[open2Close.Length - 1];
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +24,15 @@ public class GrassTile : Tile
             isSunny = false;
             spriteRenderer.color = shadowColor;
         }
+        if (other.CompareTag("Player"))
+        {
+            if(audioSource != null) 
+                audioSource.PlayOneShot(sheepArriveSound);
+            if (this.gameObject.activeSelf)
+            {
+                StartCoroutine(Close2Open(changingTime));
+            }
+        }
     }
 
     // 当阴影板离开草地时调用
@@ -31,6 +43,10 @@ public class GrassTile : Tile
             // 草地恢复阳光
             isSunny = true;
             ResetTile();
+        }
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(Open2Close(changingTime));
         }
     }
     public void ResetTile()

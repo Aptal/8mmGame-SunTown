@@ -15,15 +15,28 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private int remainingDuration;
 
+    [SerializeField] private AudioClip least30Sound;
+    [SerializeField] private AudioClip gameOverSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
-        ResetTimer();
+        uiTimeText.text = "00:00";
+        Duration = remainingDuration = 0;
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.7f;
     }
 
     private void ResetTimer()
     {
         uiTimeText.text = "00:00";
         Duration = remainingDuration = 0;
+        audioSource.Stop();
+        audioSource.PlayOneShot(gameOverSound);
     }
 
     public Timer SetDuration(int seconds)
@@ -43,6 +56,10 @@ public class Timer : MonoBehaviour
         while(remainingDuration > 0)
         {
             UpdateUI(remainingDuration);
+            if(remainingDuration <= 30)
+            {
+                audioSource.PlayOneShot(least30Sound);
+            }
             remainingDuration--;
             Duration = remainingDuration;
             yield return new WaitForSeconds(1f);

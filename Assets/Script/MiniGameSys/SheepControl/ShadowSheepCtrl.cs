@@ -12,6 +12,7 @@ public class ShadowSheepCtrl : Unit
         spriteRenderer.sortingOrder = 25;
         sheepCollider = GetComponent<Collider2D>();
         sheepSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+
     }
 
     void Update()

@@ -21,13 +21,18 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public Timer timer1;
     [SerializeField] public ShadowControl shadow;
+    
+    [SerializeField] private AudioClip envSound; // 选中sheep
+    [Range(0.0f, 1.0f)] // 在编辑器中添加滑块来调整音量
+    private float envSoundVolume = 1f; // 移动声音的默认音量
 
-    //public bool[,] linkGrass = new bool[8, 8];
-    //public bool[,] linkStore = new bool[4, 4];
-    //public bool[,] linkGandS = new bool[4, 8];
+    [SerializeField] private AudioClip clickNothingSound;
+    [SerializeField] private AudioClip sunTotalSound;
+
+    private AudioSource audioSource;
+
     public int destoryRoadpos1 = -1;
     public int destoryRoadpos2 = -1;
-
 
 
     private void Awake()
@@ -48,14 +53,19 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        // 播放移动音频并循环
+        audioSource.clip = envSound;
+        audioSource.loop = true; // 设置为循环播放
+        audioSource.volume = envSoundVolume;
+        audioSource.Play(); // 开始播放音频
+
         InitTileId();
         InitArrivePos();
         // 毁坏一条路
         DestoryRoad();
 
         timer1.SetDuration(180).Begin();
-        //linkGrass = new bool[8][];
-
 
         // 初始化羊的位置
         PlaceSheepOnGrass();
@@ -442,6 +452,13 @@ public class GameManager : MonoBehaviour
                 Tile tile = hitTile.collider.GetComponent<Tile>();
                 if(tile != null)
                 {
+                    //点击仓库声音
+                    StoreTile stTile = hitTile.collider.GetComponent<StoreTile>();
+                    if (stTile != null && stTile.opt == StoreOpt.disable)
+                    {
+                        audioSource.PlayOneShot(stTile.noWorkSound);
+                    }
+
                     if(selectedUnit != null && selectedUnit.isFlag)
                     {
                         if(hitTile.collider.GetComponent<GrassTile>())
@@ -459,6 +476,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
 
+            audioSource.PlayOneShot(clickNothingSound);
             //取消选中所有元素
             if(selectedUnit != null) 
             {

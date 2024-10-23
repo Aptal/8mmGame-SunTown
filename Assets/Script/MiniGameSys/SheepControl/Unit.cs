@@ -60,6 +60,24 @@ public class Unit : MonoBehaviour
     public bool isSelected = false;
     public Color selectedColor = Color.yellow;
 
+    // 音乐设置
+    [SerializeField] protected AudioClip selectSound; // 选中sheep
+    [SerializeField] protected AudioClip moveSound; // 移动sheep
+    [Range(0.0f, 1.0f)] // 在编辑器中添加滑块来调整音量
+    private float moveSoundVolume = 0.5f; // 移动声音的默认音量
+
+    [SerializeField] protected AudioClip crashSound;
+    [SerializeField] protected AudioClip reLifeSound;
+
+
+    protected AudioSource audioSource; // 用于播放音频
+
+    protected void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.5f;
+    }
+
     void Start()
     {
         canCtrl = true;
@@ -102,11 +120,11 @@ public class Unit : MonoBehaviour
         this.hasSun = 0;
         otherSheep.hasSun = 0;
 
-        // 随机选择一个羊继续前进
-        Unit selectedSheep = Random.value > 0.5f ? this : otherSheep;
+        // 随机选择的羊变成旗帜
+        Unit flagSheep = Random.value > 0.5f ? this : otherSheep;
+        flagSheep.audioSource.Stop(); //关闭移动声音
+        flagSheep.audioSource.PlayOneShot(crashSound);
 
-        // 让未被选择的羊变成旗帜
-        Unit flagSheep = (selectedSheep == this) ? otherSheep : this;
         flagSheep.TurnIntoFlag();
     }
 
@@ -135,7 +153,8 @@ public class Unit : MonoBehaviour
     IEnumerator WaitReLife(float duration)
     {
         spriteRenderer.sprite = dieSheepSprite;
-        yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(reLifeSound);
+        yield return new WaitForSeconds(duration);
         // 恢复羊的状态
         isFlag = false;
         spriteRenderer.color = Color.white;
@@ -249,6 +268,8 @@ public class Unit : MonoBehaviour
             GameManager.Instance.selectedUnit.isSelected = false;
             GameManager.Instance.selectedUnit = this;
         }
+
+        audioSource.PlayOneShot(selectSound);
         ShowWalkableRoad();
     }
 
@@ -367,6 +388,13 @@ public class Unit : MonoBehaviour
         ResetTiles();
         canCtrl = false;
         spriteRenderer.color = Color.white;
+
+        // 播放移动音频并循环
+        audioSource.clip = moveSound;
+        audioSource.loop = true; // 设置为循环播放
+        audioSource.volume = moveSoundVolume;
+        audioSource.Play(); // 开始播放音频
+
         StartCoroutine(MoveCo(_trans));
     }
 
@@ -439,6 +467,8 @@ public class Unit : MonoBehaviour
         }
 
         transform.position = targetPosition; // 保证最终位置精准
+        audioSource.Stop();
+
         if (transform.position == _trans.position)
         {
             isSelected = false;

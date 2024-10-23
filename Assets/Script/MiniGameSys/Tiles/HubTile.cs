@@ -12,10 +12,15 @@ public class HubTile : Tile
     [SerializeField]
     private int totalSun = 0;
 
+    [SerializeField]
+    protected AudioClip gameInSound;
+
     private void Start()
     {
         //Debug.Log("hub : " + hub++);
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        audioSource.PlayOneShot(gameInSound);
     }
 
     // Update is called once per frame
@@ -29,5 +34,13 @@ public class HubTile : Tile
         int pass = Mathf.Min(sheepHasSun, sheep2hubV);
         totalSun += pass;
         return pass;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            audioSource.PlayOneShot(sheepArriveSound);
+        }
     }
 }

@@ -32,10 +32,17 @@ public class StoreTile : Tile
 
     public StoreOpt opt = StoreOpt.disable;
 
+    [SerializeField]
+    public AudioClip noWorkSound;
+    [SerializeField]
+    protected AudioClip workSound;
+
+
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = open2Close[open2Close.Length - 1];
         storeSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
     }
 
@@ -47,18 +54,20 @@ public class StoreTile : Tile
     public void EnablePopButtion()
     {
         opt = StoreOpt.pop;
+        audioSource.PlayOneShot(workSound);
     }
 
     public void EnablePushButtion()
     {
         opt = StoreOpt.push;
+        audioSource.PlayOneShot(workSound);
     }
 
     private void EnableButtion()
     {
         pushButtion.gameObject.SetActive(true);
         popButtion.gameObject.SetActive(true);
-        Vector3 f = new Vector3(50, 50, 0);
+        Vector3 f = new Vector3(50, 0, 0);
         popButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) - f;
         pushButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) + f;
     }
@@ -68,22 +77,39 @@ public class StoreTile : Tile
         //羊群到达临时仓库
         if (other.CompareTag("Player"))
         {
-            EnableButtion();
+            if (this.gameObject.activeSelf)
+            {
+                StartCoroutine(Close2Open(changingTime));
+                if(spriteRenderer.sprite == open2Close[0])
+                {
+                    EnableButtion();
+                }
+            }
         }
     }
+
 
     void OnTriggerExit2D(Collider2D other)
     {
         //羊群离开临时仓库
         if (other.CompareTag("Player"))
         {
-            DisableButtion();
+            if(this.gameObject.activeSelf)
+            {
+                StartCoroutine(Open2Close(changingTime));
+                if(spriteRenderer.sprite == open2Close[open2Close.Length - 1])
+                {
+                    DisableButtion();
+                }
+            }
         }
     }
+
     private void DisableButtion()
     {
         popButtion.gameObject.SetActive(false);
         pushButtion.gameObject.SetActive(false);
+        opt = StoreOpt.disable;
     }
 
     public int StoreSun(int sheepHasSun)

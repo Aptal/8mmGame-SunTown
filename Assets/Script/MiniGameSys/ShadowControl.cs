@@ -32,11 +32,20 @@ public class ShadowControl : MonoBehaviour
     // UI元素
     [SerializeField] private GameObject effectIcon; // 提示图标的UI元素
 
+    // music
+    protected AudioSource audioSource; // 用于播放音频
+    [SerializeField] protected AudioClip vFastSound;
+    [SerializeField] protected AudioClip vLowSound;
+    [SerializeField] protected AudioClip vStopSound;
+    [SerializeField] protected AudioClip vContrastSound;
+
     void Start()
     {
         shadowImg.transform.position = GameManager.Instance.hubTile.transform.position;
-
         rotationSpeed = defaultRotationSpeed; // 初始速度
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.2f;
     }
 
     void Update()
@@ -86,18 +95,22 @@ public class ShadowControl : MonoBehaviour
             case 0:
                 StartCoroutine(GraduallyReachEffect(-rotationSpeed, 10f)); // 逆转：10秒内达到逆转效果
                 currentEffect = "逆转";
+                audioSource.PlayOneShot(vContrastSound);
                 break;
             case 1:
                 StartCoroutine(GraduallyReachEffect(rotationSpeed * 2f, 10f)); // 2倍速：10秒内达到2倍速
                 currentEffect = "2倍速";
+                audioSource.PlayOneShot(vFastSound);
                 break;
             case 2:
                 StartCoroutine(GraduallyReachEffect(rotationSpeed * 0.5f, 10f)); // 0.5倍速：10秒内达到0.5倍速
                 currentEffect = "0.5倍速";
+                audioSource.PlayOneShot(vLowSound);
                 break;
             case 3:
                 StartCoroutine(GraduallyReachEffect(0f, 10f)); // 停止：10秒内减速到0
                 currentEffect = "停止";
+                audioSource.PlayOneShot(vStopSound);
                 break;
         }
         preEffectIndex = effectIndex;
