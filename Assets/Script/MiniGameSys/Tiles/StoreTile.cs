@@ -61,6 +61,7 @@ public class StoreTile : Tile
 
     void Update()
     {
+        storeSunCnt.text = sthasSun.ToString();
         if (hasSheep && !pushButtion.gameObject.activeSelf)
         {
             EnableButtion();
@@ -73,7 +74,6 @@ public class StoreTile : Tile
         totalTime += Time.deltaTime;
         if(totalTime >= 1) totalTime = 0;
 
-        storeSunCnt.text = sthasSun.ToString();
         if (opt == StoreOpt.pop)
         {
             PlayAnimation(popSunFrame);
