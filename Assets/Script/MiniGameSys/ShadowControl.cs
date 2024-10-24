@@ -31,6 +31,7 @@ public class ShadowControl : MonoBehaviour
 
     // UI元素
     [SerializeField] private GameObject effectIcon; // 提示图标的UI元素
+    private string overName = "异常结束";
 
     // music
     protected AudioSource audioSource; // 用于播放音频
@@ -67,7 +68,7 @@ public class ShadowControl : MonoBehaviour
         // 恢复至默认状态（1:40和0:40启动，10秒内过渡回默认状态）
         if ( !isEffectRecovering && (remainingTime == effectRecoverStart1 || remainingTime == effectRecoverStart2))
         {
-            ShowEffectIcon("事件结束");
+            ShowEffectIcon(overName);
             StartCoroutine(RecoverEffect());
         }
 
