@@ -15,6 +15,7 @@ public class Tile : MonoBehaviour
     public List<int> arrivePos = new List<int>();
     public int id = -1;
 
+    public float animationSpeed = 12f;
 
     protected AudioSource audioSource; // 用于播放音频
     [SerializeField] protected AudioClip sheepArriveSound;
@@ -120,4 +121,5 @@ public class Tile : MonoBehaviour
         // 确保动画结束时使用最后一帧
         spriteRenderer.sprite = open2Close[totalSprites - 1];
     }
+
 }

@@ -27,6 +27,8 @@ public class RunSheepCtrl : Unit
             preType = GetCurInfo();
         totalTime += Time.deltaTime;
 
+        UpdateSheepFrame();
+
         if (totalTime >= 1)
         {
             totalTime = 0;

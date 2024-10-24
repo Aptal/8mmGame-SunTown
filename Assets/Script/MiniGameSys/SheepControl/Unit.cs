@@ -26,6 +26,7 @@ public class Unit : MonoBehaviour
     [Header("kHub(羊在中枢和仓库间的系数，speed*k)")]
     [SerializeField]
     protected float kHub = 0.25f;
+    protected Coroutine moveCoroutine;
 
     [SerializeField]
     public int productV = 1;
@@ -47,9 +48,27 @@ public class Unit : MonoBehaviour
     public SpriteRenderer spriteRenderer { get; protected set; }
 
     [SerializeField] protected Sprite sheepSprite;  // 原羊的图片
+
+    public float animationSpeed = 12f;
+    [SerializeField] public Sprite[] chargingFrame;
+    [SerializeField] public Sprite[] eatingFrame;
+    [SerializeField] public Sprite[] movingFrame;
+
+    [SerializeField] SheepBumpCtrl bumpFrame;
+
+    //[SerializeField] public Sprite[] sunShadowBoomFrame;
+    //[SerializeField] public Sprite[] sunSunBoomFrame;
+    //[SerializeField] public Sprite[] sunRunBoomFrame;
+    //[SerializeField] public Sprite[] shadowShadowBoomFrame;
+    //[SerializeField] public Sprite[] shadowRunBoomFrame;
+    //[SerializeField] public Sprite[] runRunBoomFrame;
+
     [SerializeField] protected Sprite dieSheepSprite;   // 复活羊的图片
+    //[SerializeField] protected Sprite[] reLifeSheepFrame;
 
     [SerializeField] protected Sprite flagSprite;   // 旗帜的图片
+    //[SerializeField] protected Sprite[] flagFrame; 
+
     public bool isFlag = false;  // 是否处于旗帜状态
     public bool isBeingDragged = false; // 是否正在被拖动
 
@@ -83,7 +102,6 @@ public class Unit : MonoBehaviour
         canCtrl = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         sheepCollider = GetComponent<Collider2D>();
-        //transform.position = GameManager.Instance.grassTiles[ Random.Range(0, 8) ].transform.position;
     }
 
 
@@ -107,10 +125,113 @@ public class Unit : MonoBehaviour
         Unit otherSheep = other.GetComponent<Unit>();
 
         // 确保两个碰撞对象都是羊群，且当前羊群没有变成旗帜
-        if (otherSheep != null && !isFlag && !otherSheep.isFlag)
+        if (otherSheep != null && !isFlag && !otherSheep.isFlag && !isPlayingCollisionAnimation && !otherSheep.isPlayingCollisionAnimation)
         {
             HandleCollisionWithOtherSheep(otherSheep);
         }
+    }
+
+    // 是否正在播放碰撞动画
+    public bool isPlayingCollisionAnimation = false;
+
+    // 播放碰撞动画
+    public void PlayCollisionAnimation(Unit otherSheep)
+    {
+        //canCtrl = false;
+        //otherSheep.canCtrl = false;
+
+        // 根据碰撞的羊的类型确定要播放的碰撞动画帧
+        Sprite[] collisionFrames = null;
+        if (this is SunSheepCtrl && otherSheep is SunSheepCtrl)
+        {
+            collisionFrames = bumpFrame.sunSunBoomFrame;
+        }
+        else if (this is SunSheepCtrl && otherSheep is RunSheepCtrl)
+        {
+            collisionFrames = bumpFrame.sunRunBoomFrame;
+        }
+        else if (this is SunSheepCtrl && otherSheep is ShadowSheepCtrl)
+        {
+            collisionFrames = bumpFrame.sunShadowBoomFrame;
+        }
+        else if (this is ShadowSheepCtrl && otherSheep is RunSheepCtrl)
+        {
+            collisionFrames = bumpFrame.shadowRunBoomFrame;
+        }
+        else if (this is ShadowSheepCtrl && otherSheep is ShadowSheepCtrl)
+        {
+            collisionFrames = bumpFrame.shadowShadowBoomFrame;
+        }
+        else if (this is RunSheepCtrl && otherSheep is RunSheepCtrl)
+        {
+            collisionFrames = bumpFrame.runRunBoomFrame;
+        }
+
+        Unit sheepToRevive = Random.value > 0.5f ? this : otherSheep;
+        sheepToRevive.isPlayingCollisionAnimation = true;
+        if(sheepToRevive.moveCoroutine != null)
+        {
+            StopCoroutine(sheepToRevive.moveCoroutine);
+        }
+        StartCoroutine(PlayCollisionAnimationCoroutine(collisionFrames, sheepToRevive));
+    }
+
+    IEnumerator PlayCollisionAnimationCoroutine(Sprite[] collisionFrames, Unit sheepToRevive)
+    {
+        if (collisionFrames != null && collisionFrames.Length > 0)
+        {
+            float animationDuration = collisionFrames.Length / animationSpeed;
+            float elapsedTime = 0f;
+            while (elapsedTime < animationDuration)
+            {
+                int frameIndex = (int)(elapsedTime * animationSpeed) % collisionFrames.Length;
+                sheepToRevive.spriteRenderer.sprite = collisionFrames[frameIndex];
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        yield return StartCoroutine(ExecuteAfterAnimation(sheepToRevive));
+    }
+
+    IEnumerator ExecuteAfterAnimation(Unit sheepToRevive)
+    {
+        yield return null;
+        sheepToRevive.TurnIntoFlag();
+        sheepToRevive.isPlayingCollisionAnimation = false;
+    }
+
+    IEnumerator PlayFlagAnimation(Unit sheepToRevive)
+    {
+        float animationDuration = bumpFrame.flagFrame.Length / animationSpeed;
+        float elapsedTime = 0f;
+        while (elapsedTime < animationDuration)
+        {
+            int frameIndex = (int)(elapsedTime * animationSpeed) % bumpFrame.flagFrame.Length;
+            sheepToRevive.spriteRenderer.sprite = bumpFrame.flagFrame[frameIndex];
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    // 处理复活后的操作
+    IEnumerator HandleRevival()
+    {
+        float animationDuration = bumpFrame.reLifeSheepFrame.Length / animationSpeed;
+        float elapsedTime = 0f;
+        while (elapsedTime < animationDuration)
+        {
+            int frameIndex = (int)(elapsedTime * animationSpeed) % bumpFrame.reLifeSheepFrame.Length;
+            spriteRenderer.sprite = bumpFrame.reLifeSheepFrame[frameIndex];
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 恢复羊的状态
+        isFlag = false;
+        spriteRenderer.color = Color.white;
+        canCtrl = true;
+        sheepCollider.enabled = true;
     }
 
     // 处理羊群之间的碰撞逻辑
@@ -120,25 +241,32 @@ public class Unit : MonoBehaviour
         this.hasSun = 0;
         otherSheep.hasSun = 0;
 
-        // 随机选择的羊变成旗帜
+        // 播放碰撞动画
+        PlayCollisionAnimation(otherSheep);
+
+/*        // 随机选择的羊变成旗帜
         Unit flagSheep = Random.value > 0.5f ? this : otherSheep;
         flagSheep.audioSource.Stop(); //关闭移动声音
         flagSheep.audioSource.PlayOneShot(crashSound);
 
-        flagSheep.TurnIntoFlag();
+        flagSheep.TurnIntoFlag();*/
     }
 
     // 将羊群变成旗帜
     protected void TurnIntoFlag()
     {
+        audioSource.Stop(); //关闭移动声音
+        audioSource.PlayOneShot(crashSound);
+        spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, 0);
+
         isFlag = true;
         //canCtrl = false; // 不允许继续控制
         //sheepCollider.enabled = false; // 暂时禁用碰撞
-        GetComponent<SpriteRenderer>().sprite = flagSprite; // 改变图片为旗帜
+        //GetComponent<SpriteRenderer>().sprite = flagSprite; // 改变图片为旗帜
 
         stopPosition = transform.position; 
         // 停止移动，将位置固定
-        StopAllCoroutines();
+        StopCoroutine(moveCoroutine);
         transform.position = stopPosition;
     }
 
@@ -146,115 +274,24 @@ public class Unit : MonoBehaviour
     public void PlaceOnGrassTile(Vector3 grassTilePosition)
     {
         transform.position = grassTilePosition; // 将旗帜移动到指定草地
-        
-        StartCoroutine(WaitReLife(2.0f));
+        audioSource.PlayOneShot(reLifeSound);
+        StartCoroutine(HandleRevival());
     }
 
     IEnumerator WaitReLife(float duration)
     {
-        spriteRenderer.sprite = dieSheepSprite;
+        //spriteRenderer.sprite = dieSheepSprite;
         audioSource.PlayOneShot(reLifeSound);
         yield return new WaitForSeconds(duration);
-        // 恢复羊的状态
-        isFlag = false;
-        spriteRenderer.color = Color.white;
-        canCtrl = true;
-        spriteRenderer.sprite = sheepSprite;
-        //GetComponent<SpriteRenderer>().sprite = sheepSprite; // 改变图片为羊
-        sheepCollider.enabled = true; // 重新启用碰撞
+        //// 恢复羊的状态
+        //isFlag = false;
+        //spriteRenderer.color = Color.white;
+        //canCtrl = true;
+        //spriteRenderer.sprite = sheepSprite;
+        //sheepCollider.enabled = true; // 重新启用碰撞
     }
 
-    //protected void OnMouseDown()
-    //{
-    //    if (isFlag)
-    //    {
-    //        isBeingDragged = true; // 开始拖动
-    //    }
-    //}
-
-    //protected void OnMouseUp()
-    //{
-    //    if (isFlag)
-    //    {
-    //        isBeingDragged = false; // 停止拖动
-    //        TryPlaceFlag(); // 尝试放置旗帜
-    //    }
-    //}
-
-    // 尝试将旗帜放置到草地上
-    //protected void TryPlaceFlag()
-    //{
-    //    // 获取鼠标当前位置
-    //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-    //    // 检查鼠标下是否有草地 Tile
-    //    RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Tile"));
-    //    if (hit.collider != null)
-    //    {
-    //        GrassTile grassTile = hit.collider.GetComponent<GrassTile>();
-    //        if (grassTile != null && grassTile.canGo) // 如果是可走的草地
-    //        {
-    //            PlaceOnGrassTile(grassTile.transform.position); // 将旗帜放置到草地上
-    //        }
-    //    }
-    //}
-
-    // 让旗帜跟随鼠标移动
-/*    private void OnMouseDrag()
-    {
-        if (isFlag)
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0; // 确保只在X和Y轴移动
-            transform.position = mousePosition;
-        }
-    }*/
-
-
-    /*public void BecomeFlag()
-    {
-        spriteRenderer.sprite = flagSprite;
-        isFlag = true;
-        canCtrl = false; // 禁止移动
-    }
-
-    public void BecomeSheep()
-    {
-        spriteRenderer.sprite = sheepSprite;
-        isFlag = false;
-        canCtrl = true; // 恢复移动控制
-    }
-
-    void OnMouseDown()
-    {
-        if (isFlag)
-        {
-            StartCoroutine(DragFlag());
-        }
-    }
-
-    private IEnumerator DragFlag()
-    {
-        while (isFlag)
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(mousePosition.x, mousePosition.y);
-
-            // 如果鼠标左键点击，停止拖拽并检查是否在草地上
-            if (Input.GetMouseButtonDown(0))
-            {
-                // 检查是否在草地上放置
-                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Grass"));
-                if (hit.collider != null)
-                {
-                    BecomeSheep(); // 恢复羊状态
-                    break;
-                }
-            }
-            yield return null;
-        }
-    }*/
-
+    
     public void SelectSheep()
     {
         if (isSelected) return;
@@ -395,7 +432,7 @@ public class Unit : MonoBehaviour
         audioSource.volume = moveSoundVolume;
         audioSource.Play(); // 开始播放音频
 
-        StartCoroutine(MoveCo(_trans));
+        moveCoroutine = StartCoroutine(MoveCo(_trans));
     }
 
     bool ComparePos(Vector2 pos, Vector2 pos2)
@@ -405,13 +442,9 @@ public class Unit : MonoBehaviour
 
     IEnumerator MoveCo(Transform _trans)
     {
-        //while (Vector2.Distance(transform.position, _trans.position) > 0.0001f)
-        //{
-        //    transform.position = Vector2.MoveTowards(transform.position, _trans.position, moveSpeed * Time.deltaTime);
-        //    yield return new WaitForSeconds(0);
-        //}
         Vector2 startPosition = transform.position;
         Vector2 targetPosition = _trans.position;
+        Vector2 direction = targetPosition - startPosition;
 
         int type1 = -1, type2 = -1;
         for(int i = 0; i < GameManager.Instance.grassTiles.Length; i++)
@@ -454,7 +487,6 @@ public class Unit : MonoBehaviour
             k = kStore;
         }
 
-        //moveSpeed *= k;
         float v = moveSpeed * k;
         float elapsedTime = 0f;
         float moveDuration = 1f / v;  // 根据moveSpeed (v)调整移动时间
@@ -463,18 +495,82 @@ public class Unit : MonoBehaviour
         {
             transform.position = Vector2.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
             elapsedTime += Time.deltaTime;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (angle > -90 && angle < 90)
+            {
+                // 向右侧方向移动，确保羊头正确朝向并镜像翻转
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                // 其他方向根据原始计算调整并恢复镜像状态
+                spriteRenderer.flipX = false;
+                if (angle > 90 || angle < -90)
+                {
+                    angle += 180;
+                }
+                spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+
+
             yield return null;
         }
 
         transform.position = targetPosition; // 保证最终位置精准
+        spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, 0);
         audioSource.Stop();
 
         if (transform.position == _trans.position)
         {
             isSelected = false;
             canCtrl = true;
+            if(GetCurInfo() == PosType.store)
+            {
+                GameManager.Instance.storeTiles[posIndex].hasSheep = true;
+            }
         }
         //moveSpeed /= k; //复原
+    }
+
+    public bool IsMoving()
+    {
+        return audioSource.clip == moveSound && audioSource.isPlaying;
+    }
+
+    protected void UpdateSheepFrame()
+    {
+        if(isFlag)
+        {
+            int frameIndex = (int)(totalTime * animationSpeed) % bumpFrame.flagFrame.Length;
+            spriteRenderer.sprite = bumpFrame.flagFrame[frameIndex];
+            return;
+        }
+
+        // 判断羊群是否在移动
+        bool isMoving = IsMoving();
+
+        if (isMoving)
+        {
+            // 如果在移动，播放 movingFrame
+            int frameIndex = (int)(totalTime * animationSpeed) % movingFrame.Length;
+            spriteRenderer.sprite = movingFrame[frameIndex];
+        }
+        else
+        {
+            // 如果不在移动，判断是否在吃草并播放相应动画帧
+            curType = GetCurInfo();
+            if (eatingFrame.Length > 0 && curType == PosType.grass && preType == PosType.grass && GameManager.Instance.grassTiles[posIndex].isSunny && !isFlag)
+            {
+                int frameIndex = (int)(totalTime * animationSpeed) % eatingFrame.Length;
+                spriteRenderer.sprite = eatingFrame[frameIndex];
+            }
+            else if(chargingFrame.Length > 0)
+            {
+                int frameIndex = (int)(totalTime * animationSpeed) % chargingFrame.Length;
+                spriteRenderer.sprite = chargingFrame[frameIndex];
+            }
+        }
     }
 
     public  void ResetTiles()

@@ -22,8 +22,10 @@ public class ShadowSheepCtrl : Unit
         if (preType == PosType.errorType)
             preType = GetCurInfo();
         totalTime += Time.deltaTime;
-        // 每秒生产光能
 
+        UpdateSheepFrame();
+
+        // 每秒生产光能
         if (totalTime >= 1)
         {
             totalTime = 0;

@@ -22,9 +22,11 @@ public class SunSheepCtrl : Unit
         if (preType == PosType.errorType)
             preType = GetCurInfo();
         totalTime += Time.deltaTime;
-        // 每秒生产光能
 
-        if(totalTime >= 1)
+        UpdateSheepFrame();
+
+        // 每秒生产光能
+        if (totalTime >= 1)
         {            
             totalTime = 0;
 
@@ -32,8 +34,6 @@ public class SunSheepCtrl : Unit
             
             if(curType == PosType.store && preType == PosType.store)
             {
-                //if(!GameManager.Instance.storeTiles[posIndex].pushButtion.IsActive())
-                //    GameManager.Instance.storeTiles[posIndex].EnableButtion();
                 if (GameManager.Instance.storeTiles[posIndex].opt == StoreOpt.push)
                 {
                     hasSun -= GameManager.Instance.storeTiles[posIndex].StoreSun(hasSun);
@@ -45,11 +45,6 @@ public class SunSheepCtrl : Unit
             }   
             else
             {
-                //for(int i = 0; i < 4; ++i)
-                //{
-                //    if (GameManager.Instance.storeTiles[i].pushButtion.IsActive())
-                //        GameManager.Instance.storeTiles[i].DisableButtion();
-                //}
                 if (curType == PosType.grass && preType == PosType.grass && GameManager.Instance.grassTiles[posIndex].isSunny && !isFlag)
                 {
                     hasSun = Mathf.Min(hasSun + productV, sunLimit);

@@ -430,7 +430,10 @@ public class GameManager : MonoBehaviour
                 Unit sheep = hitSheep.collider.GetComponent<Unit>();
                 if(sheep.isFlag)
                 {
-                    sheep.isBeingDragged = true;
+                    if(selectedUnit != null)
+                    {
+                        resetSelectUnit();
+                    }
                     selectedUnit = sheep;
                     selectedUnit.spriteRenderer.color = selectedUnit.selectedColor;
                     Debug.Log("flag");
@@ -467,6 +470,11 @@ public class GameManager : MonoBehaviour
                     else if (tile.canGo && selectedUnit != null && selectedUnit.canCtrl)
                     {
                         // 如果Tile可走，且有选中的羊群，执行移动
+                        // 
+                        if(selectedUnit.curType == PosType.store)
+                        {
+                            storeTiles[selectedUnit.posIndex].hasSheep = false;
+                        }
                         selectedUnit.Move(hitTile.transform);
                         //selectedUnit.isSelected = false;
                         selectedUnit.ResetTiles();
@@ -480,11 +488,16 @@ public class GameManager : MonoBehaviour
             //取消选中所有元素
             if(selectedUnit != null) 
             {
-                selectedUnit.isSelected = false;
-                selectedUnit.ResetTiles();
-                selectedUnit = null;
+                resetSelectUnit();
             }
         }
+    }
+
+    void resetSelectUnit()
+    {
+        selectedUnit.isSelected = false;
+        selectedUnit.ResetTiles();
+        selectedUnit = null;
     }
 
 /*    public void HandleCollision(List<Unit> collidingUnits)

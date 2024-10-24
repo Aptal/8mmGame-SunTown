@@ -25,12 +25,16 @@ public class StoreTile : Tile
     [SerializeField]
     private int store2sheepV = 1;
     //控制存储、取出交互按钮
-    [SerializeField]
-    public Button pushButtion;
-    [SerializeField]
-    public Button popButtion;
+    [SerializeField] public Button pushButtion;
+    [SerializeField] public Button popButtion;
+
+    [SerializeField] private Sprite[] pushSunFrame;
+    [SerializeField] private Sprite[] popSunFrame;
+    [SerializeField] private Image workingImg;
+    protected float totalTime = 0;
 
     public StoreOpt opt = StoreOpt.disable;
+    public bool hasSheep = false;
 
     [SerializeField]
     public AudioClip noWorkSound;
@@ -38,17 +42,78 @@ public class StoreTile : Tile
     protected AudioClip workSound;
 
 
-
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = open2Close[open2Close.Length - 1];
-        storeSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+
+        Vector3 f = new Vector3(-0.5f, -1, 0);
+        storeSunCnt.transform.position = Camera.main.WorldToScreenPoint(transform.position - f);
+
+        Vector3 f1 = new Vector3(1.2f, 0, 0);
+        Vector3 f2 = new Vector3(1.2f, -1f, 0);
+        popButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position - f1);
+        pushButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position - f2);
+
+        Vector3 f3 = new Vector3(0, -2f, 0);
+        workingImg.transform.position = Camera.main.WorldToScreenPoint(transform.position - f3);
     }
 
     void Update()
     {
+        if (hasSheep && !pushButtion.gameObject.activeSelf)
+        {
+            EnableButtion();
+        }
+        else if(!hasSheep && pushButtion.gameObject.activeSelf)
+        {
+            DisableButtion();
+        }
+
+        totalTime += Time.deltaTime;
+        if(totalTime >= 1) totalTime = 0;
+
         storeSunCnt.text = sthasSun.ToString();
+        if (opt == StoreOpt.pop)
+        {
+            PlayAnimation(popSunFrame);
+            
+        }
+        else if (opt == StoreOpt.push)
+        {
+            PlayAnimation(pushSunFrame);
+        }
+        else
+        {
+            workingImg.gameObject.SetActive(false);
+        }
+    }
+
+    protected void PlayAnimation(Sprite[] frames)
+    {
+        //isPlayingAnimation = true;
+        Debug.Log("store play animation");
+        workingImg.gameObject.SetActive(true);
+        int frameIndex = (int)(totalTime * animationSpeed) % frames.Length;
+        workingImg.sprite = frames[frameIndex];
+        //StartCoroutine(PlayAnimationCoroutine(frames));
+    }
+
+    IEnumerator PlayAnimationCoroutine(Sprite[] frames)
+    {
+        if (frames != null && frames.Length > 0)
+        {
+            float animationDuration = frames.Length / animationSpeed;
+            float elapsedTime = 0f;
+            while (elapsedTime < animationDuration)
+            {
+                int frameIndex = (int)(elapsedTime * animationSpeed) % frames.Length;
+                workingImg.sprite = frames[frameIndex];
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+        }
+        //isPlayingAnimation = false;
     }
 
     public void EnablePopButtion()
@@ -67,9 +132,6 @@ public class StoreTile : Tile
     {
         pushButtion.gameObject.SetActive(true);
         popButtion.gameObject.SetActive(true);
-        Vector3 f = new Vector3(50, 0, 0);
-        popButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) - f;
-        pushButtion.transform.position = Camera.main.WorldToScreenPoint(transform.position) + f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -80,10 +142,6 @@ public class StoreTile : Tile
             if (this.gameObject.activeSelf)
             {
                 StartCoroutine(Close2Open(changingTime));
-                if(spriteRenderer.sprite == open2Close[0])
-                {
-                    EnableButtion();
-                }
             }
         }
     }
@@ -97,18 +155,16 @@ public class StoreTile : Tile
             if(this.gameObject.activeSelf)
             {
                 StartCoroutine(Open2Close(changingTime));
-                if(spriteRenderer.sprite == open2Close[open2Close.Length - 1])
-                {
-                    DisableButtion();
-                }
             }
         }
     }
 
     private void DisableButtion()
     {
+        StopAllCoroutines();
         popButtion.gameObject.SetActive(false);
         pushButtion.gameObject.SetActive(false);
+        workingImg.gameObject.SetActive(false);
         opt = StoreOpt.disable;
     }
 
