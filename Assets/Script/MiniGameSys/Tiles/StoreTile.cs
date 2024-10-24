@@ -93,7 +93,8 @@ public class StoreTile : Tile
     {
         //isPlayingAnimation = true;
         Debug.Log("store play animation");
-        workingImg.gameObject.SetActive(true);
+        if(workingImg.gameObject && !workingImg.gameObject.activeSelf)
+            workingImg.gameObject.SetActive(true);
         int frameIndex = (int)(totalTime * animationSpeed) % frames.Length;
         workingImg.sprite = frames[frameIndex];
         //StartCoroutine(PlayAnimationCoroutine(frames));
