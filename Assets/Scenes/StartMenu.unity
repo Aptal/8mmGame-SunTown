@@ -1160,6 +1160,7 @@ GameObject:
   - component: {fileID: 908195960}
   - component: {fileID: 908195961}
   - component: {fileID: 908195962}
+  - component: {fileID: 908195963}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1206,6 +1207,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea48aaec670784543aef844192b06ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &908195963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908195959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9fd606b370ac94c9b6e0c274c6c9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: d990b767084bdcc49a0652ebddfe2538, type: 3}
 --- !u!1 &1164664863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,13 +2114,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 908195960}
   - {fileID: 2110363152}
   - {fileID: 195523809}
   - {fileID: 1285269373}
   - {fileID: 513851833}
   - {fileID: 1664928953}
   - {fileID: 1455942008}
-  - {fileID: 908195960}
   m_Father: {fileID: 1478258845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
