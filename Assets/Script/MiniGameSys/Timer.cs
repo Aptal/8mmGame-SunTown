@@ -74,7 +74,8 @@ public class Timer : MonoBehaviour
 
     public void End()
     {
-        ResetTimer() ;
+        ResetTimer();
+        PlayerPrefs.SetInt("MiniGameGotSun", GameManager.Instance.hubTile.totalSun);
     }
 
     private void OnDestroy()

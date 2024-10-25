@@ -1884,6 +1884,7 @@ Transform:
   - {fileID: 245008706}
   - {fileID: 1568077586}
   - {fileID: 884548442}
+  - {fileID: 1571668597}
   - {fileID: 1552313981}
   - {fileID: 399495474}
   - {fileID: 15366821}
@@ -2642,10 +2643,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1950949045}
     m_Modifications:
     - target: {fileID: 2476168536777636160, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476168536777636160, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.00281
       objectReference: {fileID: 0}
@@ -2688,6 +2685,10 @@ PrefabInstance:
     - target: {fileID: 7137124108237329715, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
       propertyPath: m_Name
       value: destoryRoad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137124108237329715, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4820,6 +4821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: destoryRoad2
       objectReference: {fileID: 0}
+    - target: {fileID: 7137124108237329715, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5339,6 +5344,7 @@ GameObject:
   - component: {fileID: 1348473032}
   - component: {fileID: 1348473031}
   - component: {fileID: 1348473033}
+  - component: {fileID: 1348473034}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -5380,6 +5386,7 @@ MonoBehaviour:
   - {fileID: 245008707}
   - {fileID: 1568077587}
   - {fileID: 884548443}
+  - {fileID: 884548443}
   shadowSheep:
   - {fileID: 1552313985}
   - {fileID: 399495475}
@@ -5419,14 +5426,11 @@ MonoBehaviour:
   hubTile: {fileID: 156349498}
   showCnt: {fileID: 440094885}
   selectedUnit: {fileID: 0}
-  showUnits: []
   timer1: {fileID: 1520709045}
   shadow: {fileID: 1577777859}
-  envSound: {fileID: 8300000, guid: 272ed94b1ac061643b60c004e890c62c, type: 3}
+  initData: {fileID: 0}
   clickNothingSound: {fileID: 8300000, guid: 9ed89b405a215944d8d90341aa49dd2a, type: 3}
   sunTotalSound: {fileID: 0}
-  destoryRoadpos1: -1
-  destoryRoadpos2: -1
 --- !u!4 &1348473032
 Transform:
   m_ObjectHideFlags: 0
@@ -5538,6 +5542,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1348473034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348473030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92e3c626e4c80c40b9c3204ab6c8b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheepCnt: 040000000300000001000000
 --- !u!1001 &1366691701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6349,6 +6366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: destoryRoad1
       objectReference: {fileID: 0}
+    - target: {fileID: 7137124108237329715, guid: e358d305a21102042a6ef7b4b31830ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6515,6 +6536,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b9d1b6aea72b64686cf09c19660ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1571668596
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 492804540}
+    m_Modifications:
+    - target: {fileID: 3760718744503442468, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_Name
+      value: SunSheep8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+--- !u!4 &1571668597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6159296497802220324, guid: a74bd64f183184243ba3df2c66d2de22, type: 3}
+  m_PrefabInstance: {fileID: 1571668596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577777855
 GameObject:
   m_ObjectHideFlags: 0

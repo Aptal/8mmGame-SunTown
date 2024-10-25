@@ -107,6 +107,7 @@ MonoBehaviour:
     m_Bits: 0
   arrivePos: 
   id: -1
+  animationSpeed: 12
   sheepArriveSound: {fileID: 8300000, guid: caa2702b0c2f1b34683eeca1fccbb77f, type: 3}
   sheep2hubV: 3
   totalSun: 0
@@ -168,7 +169,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.569
   m_Pitch: 1
   Loop: 0
   Mute: 0

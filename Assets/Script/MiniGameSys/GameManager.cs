@@ -13,16 +13,17 @@ public class GameManager : MonoBehaviour
     public ShadowSheepCtrl[] shadowSheep;
     public RunSheepCtrl[] runSheep;
     public GameObject[] destoryRoad; 
-
     public HubTile hubTile;
+
     public TextMeshProUGUI showCnt;
     public Unit selectedUnit;
-    public Unit[] showUnits;
+    //public Unit[] showUnits;
 
-    [SerializeField] public Timer timer1;
-    [SerializeField] public ShadowControl shadow;
+    public Timer timer1;
+    public ShadowControl shadow;
+    public InitMiniGameData initData;
     
-    [SerializeField] private AudioClip envSound; // 选中sheep
+    private AudioClip envSound; // 选中sheep
     [Range(0.0f, 1.0f)] // 在编辑器中添加滑块来调整音量
     private float envSoundVolume = 1f; // 移动声音的默认音量
 
@@ -31,8 +32,9 @@ public class GameManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-    public int destoryRoadpos1 = -1;
-    public int destoryRoadpos2 = -1;
+    public List<(int ID, int U, int V)> badRoadList;
+    //public int destoryRoadpos1 = -1;
+    //public int destoryRoadpos2 = -1;
 
 
     private void Awake()
@@ -40,6 +42,16 @@ public class GameManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            initData = gameObject.GetComponent<InitMiniGameData>();
+            if (initData != null)
+            {
+                initData.LoadData();
+                initData.setValue();
+            }   
+            else
+            {
+                Debug.LogError("data pass failed");
+            }
         }
         else
         {
@@ -62,6 +74,9 @@ public class GameManager : MonoBehaviour
 
         InitTileId();
         InitArrivePos();
+
+
+
         // 毁坏一条路
         DestoryRoad();
 
@@ -90,32 +105,33 @@ public class GameManager : MonoBehaviour
             grassIndices[randomIndex] = temp;
         }
 
-        // 至少选一只阳光羊和一只阴影羊
         List<Unit> selectedSheep = new List<Unit>();
-        selectedSheep.Add(sunSheep[Random.Range(0, sunSheep.Length)]);
-        selectedSheep.Add(shadowSheep[Random.Range(0, shadowSheep.Length)]);
-        selectedSheep.Add(runSheep[Random.Range(0, runSheep.Length)]);
 
-
-        // 剩余的5个随机挑选羊
         List<Unit> allSheep = new List<Unit>();
         allSheep.AddRange(sunSheep);
-        allSheep.AddRange(shadowSheep);
-        allSheep.AddRange(runSheep);
-
-
-        // 移除已选择的羊
-        allSheep.Remove(selectedSheep[0]); // 移除已经选中的阳光羊
-        allSheep.Remove(selectedSheep[1]); // 移除已经选中的阴影羊
-        allSheep.Remove(selectedSheep[2]); // 移除已经选中的跑跑羊
-
-
-        // 从剩余的羊中挑选5个
-        for (int i = 0; i < 5; i++)
+        for(int i = 0; i < initData.sheepCnt[0]; ++i)
         {
             int randomIndex = Random.Range(0, allSheep.Count);
             selectedSheep.Add(allSheep[randomIndex]);
-            allSheep.RemoveAt(randomIndex); // 移除已选择的羊
+            allSheep.RemoveAt(randomIndex);
+        }
+        allSheep.Clear();
+
+        allSheep.AddRange(shadowSheep);
+        for (int i = 0; i < initData.sheepCnt[1]; ++i)
+        {
+            int randomIndex = Random.Range(0, allSheep.Count);
+            selectedSheep.Add(allSheep[randomIndex]);
+            allSheep.RemoveAt(randomIndex);
+        }
+        allSheep.Clear();
+
+        allSheep.AddRange(runSheep);
+        for (int i = 0; i < initData.sheepCnt[2]; ++i)
+        {
+            int randomIndex = Random.Range(0, allSheep.Count);
+            selectedSheep.Add(allSheep[randomIndex]);
+            allSheep.RemoveAt(randomIndex);
         }
 
         // 将羊分配到打乱顺序的草地上
@@ -130,6 +146,7 @@ public class GameManager : MonoBehaviour
             //sheep.ResetTiles();
         }
     }
+
     /*private void PlaceSheepOnGrass()
     {
         // 创建草地的索引列表，草地总数是8
@@ -309,78 +326,18 @@ public class GameManager : MonoBehaviour
 
     private void DestoryRoad()
     {
-        int desRoadIndex = Random.Range(0, 24);
-        switch (desRoadIndex)
+        if (badRoadList == null) return;
+        foreach(var badRoad in badRoadList)
         {
-            case 0:
-                destoryRoadpos1 = 0; destoryRoadpos2 = 1; break;
-            case 1:
-                destoryRoadpos1 = 1; destoryRoadpos2 = 2; break;
-            case 2:
-                destoryRoadpos1 = 0; destoryRoadpos2 = 3; break;
-            case 3:
-                destoryRoadpos1 = 0; destoryRoadpos2 = 8; break;
-            case 4:
-                destoryRoadpos1 = 1; destoryRoadpos2 = 8; break;
-            case 5:
-                destoryRoadpos1 = 1; destoryRoadpos2 = 9; break;
-            case 6:
-                destoryRoadpos1 = 2; destoryRoadpos2 = 9; break;
-            case 7:
-                destoryRoadpos1 = 2; destoryRoadpos2 = 4; break;
-            case 8:
-                destoryRoadpos1 = 3; destoryRoadpos2 = 8; break;
-            case 9:
-                destoryRoadpos1 = 8; destoryRoadpos2 = 9; break;
-            case 10:
-                destoryRoadpos1 = 4; destoryRoadpos2 = 9; break;
-            case 11:
-                destoryRoadpos1 = 3; destoryRoadpos2 = 5; break;
-            case 12:
-                destoryRoadpos1 = 3; destoryRoadpos2 = 10; break;
-            case 13:
-                destoryRoadpos1 = 8; destoryRoadpos2 = 10; break;
-            case 14:
-                destoryRoadpos1 = 9; destoryRoadpos2 = 11; break;
-            case 15:
-                destoryRoadpos1 = 4; destoryRoadpos2 = 11; break;
-            case 16:
-                destoryRoadpos1 = 4; destoryRoadpos2 = 7; break;
-            case 17:
-                destoryRoadpos1 = 5; destoryRoadpos2 = 10; break;
-            case 18:
-                destoryRoadpos1 = 11; destoryRoadpos2 = 10; break;
-            case 19:
-                destoryRoadpos1 = 11; destoryRoadpos2 = 7; break;
-            case 20:
-                destoryRoadpos1 = 10; destoryRoadpos2 = 6; break;
-            case 21:
-                destoryRoadpos1 = 11; destoryRoadpos2 = 6; break;
-            case 22:
-                destoryRoadpos1 = 5; destoryRoadpos2 = 6; break;
-            case 23:
-                destoryRoadpos1 = 6; destoryRoadpos2 = 7; break;
-            default:
-                break;
+            int desRoadIndex = badRoad.ID;
+            int destoryRoadpos1 = badRoad.U;
+            int destoryRoadpos2 = badRoad.V;
+            RemoveArrivePos(destoryRoadpos1, destoryRoadpos2);
+            destoryRoad[desRoadIndex].SetActive(true);
         }
-        if(destoryRoadpos1 > destoryRoadpos2)
-        {
-            int temp = destoryRoadpos1;
-            destoryRoadpos1 = destoryRoadpos2;
-            destoryRoadpos2 = temp;
-        }
-        RemoveArrivePos(destoryRoadpos1, destoryRoadpos2);
-
-        destoryRoad[desRoadIndex].SetActive(true);
     }
 
-    private void RepairRoad()
-    {
-        destoryRoadpos1 = -1;
-        destoryRoadpos2 = -1;
-    }
-
-    private bool IsDestoryRoad(Vector3 targetPos)
+    /*private bool IsDestoryRoad(Vector3 targetPos)
     {
         Debug.Log(destoryRoadpos1 + " " + destoryRoadpos2);
         if(destoryRoadpos1 < 0 || destoryRoadpos2 < 0)  return false;
@@ -415,7 +372,7 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("cnt : "+cnt);
         return cnt == 2;
-    }
+    }*/
 
     private void Update()
     {

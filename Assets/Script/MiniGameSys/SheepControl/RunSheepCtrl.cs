@@ -15,8 +15,8 @@ public class RunSheepCtrl : Unit
 
         //≈‹≈‹—Ú Ãÿ÷ 
         productV = 0;
-        sunLimit = 20;
-        moveSpeed = 0.4f;
+        sunLimit *= 2;
+        moveSpeed *= 2;
     }
 
     void Update()

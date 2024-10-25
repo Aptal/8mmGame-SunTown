@@ -10,7 +10,7 @@ public class HubTile : Tile
     [SerializeField]
     public int sheep2hubV = 3;
     [SerializeField]
-    private int totalSun = 0;
+    public int totalSun = 0;
 
     [SerializeField]
     protected AudioClip gameInSound;

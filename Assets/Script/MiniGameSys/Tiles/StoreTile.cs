@@ -13,17 +13,14 @@ public enum StoreOpt
 
 public class StoreTile : Tile
 {
-    [SerializeField]
-    private int stSunLimit = 20;
+    public int stSunLimit = 20;
     [SerializeField]
     private int sthasSun = 0;
     [SerializeField]
     private TextMeshProUGUI storeSunCnt;//显示当前临时仓库存储阳光数量
 
-    [SerializeField]
-    private int sheep2storeV = 1;
-    [SerializeField]
-    private int store2sheepV = 1;
+    public int sheep2storeV = 1;
+    public int store2sheepV = 1;
     //控制存储、取出交互按钮
     [SerializeField] public Button pushButtion;
     [SerializeField] public Button popButtion;

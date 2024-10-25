@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SunControl : MonoBehaviour
 {
-    [SerializeField] public int totalSun = 0;
+    public int totalSun = 200;
     public TextMeshProUGUI thsSun;
     public TextMeshProUGUI hunSun;
     public TextMeshProUGUI tenSun;

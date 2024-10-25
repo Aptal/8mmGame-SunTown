@@ -17,9 +17,7 @@ public enum PosType
 public class Unit : MonoBehaviour
 {
     [SerializeField]
-    protected float moveRange = 6f;
-    [SerializeField]
-    protected float moveSpeed = 0.2f;
+    public float moveSpeed = 0.2f;
     [Header("kStore(羊在草地和仓库间的系数，speed*k)")]
     [SerializeField]
     protected float kStore = 0.5f;
@@ -55,13 +53,6 @@ public class Unit : MonoBehaviour
     [SerializeField] public Sprite[] movingFrame;
 
     [SerializeField] SheepBumpCtrl bumpFrame;
-
-    //[SerializeField] public Sprite[] sunShadowBoomFrame;
-    //[SerializeField] public Sprite[] sunSunBoomFrame;
-    //[SerializeField] public Sprite[] sunRunBoomFrame;
-    //[SerializeField] public Sprite[] shadowShadowBoomFrame;
-    //[SerializeField] public Sprite[] shadowRunBoomFrame;
-    //[SerializeField] public Sprite[] runRunBoomFrame;
 
     [SerializeField] protected Sprite dieSheepSprite;   // 复活羊的图片
     //[SerializeField] protected Sprite[] reLifeSheepFrame;
