@@ -60,7 +60,7 @@ public class MainStoreData
 {
     // 存储上限
     public int storeLimit;
-    public int storeLimitLevel = 1;
+    public int storeLimitLevel;
 
     // 储存速度
     public int pushSpeed;

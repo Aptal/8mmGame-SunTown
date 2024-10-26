@@ -6,15 +6,15 @@ public class SheepLevelControl : MonoBehaviour
 {
     // 羊群速度
     public float moveSpeed = 0.2f;
-    public int moveSpeedLevel = 1;
+    public int moveSpeedLevel = 0;
 
     // 存储上限
     public int sunLimit = 10;
-    public int sunLimitLevel = 1;
+    public int sunLimitLevel = 0;
 
     // 产出速度
     public int productSpeed = 4;
-    public int productSpeedLevel = 1;
+    public int productSpeedLevel = 0;
 
     //升级阳光花费
     public int[] upLevelCost = new int[6] {0, 100, 200, 400, 800, 1500 };
@@ -23,9 +23,9 @@ public class SheepLevelControl : MonoBehaviour
     {
         if(sunCtrl != null)
         {
-            if(sunCtrl.totalSun >= upLevelCost[moveSpeedLevel])
+            if(sunCtrl.totalSun >= upLevelCost[moveSpeedLevel + 1])
             {
-                if (sunCtrl.CostSun(upLevelCost[moveSpeedLevel]))
+                if (sunCtrl.CostSun(upLevelCost[moveSpeedLevel + 1]))
                 {
                     moveSpeedLevel++;
                     return true;
@@ -41,9 +41,9 @@ public class SheepLevelControl : MonoBehaviour
     {
         if (sunCtrl != null)
         {
-            if (sunCtrl.totalSun >= upLevelCost[sunLimitLevel])
+            if (sunCtrl.totalSun >= upLevelCost[sunLimitLevel + 1])
             {
-                if (sunCtrl.CostSun(upLevelCost[sunLimitLevel]))
+                if (sunCtrl.CostSun(upLevelCost[sunLimitLevel + 1]))
                 {
                     sunLimitLevel++;
                     return true;
@@ -59,9 +59,9 @@ public class SheepLevelControl : MonoBehaviour
     {
         if (sunCtrl != null)
         {
-            if (sunCtrl.totalSun >= upLevelCost[productSpeedLevel])
+            if (sunCtrl.totalSun >= upLevelCost[productSpeedLevel + 1])
             {
-                if (sunCtrl.CostSun(upLevelCost[productSpeedLevel]))
+                if (sunCtrl.CostSun(upLevelCost[productSpeedLevel + 1]))
                 {
                     productSpeedLevel++;
                     productSpeed = (int)(productSpeed * 1.2 + 0.5);

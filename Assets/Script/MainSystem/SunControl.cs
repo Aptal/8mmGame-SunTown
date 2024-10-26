@@ -30,9 +30,14 @@ public class SunControl : MonoBehaviour
 
     }
 
+    public bool QueryUp(int cost)
+    {
+        return cost <= totalSun;
+    }
+
     public bool CostSun(int costSun)
     {
-        if(costSun < totalSun) 
+        if(costSun > totalSun) 
             return false;
 
         totalSun -= costSun;

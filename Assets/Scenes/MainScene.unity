@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5064273}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: SheepSpeedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5064273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2064,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: ResearchButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1027531301}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: SaveData1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &223329804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3672,6 +3708,7 @@ GameObject:
   - component: {fileID: 359392597}
   - component: {fileID: 359392596}
   - component: {fileID: 359392595}
+  - component: {fileID: 359392598}
   m_Layer: 5
   m_Name: ResearchCanvas
   m_TagString: Untagged
@@ -3762,6 +3799,64 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &359392598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359392593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57bfa5f1dcf3ef4eba81bbe6db8e8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  researchImg:
+  - {fileID: 81629993}
+  - {fileID: 1692689259}
+  - {fileID: 2126405294}
+  - {fileID: 1313798361}
+  - {fileID: 1729870317}
+  - {fileID: 256450755}
+  - {fileID: 719577396}
+  - {fileID: 1953069186}
+  - {fileID: 434761147}
+  researchCost:
+  - {fileID: 901888841}
+  - {fileID: 556682497}
+  - {fileID: 864200248}
+  - {fileID: 931056148}
+  - {fileID: 1775567371}
+  - {fileID: 1195569858}
+  - {fileID: 1021170628}
+  - {fileID: 1527043420}
+  - {fileID: 730359056}
+  upButton:
+  - {fileID: 5064272}
+  - {fileID: 1865261590}
+  - {fileID: 1141354352}
+  - {fileID: 733148603}
+  - {fileID: 382792720}
+  - {fileID: 1361899596}
+  - {fileID: 1249816105}
+  - {fileID: 1497206268}
+  - {fileID: 234159984}
+  fiveLevelSprite:
+  - {fileID: 21300000, guid: 6d1c3d5af1ba06947b1607524a860356, type: 3}
+  - {fileID: 21300000, guid: 3894ceeea44993341a2e2c48c423ccfa, type: 3}
+  - {fileID: 21300000, guid: b012a9b045819624a9296bf44471bf18, type: 3}
+  - {fileID: 21300000, guid: b98da5c357029834087bb41b5a1505d7, type: 3}
+  - {fileID: 21300000, guid: f7e8f22e5a31f0b4d8f1a20d5bd07e88, type: 3}
+  - {fileID: 21300000, guid: 1b3815f4713311d418bbeda4ea654455, type: 3}
+  threeLevelSprite:
+  - {fileID: 21300000, guid: 9ba71e7a170d7d24c9db1e5035e6b814, type: 3}
+  - {fileID: 21300000, guid: 09f8033d707d581458574fca88df164e, type: 3}
+  - {fileID: 21300000, guid: c8bac115e657bc34d9ab8911e27da600, type: 3}
+  - {fileID: 21300000, guid: 1b576909b8b630e43b99d1d7d17320a9, type: 3}
+  hubSpeedSprite:
+  - {fileID: 21300000, guid: 16c5939359157254dbba88c7afeb8e6e, type: 3}
+  - {fileID: 21300000, guid: 6995e897a1e1ae7418459a20c8deee2d, type: 3}
+  - {fileID: 21300000, guid: 695e8ef82566d394486fb7900732577b, type: 3}
 --- !u!1 &377372855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +4014,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 382792721}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: StorePushVButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &382792721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7169,7 +7276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -100
+  m_text: -10000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd149b145cd68a64abdc9ec2b8c48467, type: 2}
   m_sharedMaterial: {fileID: -1924429198423276754, guid: bd149b145cd68a64abdc9ec2b8c48467, type: 2}
@@ -7470,7 +7577,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733148604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: StoreLimitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &733148604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10929,7 +11048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheep2hubSpeed: 3
-  hubSpeedLevel: 4
+  hubSpeedLevel: 0
   fixSunCost: 0
   delSunCost: 0
   upLevelCost: 00000000e8030000d0070000
@@ -10971,11 +11090,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.2
-  moveSpeedLevel: 1
+  moveSpeedLevel: 0
   sunLimit: 10
-  sunLimitLevel: 1
+  sunLimitLevel: 0
   productSpeed: 4
-  productSpeedLevel: 1
+  productSpeedLevel: 0
   upLevelCost: 0000000064000000c80000009001000020030000dc050000
 --- !u!114 &1027531308
 MonoBehaviour:
@@ -10990,11 +11109,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeLimit: 10
-  storeLimitLevel: 1
+  storeLimitLevel: 0
   pushSpeed: 4
-  pushSpeedLevel: 1
+  pushSpeedLevel: 0
   popSpeed: 4
-  popSpeedLevel: 1
+  popSpeedLevel: 0
   upLevelCost: 00000000c80000009001000020030000
 --- !u!114 &1027531309
 MonoBehaviour:
@@ -11398,7 +11517,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1038422272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: CancelButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1038422272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12218,7 +12349,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1141354353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: SheepProdVButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1141354353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13228,7 +13371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1249816106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: hubSpeedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1249816106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14269,7 +14424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1361899597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: StorePopVButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1361899597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14870,7 +15037,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1430907088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: ApplyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1430907088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19428,7 +19607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1865261591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: SheepLimitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1865261591
 MonoBehaviour:
   m_ObjectHideFlags: 0

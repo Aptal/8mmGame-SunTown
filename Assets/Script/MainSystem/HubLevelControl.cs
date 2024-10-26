@@ -6,7 +6,7 @@ public class HubLevelControl : MonoBehaviour
 {
     // 存储速度
     public int sheep2hubSpeed = 3;
-    public int hubSpeedLevel = 4;
+    public int hubSpeedLevel = 0;
 
     // 中枢修理
     public int fixSunCost;
@@ -20,9 +20,9 @@ public class HubLevelControl : MonoBehaviour
     {
         if (sunCtrl != null)
         {
-            if (sunCtrl.totalSun >= upLevelCost[hubSpeedLevel])
+            if (sunCtrl.totalSun >= upLevelCost[hubSpeedLevel + 1])
             {
-                if (sunCtrl.CostSun(upLevelCost[hubSpeedLevel]))
+                if (sunCtrl.CostSun(upLevelCost[hubSpeedLevel + 1]))
                 {
                     hubSpeedLevel++;
                     sheep2hubSpeed = (int)(sheep2hubSpeed * 1.2 + 0.5);

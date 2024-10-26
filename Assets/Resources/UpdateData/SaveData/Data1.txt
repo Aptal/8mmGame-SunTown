@@ -1,0 +1,13 @@
+{"dayCnt":1}
+
+{"totalSun":200}
+
+{"moveSpeed":0.20000000298023225,"moveSpeedLevel":2,"sunLimit":10,"sunLimitLevel":0,"productSpeed":4,"productSpeedLevel":0}
+
+{"storeLimit":10,"storeLimitLevel":0,"pushSpeed":4,"pushSpeedLevel":0,"popSpeed":4,"popSpeedLevel":0}
+
+{"sheep2hubSpeed":12,"hubSpeedLevel":0}
+
+{"happyValue":25.0}
+
+{"faithValue":25.0}

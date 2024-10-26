@@ -18,13 +18,16 @@ public class menuControl : MonoBehaviour
     public void ContinueGame()
     {
         Debug.Log("data 1");
-        //TextAsset data1 = Resources.Load<TextAsset>("UpdateData/SaveData/Data1");
-        //if (data1 == null)
-        //{
-            
-        //}
-        //else { }
-        StartGame();
+        TextAsset data1 = Resources.Load<TextAsset>("UpdateData/SaveData/Data1");
+        if (data1 == null)
+        {
+            StartGame();
+        }
+        else 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
     }
 
     //game settings

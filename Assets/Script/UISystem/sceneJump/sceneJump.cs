@@ -11,7 +11,7 @@ public class sceneJump : MonoBehaviour
     //ͨ�������ťʵ�ֽ�����ת
     public void JumpToMainScene()
     {
-        DeleteFile("Assets/Resources/UpdateData/SaveData/Data1.txt");
+        LoadInitData();
         SceneManager.LoadScene(1);
     }
 
@@ -87,6 +87,54 @@ public class sceneJump : MonoBehaviour
         info += JsonUtility.ToJson(hubData) + "\n\n";
         info += JsonUtility.ToJson(roadData);
         return info;
+    }
+
+    private string InitMainGameData()
+    {
+        string info = "";
+        MainTimeData timeData = new MainTimeData(1);
+        MainSunData sunData = new MainSunData(200);
+        MainSheepData sheepData = new MainSheepData(0.2f, 0,
+                                                    10, 0,
+                                                    4, 0);
+        MainStoreData storeData = new MainStoreData(10, 0,
+                                                    4, 0,
+                                                    4, 0);
+        MainHubData hubData = new MainHubData(12, 0);
+        MainHappyData happyData = new MainHappyData(25);
+        MainFaithData faithData = new MainFaithData(25);
+
+        // convert
+        info = JsonUtility.ToJson(timeData) + "\n\n";
+        info += JsonUtility.ToJson(sunData) + "\n\n";
+        info += JsonUtility.ToJson(sheepData) + "\n\n";
+        info += JsonUtility.ToJson(storeData) + "\n\n";
+        info += JsonUtility.ToJson(hubData) + "\n\n";
+        info += JsonUtility.ToJson(happyData) + "\n\n";
+        info += JsonUtility.ToJson(faithData);
+        return info;
+    }
+    
+    private void LoadInitData()
+    {
+        string path = "Assets/Resources/UpdateData/SaveData";
+        string name = "Data1.txt";
+        string info = InitMainGameData();
+
+        // delete file
+        bool deleteSuccess = DeleteFile(path + name);
+
+        // create file
+        bool createSuccess = CreateOrOpenFile(path, name, info);
+
+        if (deleteSuccess && createSuccess)
+        {
+            //SceneManager.LoadScene(2);
+        }
+        else
+        {
+            Debug.LogError("init文件操作出现问题，请检查！");
+        }
     }
 
     // button click
