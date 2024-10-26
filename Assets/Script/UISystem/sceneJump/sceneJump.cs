@@ -11,6 +11,10 @@ public class sceneJump : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+    public void skipVideo()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void JumpToMenu()
     {
         SceneManager.LoadScene(0);
@@ -29,5 +33,9 @@ public class sceneJump : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(2);
+    }
+    public void JumpToVideoPlay()
+    {
+        SceneManager.LoadScene(4);
     }
 }

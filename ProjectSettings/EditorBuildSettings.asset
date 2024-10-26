@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DailyCheckScene.unity
     guid: 92d02cb8f20242b4e875dbb84c1d798b
+  - enabled: 1
+    path: Assets/Scenes/VideoPlayer.unity
+    guid: bc3656d3202e25a46828e5e5e018f8a6
   m_configObjects: {}
