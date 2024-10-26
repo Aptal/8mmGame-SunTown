@@ -12,6 +12,7 @@ TagManager:
   - store
   - hub
   - dataInfo
+  - AnimationObject
   layers:
   - Default
   - TransparentFX

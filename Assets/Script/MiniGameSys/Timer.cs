@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Timer : MonoBehaviour
 
     public int Duration { get; private set; }
 
-    [Header("ÓÎÏ·³ÖÐøÊ±¼ä")]
+    [Header("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½")]
     [SerializeField]
     private int remainingDuration;
 
@@ -76,6 +77,7 @@ public class Timer : MonoBehaviour
     {
         ResetTimer();
         PlayerPrefs.SetInt("MiniGameGotSun", GameManager.Instance.hubTile.totalSun);
+        SceneManager.LoadScene(3);
     }
 
     private void OnDestroy()

@@ -13,7 +13,7 @@ public class UnitData
     public int productV;
     public int sunLimit;
 
-    public int[] sheepCnt;
+    public int[] sheepCnt = new int [3];
 
     public UnitData()
     {

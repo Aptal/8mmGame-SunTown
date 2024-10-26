@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 
-public class sceneJump : MonoBehaviour
+public class sceneJumpp : MonoBehaviour
 {
     //ͨ�������ťʵ�ֽ�����ת
     public void JumpToMainScene()
@@ -74,9 +74,9 @@ public class sceneJump : MonoBehaviour
         HubLevelControl hubInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HubLevelControl>();
         RoadControl roadInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<RoadControl>();
 
-        
-        
-        UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int) (sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
+
+
+        UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int)(sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
         StoreData storeData = new StoreData(storeInfo.storeLimit, storeInfo.pushSpeed, storeInfo.popSpeed);
         HubData hubData = new HubData(hubInfo.sheep2hubSpeed);
         RoadData roadData = new RoadData(roadInfo.RoadList);
@@ -104,15 +104,27 @@ public class sceneJump : MonoBehaviour
 
         // create file
         bool createSuccess = CreateOrOpenFile(path, name, info);
-        
-        if (deleteSuccess && createSuccess)
+
+        /*if (deleteSuccess && createSuccess)
         {
             SceneManager.LoadScene(2);
         }
         else
         {
             Debug.LogError("在跳转到迷你游戏场景之前，文件操作出现问题，请检查！");
-        }
+        }*/
     }
 
+    // 动画事件调用的函数
+    public void JumpToMiniGameLater()
+    {
+        StartCoroutine(LoadSceneAfterDelay());
+    }
+    // 协程用于延迟场景加载
+    private System.Collections.IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        JumpToMiniGame();
+        SceneManager.LoadScene(2);
+    }
 }
