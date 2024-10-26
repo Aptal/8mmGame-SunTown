@@ -80,8 +80,8 @@ public class ReadyControl : MonoBehaviour
         }
 
         // show road
-        TimeControl.Instance.roadCtrl.badRoadCnt = 2;
-        TimeControl.Instance.roadCtrl.AddRoad();
+        //TimeControl.Instance.roadCtrl.badRoadCnt = 2;
+        //TimeControl.Instance.roadCtrl.AddRoad();
         foreach (var road in TimeControl.Instance.roadCtrl.RoadList)
         {
             Debug.Log(road.ID);

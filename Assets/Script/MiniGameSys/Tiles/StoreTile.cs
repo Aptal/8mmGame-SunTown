@@ -54,7 +54,7 @@ public class StoreTile : Tile
 
         Vector3 f3 = new Vector3(0, -2f, 0);
         workingImg.transform.position = Camera.main.WorldToScreenPoint(transform.position - f3);
-        audioSource.volume = 0.15f;
+        audioSource.volume = 0.05f;
     }
 
     void Update()

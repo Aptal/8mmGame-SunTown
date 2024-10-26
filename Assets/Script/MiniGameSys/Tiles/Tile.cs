@@ -23,7 +23,7 @@ public class Tile : MonoBehaviour
     protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.0f;
     }
 
     void Start()

@@ -9,7 +9,7 @@ public class SheepLevelControl : MonoBehaviour
     public int moveSpeedLevel = 0;
 
     // 存储上限
-    public int sunLimit = 10;
+    public int sunLimit = 20;
     public int sunLimitLevel = 0;
 
     // 产出速度

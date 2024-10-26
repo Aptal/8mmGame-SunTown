@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoreLevelControl : MonoBehaviour
 {
     // 存储上限
-    public int storeLimit = 10;
+    public int storeLimit = 40;
     public int storeLimitLevel = 0;
 
     // 储存速度
