@@ -1296,7 +1296,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 131359605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1466228218}
+        m_TargetAssemblyTypeName: ReadyControl, Assembly-CSharp
+        m_MethodName: FixButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &131359605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11077,6 +11089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   badRoadCnt: 0
+  hasFix: 0
 --- !u!114 &1027531307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11156,6 +11169,7 @@ MonoBehaviour:
   dayText: {fileID: 299388178}
   dayCnt: 1
   sheepCnt: 000000000000000000000000
+  weatherType: 0
   weatherK: 1
 --- !u!1 &1031816491
 GameObject:
@@ -15453,6 +15467,7 @@ GameObject:
   - component: {fileID: 1466228217}
   - component: {fileID: 1466228216}
   - component: {fileID: 1466228215}
+  - component: {fileID: 1466228218}
   m_Layer: 5
   m_Name: ReadyCanvas
   m_TagString: Untagged
@@ -15543,6 +15558,34 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1466228218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466228213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cada64e348aab468326ce358962d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheepCnt:
+  - {fileID: 1535670357}
+  - {fileID: 112073913}
+  - {fileID: 187490575}
+  sheepImg:
+  - {fileID: 1921249762}
+  - {fileID: 2087433878}
+  - {fileID: 1890254289}
+  badRoadButtons: []
+  roadFixButton: {fileID: 0}
+  weatherImg: {fileID: 844989949}
+  weatherSprite:
+  - {fileID: 21300000, guid: 3677eee99226d3b49b5d6b5cc563901a, type: 3}
+  - {fileID: 21300000, guid: 1e01560833608664f9a2263fa2124826, type: 3}
+  - {fileID: 21300000, guid: 2e7738d58d4acc24898167fecc8aa6d2, type: 3}
+  isFixing: 0
 --- !u!1 &1476044840
 GameObject:
   m_ObjectHideFlags: 0
@@ -19765,6 +19808,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1466228218}
+        m_TargetAssemblyTypeName: ReadyControl, Assembly-CSharp
+        m_MethodName: ReadyCanvasButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1878619126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21353,6 +21408,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1466228218}
+        m_TargetAssemblyTypeName: ReadyControl, Assembly-CSharp
+        m_MethodName: GotoMiniGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

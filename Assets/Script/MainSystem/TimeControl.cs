@@ -43,6 +43,7 @@ public class TimeControl : MonoBehaviour
     private bool hasRunSheep = false;
     public int[] sheepCnt = new int[3];
 
+    public int weatherType = 0;
     public float weatherK = 1.0f;
 
     private void Awake()

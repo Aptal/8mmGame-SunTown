@@ -85,7 +85,7 @@ public class Unit : MonoBehaviour
     protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
+        audioSource.volume = 0.25f;
     }
 
     void Start()

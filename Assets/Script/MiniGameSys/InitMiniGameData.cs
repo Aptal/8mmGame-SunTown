@@ -78,7 +78,12 @@ public class InitMiniGameData : MonoBehaviour
             if (hubData == null) return;
             GameManager.Instance.hubTile.sheep2hubV = hubData.sheep2hubSpeed;
             if (roadData == null) return;
-            GameManager.Instance.badRoadList = roadData.RoadList;
+            GameManager.Instance.badRoadList = new List<(int ID, int U, int V)> ();
+            for(int i = 0; i < roadData.cnt; ++i)
+            {
+                GameManager.Instance.badRoadList.Add((roadData.ID[i], roadData.U[i], roadData.V[i]));
+            }
+            //GameManager.Instance.badRoadList = roadData.RoadList;
         }
         else
         {

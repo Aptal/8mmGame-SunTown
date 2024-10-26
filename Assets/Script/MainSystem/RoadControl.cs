@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RoadControl : MonoBehaviour
 {
-    public List<(int ID, int U, int V)> RoadList;
+    public List<(int ID, int U, int V)> RoadList = new List<(int ID, int U, int V)>();
     public int badRoadCnt = 0;
-
+    public bool hasFix = false;
 
     public (int i, int u, int v) RandomDestoryRoad()
     {
@@ -85,6 +85,8 @@ public class RoadControl : MonoBehaviour
 
     public void FixRoad(int id)
     {
-        RoadList.RemoveAll(item => item.ID == id);
+        if(!hasFix)
+            RoadList.RemoveAll(item => item.ID == id);
+        hasFix = true;
     }
 }

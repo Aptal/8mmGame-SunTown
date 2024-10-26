@@ -46,7 +46,7 @@ public class ShadowControl : MonoBehaviour
         rotationSpeed = defaultRotationSpeed; // ≥ı ºÀŸ∂»
 
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.2f;
+        audioSource.volume = 0.1f;
     }
 
     void Update()

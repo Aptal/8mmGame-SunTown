@@ -69,13 +69,11 @@ public class sceneJump : MonoBehaviour
     private string LogMiniGameData()
     {
         string info = "";
-        SheepLevelControl sheepInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<SheepLevelControl>();
-        StoreLevelControl storeInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<StoreLevelControl>();
-        HubLevelControl hubInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HubLevelControl>();
-        RoadControl roadInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<RoadControl>();
+        SheepLevelControl sheepInfo = TimeControl.Instance.sheepLevelCtrl;
+        StoreLevelControl storeInfo = TimeControl.Instance.storeLevelCtrl;
+        HubLevelControl hubInfo = TimeControl.Instance.hubLevelCtrl;
+        RoadControl roadInfo = TimeControl.Instance.roadCtrl;
 
-        
-        
         UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int) (sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
         StoreData storeData = new StoreData(storeInfo.storeLimit, storeInfo.pushSpeed, storeInfo.popSpeed);
         HubData hubData = new HubData(hubInfo.sheep2hubSpeed);
@@ -140,9 +138,6 @@ public class sceneJump : MonoBehaviour
     // button click
     public void JumpToMiniGame()
     {
-        // create file before jumpToMiniGame
-        string basePath = Application.dataPath;
-        //string path = Path.Combine(basePath, "Resources/UpdateData/MoveSence");
         string path = "Assets/Resources/UpdateData/MoveSence";
         string name = "MoveMiniGame.txt";
         string info = LogMiniGameData();
@@ -165,13 +160,13 @@ public class sceneJump : MonoBehaviour
     // 动画事件调用的函数
     public void JumpToMiniGameLater()
     {
+        JumpToMiniGame();
         StartCoroutine(LoadSceneAfterDelay());
     }
     // 协程用于延迟场景加载
     private System.Collections.IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(3f);
-        JumpToMiniGame();
         SceneManager.LoadScene(2);
     }
 }

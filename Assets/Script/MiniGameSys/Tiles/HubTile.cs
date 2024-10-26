@@ -20,6 +20,7 @@ public class HubTile : Tile
         //Debug.Log("hub : " + hub++);
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        audioSource.volume = 0.2f;
         audioSource.PlayOneShot(gameInSound);
     }
 

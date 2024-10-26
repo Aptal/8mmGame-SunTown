@@ -75,15 +75,30 @@ public class HubData
 
 public class RoadData
 {
-    public List<(int ID, int U, int V)> RoadList;
+    public int cnt;
+    public int[] ID;
+    public int[] U;
+    public int[] V;
 
     public RoadData()
     {
-        RoadList = new List<(int ID, int U, int V)>();
+        cnt = 0;
+        ID = new int[0];
+        U = new int[0];
+        V = new int[0];
     }
 
     public RoadData(List<(int ID, int U, int V)> roadList)
     {
-        RoadList = roadList;
+        cnt = roadList.Count;
+        ID = new int[cnt];
+        U = new int[cnt];
+        V = new int[cnt];
+        for(int i = 0; i < cnt; i++)
+        {
+            ID[i] = roadList[i].ID;
+            U[i] = roadList[i].U;
+            V[i] = roadList[i].V;
+        }
     }
 }

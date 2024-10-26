@@ -13,6 +13,7 @@ public class GrassTile : Tile
         spriteRenderer.sortingOrder = 5;
         changingTime = 1f;
         spriteRenderer.sprite = open2Close[open2Close.Length - 1];
+        audioSource.volume = 0.15f;
     }
 
     void OnTriggerEnter2D(Collider2D other)

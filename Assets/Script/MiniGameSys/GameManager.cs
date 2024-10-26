@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     public Timer timer1;
     public ShadowControl shadow;
     public InitMiniGameData initData;
-    
-    private AudioClip envSound; // 选中sheep
+
+    private AudioClip gameSound;
+    private AudioClip envSound;
     [Range(0.0f, 1.0f)] // 在编辑器中添加滑块来调整音量
     private float envSoundVolume = 1f; // 移动声音的默认音量
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip sunTotalSound;
 
     private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceGame;
 
     public List<(int ID, int U, int V)> badRoadList;
     //public int destoryRoadpos1 = -1;
@@ -74,7 +76,6 @@ public class GameManager : MonoBehaviour
 
         InitTileId();
         InitArrivePos();
-
 
 
         // 毁坏一条路

@@ -2,6 +2,6 @@
 
 {"storeLimit":10,"pushSpeed":4,"popSpeed":4}
 
-{"sheep2hubSpeed":3,"gotSun":0}
+{"sheep2hubSpeed":12,"gotSun":0}
 
-{}
+{"cnt":1,"ID":[9],"U":[8],"V":[9]}
