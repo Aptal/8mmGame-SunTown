@@ -144,9 +144,10 @@ public class TimeControl : MonoBehaviour
         sunCtrl.totalSun += minigameSun - sunCtrl.sunOutcome;
 
         UpdateUI();
+        UpdateEvent();
     }
 
-    private void Update()
+    private void UpdateEvent()
     {
         // 进入白天, 一天开始
         if (PlayerPrefs.GetString("animatN2D") == "yes")
