@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
@@ -11,6 +12,10 @@ public class AudioManager : MonoBehaviour
 
     // 单例模式
     public static AudioManager Instance;
+
+
+    public UnityEvent onReturnButtonClicked;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -59,5 +64,17 @@ public class AudioManager : MonoBehaviour
     public void UnmuteMusic()
     {
         musicMixer.SetFloat("MusicVolume", 0);
+    }
+
+
+
+    void Start()
+    {
+        // 在这里可以添加事件监听器，比如下面这样
+        onReturnButtonClicked.AddListener(PlayAudio);
+    }
+    public void PlayAudio()
+    {
+        audioSource.Play();
     }
 }
