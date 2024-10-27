@@ -10,10 +10,12 @@ public class SaveDataObject : MonoBehaviour
 public class MainTimeData
 {
     public int dayCnt;
+    public bool hasMiniGame;
 
-    public MainTimeData(int initialDayCnt)
+    public MainTimeData(int initialDayCnt, bool hasMiniGame)
     {
         dayCnt = initialDayCnt;
+        this.hasMiniGame = hasMiniGame;
     }
 }
 
@@ -98,9 +100,9 @@ public class MainHubData
 
 public class MainHappyData
 {
-    public float happyValue;
+    public int happyValue;
 
-    public MainHappyData(float initialHappyValue)
+    public MainHappyData(int initialHappyValue)
     {
         happyValue = initialHappyValue;
     }
@@ -108,9 +110,9 @@ public class MainHappyData
 
 public class MainFaithData
 {
-    public float faithValue;
+    public int faithValue;
 
-    public MainFaithData(float initialFaithValue)
+    public MainFaithData(int initialFaithValue)
     {
         faithValue = initialFaithValue;
     }

@@ -93,7 +93,7 @@ public class sceneJump : MonoBehaviour
     private string InitMainGameData()
     {
         string info = "";
-        MainTimeData timeData = new MainTimeData(1);
+        MainTimeData timeData = new MainTimeData(1, true);
         MainSunData sunData = new MainSunData(200);
         MainSheepData sheepData = new MainSheepData(0.2f, 0,
                                                     10, 0,

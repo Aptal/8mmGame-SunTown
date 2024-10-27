@@ -7,8 +7,10 @@ public class HappyControl : MonoBehaviour
 {
     public Image happySlider;
 
-    public float happyValue = 25;
-    public float happyMaxVal = 100;
+    public int happyValue = 25;
+    public int happyMaxVal = 100;
+
+    public int happyChange = 0;
 
     void Update()
     {
@@ -18,6 +20,6 @@ public class HappyControl : MonoBehaviour
     public void SliderCtrl()
     {
         happyValue = Mathf.Min(happyMaxVal, happyValue);
-        happySlider.fillAmount = happyValue / happyMaxVal;
+        happySlider.fillAmount = (float) happyValue / (float) happyMaxVal;
     }
 }

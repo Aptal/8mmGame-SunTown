@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeControl : MonoBehaviour
 {
@@ -53,10 +54,15 @@ public class TimeControl : MonoBehaviour
     private bool[] hasBuilding = new bool[3];
 
     public bool canFix = false;
+    public bool hasMiniGame = true;
+
+    public int eventOutcome;
+    public int researchOutcome;
 
 
     private void Awake()
     {
+        Debug.Log("awake main");
         if(Instance != null)
         {
             initMainData = gameObject.GetComponent<LoadMainGameData>();
@@ -73,9 +79,20 @@ public class TimeControl : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("start main");
         hasBuilding[0] = true;
         hasBuilding[1] = true;
         hasBuilding[2] = true;
+        
+        int minigameSun = PlayerPrefs.GetInt("MiniGameGotSun");
+        if (minigameSun >= 0)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+        }
+        sunCtrl.sunIncome += minigameSun;
+        sunCtrl.sunOutcome = minigameSun / 10;
+
         UpdateUI();
     }
 
@@ -83,6 +100,8 @@ public class TimeControl : MonoBehaviour
     {
         if (dayCnt == -1) dayCnt = 1;
         else dayCnt++;
+        hasMiniGame = true;
+
 
         // ÊÂ¼þÅÐ¶¨
 

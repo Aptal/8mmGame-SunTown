@@ -7,8 +7,10 @@ public class FaithControl : MonoBehaviour
 {
     public Image faithSlider;
 
-    public float faithValue = 25;
-    public float faithMaxVal = 100;
+    public int faithValue = 25;
+    public int faithMaxVal = 100;
+
+    public int faithChange = 0;
 
     void Start()
     {
@@ -23,6 +25,6 @@ public class FaithControl : MonoBehaviour
     public void SliderCtrl()
     {
         faithValue = Mathf.Min(faithMaxVal, faithValue);
-        faithSlider.fillAmount = faithValue / faithMaxVal;
+        faithSlider.fillAmount = (float) (faithValue) / (float) (faithMaxVal);
     }
 }

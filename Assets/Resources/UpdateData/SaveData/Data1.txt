@@ -1,4 +1,4 @@
-{"dayCnt":1}
+{"dayCnt":1,"hasMiniGame":true}
 
 {"totalSun":200}
 

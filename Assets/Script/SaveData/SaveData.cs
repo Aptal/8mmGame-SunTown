@@ -65,7 +65,7 @@ public class SaveData : MonoBehaviour
         HappyControl happyInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HappyControl>();
         FaithControl faithInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<FaithControl>();
         
-        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt);
+        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame);
         MainSunData sunData = new MainSunData(sunInfo.totalSun);
         MainSheepData sheepData = new MainSheepData(sheepInfo.moveSpeed, sheepInfo.moveSpeedLevel, 
                                                     sheepInfo.sunLimit, sheepInfo.sunLimitLevel, 

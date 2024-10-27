@@ -14,34 +14,10 @@ public class researchControl : MonoBehaviour
     private int upCost = 0;
 
     public Sprite[] fiveLevelSprite;
-    //public Image sheepSpeedImg;
-    //public TextMeshProUGUI sheepSpeedCost;
-    //public Image sheepLimitImg;
-    //public TextMeshProUGUI sheepLimitCost;
-    //public Image sheepProdVImg;
-    //public TextMeshProUGUI sheepProdVCost;
-
-    //private int sheepSpeedLevel;
-    //private int sheepLimitLevel;
-    //private int sheepProdVLevel;
 
     public Sprite[] threeLevelSprite;
-    //public Sprite storeLimitSprite;
-    //public TextMeshProUGUI storeLimitCost;
-    //public Sprite storePushVSprite;
-    //public TextMeshProUGUI storePushCost;
-    //public Sprite[] storePopVSprite;
-    //public TextMeshProUGUI storePopCost;
-
-    //private int storeLimitLevel;
-    //private int storePushLevel;
-    //private int storePopLevel;
 
     public Sprite[] hubSpeedSprite;
-    //public TextMeshProUGUI hubSpeedCost;
-
-    //private int hubSpeedLevel;
-    //public Sprite[] hubLevelSprite;
 
     private void Update()
     {
@@ -57,9 +33,9 @@ public class researchControl : MonoBehaviour
             }
         }
 
-        for (int i = 3; i < 5; i++)
+        for (int i = 3; i < 6; i++)
         {
-            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.storeLevelCtrl.upLevelCost[researchLevel[i + 1]]))
+            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.storeLevelCtrl.upLevelCost[researchLevel[i] + 1]))
             {
                 upButton[i].interactable = true;
             }
@@ -211,6 +187,8 @@ public class researchControl : MonoBehaviour
         TimeControl.Instance.storeLevelCtrl.popSpeedLevel = researchLevel[5];
 
         TimeControl.Instance.hubLevelCtrl.hubSpeedLevel = researchLevel[6];
+
+        TimeControl.Instance.researchOutcome += upCost;
         upCost = 0;
     }
 

@@ -11,6 +11,9 @@ public class SunControl : MonoBehaviour
     public TextMeshProUGUI tenSun;
     public TextMeshProUGUI oneSun;
 
+    public int sunIncome;
+    public int sunOutcome;
+
     private void Update()
     {
         UpdateSunCnt();
