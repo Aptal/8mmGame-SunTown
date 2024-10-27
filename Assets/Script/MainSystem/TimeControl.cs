@@ -14,7 +14,7 @@ public class TimeControl : MonoBehaviour
         {
             if (_instance == null)
             {
-                // 在场景中查找GameDataManager组件，如果没有则创建一个新的
+                // 锟节筹拷锟斤拷锟叫诧拷锟斤拷GameDataManager锟斤拷锟斤拷锟斤拷锟斤拷没锟斤拷锟津创斤拷一锟斤拷锟铰碉拷
                 _instance = FindObjectOfType<TimeControl>();
                 if (_instance == null)
                 {
@@ -103,7 +103,7 @@ public class TimeControl : MonoBehaviour
         hasMiniGame = true;
 
 
-        // 事件判定
+        // 锟铰硷拷锟叫讹拷
 
         UpdateUI();
 
