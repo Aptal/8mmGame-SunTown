@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -462,6 +462,48 @@ public class GameManager : MonoBehaviour
         selectedUnit.isSelected = false;
         selectedUnit.ResetTiles();
         selectedUnit = null;
+    }
+
+    public void StopAllAction()
+    {
+        // 停止所有sunSheep的协程和声音
+        foreach (var sheep in sunSheep)
+        {
+            sheep.StopAllCoroutines();
+            sheep.StopSounds(); // 假设存在StopSounds方法用于停止sunSheep的所有声音
+        }
+
+        // 停止所有shadowSheep的协程和声音
+        foreach (var sheep in shadowSheep)
+        {
+            sheep.StopAllCoroutines();
+            sheep.StopSounds();
+        }
+
+        // 停止所有runSheep的协程和声音
+        foreach (var sheep in runSheep)
+        {
+            sheep.StopAllCoroutines();
+            sheep.StopSounds();
+        }
+
+        // 停止所有GrassTile的协程和声音（假设存在相关方法）
+        foreach (var tile in grassTiles)
+        {
+            tile.StopAllCoroutines();
+            tile.StopTileSounds(); // 假设存在StopTileSounds方法用于停止GrassTile的所有声音
+        }
+
+        // 停止所有StoreTile的协程和声音（假设存在相关方法）
+        foreach (var tile in storeTiles)
+        {
+            tile.StopAllCoroutines();
+            tile.StopTileSounds();
+        }
+
+        // 假设HubTile也有相关协程和声音需要停止
+        hubTile.StopAllCoroutines();
+        hubTile.StopTileSounds();
     }
 
 /*    public void HandleCollision(List<Unit> collidingUnits)

@@ -47,7 +47,10 @@ public class LoadMainGameData : MonoBehaviour
                 return;
             }
             TimeControl.Instance.dayCnt = timeData.dayCnt;
-            
+            TimeControl.Instance.hasMiniGame = timeData.hasMiniGame;
+            TimeControl.Instance.eventOutcome = timeData.eventOutcome;
+            TimeControl.Instance.researchOutcome = timeData.researchOutcome;
+
             TimeControl.Instance.sunCtrl.totalSun = sunData.totalSun;
 
             TimeControl.Instance.sheepLevelCtrl.moveSpeed = sheepData.moveSpeed;

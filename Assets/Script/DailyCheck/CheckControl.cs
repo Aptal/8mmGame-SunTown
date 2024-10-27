@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class CheckControl : MonoBehaviour
 {
+    public Canvas checkCanvas;
+
+    public Sprite[] slidSprite;
+    public Image happyImg;
+    public Image faithImg;
+
     public Sprite[] trendSprite;
     public Image happyTrend;
     public Image faithTrend;
@@ -20,6 +26,10 @@ public class CheckControl : MonoBehaviour
 
     public void ShowDailyCheck()
     {
+        if (checkCanvas == null) return;
+
+        checkCanvas.gameObject.SetActive(true);
+
         if(TimeControl.Instance.happyCtrl.happyChange > 0)
         {
             happyTrend.sprite = trendSprite[0];
@@ -30,20 +40,20 @@ public class CheckControl : MonoBehaviour
         }
         else
         {
-            happyTrend.sprite = trendSprite[4];
+            happyTrend.sprite = trendSprite[2];
         }
 
         if (TimeControl.Instance.faithCtrl.faithChange > 0)
         {
-            faithTrend.sprite = trendSprite[2];
+            faithTrend.sprite = trendSprite[0];
         }
         else if (TimeControl.Instance.faithCtrl.faithChange < 0)
         {
-            faithTrend.sprite = trendSprite[3];
+            faithTrend.sprite = trendSprite[1];
         }
         else
         {
-            faithTrend.sprite = trendSprite[4];
+            faithTrend.sprite = trendSprite[2];
         }
 
         sunIncomeText.text = TimeControl.Instance.sunCtrl.sunIncome.ToString();
@@ -52,8 +62,8 @@ public class CheckControl : MonoBehaviour
         researchOutcomeText.text = TimeControl.Instance.researchOutcome.ToString();
 
         endSunText.text = TimeControl.Instance.sunCtrl.totalSun.ToString();
-        beginSunText.text = (TimeControl.Instance.sunCtrl.totalSun -
-                            (TimeControl.Instance.sunCtrl.sunIncome - TimeControl.Instance.sunCtrl.sunOutcome)).ToString();
+        //beginSunText.text = (TimeControl.Instance.sunCtrl.totalSun -
+        //                    (TimeControl.Instance.sunCtrl.sunIncome - TimeControl.Instance.sunCtrl.sunOutcome)).ToString();
     }
 
     public void NextDay()
@@ -64,6 +74,7 @@ public class CheckControl : MonoBehaviour
         TimeControl.Instance.sunCtrl.sunOutcome = 0;
         TimeControl.Instance.eventOutcome = 0;
         TimeControl.Instance.researchOutcome = 0;
+        checkCanvas.gameObject.SetActive(false);
 
         TimeControl.Instance.NewDay();
     }

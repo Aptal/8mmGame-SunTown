@@ -1,10 +1,10 @@
-{"dayCnt":1,"hasMiniGame":true}
+{"dayCnt":1,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":200}
 
-{"totalSun":200}
+{"totalSun":0}
 
-{"moveSpeed":0.20000000298023225,"moveSpeedLevel":0,"sunLimit":10,"sunLimitLevel":0,"productSpeed":4,"productSpeedLevel":0}
+{"moveSpeed":0.23999999463558198,"moveSpeedLevel":1,"sunLimit":24,"sunLimitLevel":1,"productSpeed":4,"productSpeedLevel":0}
 
-{"storeLimit":10,"storeLimitLevel":0,"pushSpeed":4,"pushSpeedLevel":0,"popSpeed":4,"popSpeedLevel":0}
+{"storeLimit":30,"storeLimitLevel":0,"pushSpeed":4,"pushSpeedLevel":0,"popSpeed":4,"popSpeedLevel":0}
 
 {"sheep2hubSpeed":12,"hubSpeedLevel":0}
 

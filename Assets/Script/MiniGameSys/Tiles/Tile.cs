@@ -20,6 +20,11 @@ public class Tile : MonoBehaviour
     protected AudioSource audioSource; // ”√”⁄≤•∑≈“Ù∆µ
     [SerializeField] protected AudioClip sheepArriveSound;
 
+    public void StopTileSounds()
+    {
+        audioSource.Stop();
+    }
+
     protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();

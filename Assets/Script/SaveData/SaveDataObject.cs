@@ -11,11 +11,15 @@ public class MainTimeData
 {
     public int dayCnt;
     public bool hasMiniGame;
+    public int eventOutcome;
+    public int researchOutcome;
 
-    public MainTimeData(int initialDayCnt, bool hasMiniGame)
+    public MainTimeData(int initialDayCnt, bool hasMiniGame, int eventOutcome, int researchOutcome)
     {
         dayCnt = initialDayCnt;
         this.hasMiniGame = hasMiniGame;
+        this.eventOutcome = eventOutcome;
+        this.researchOutcome = researchOutcome;
     }
 }
 

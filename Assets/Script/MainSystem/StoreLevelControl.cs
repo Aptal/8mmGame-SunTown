@@ -5,19 +5,30 @@ using UnityEngine;
 public class StoreLevelControl : MonoBehaviour
 {
     // 存储上限
-    public int storeLimit = 40;
+    public int storeLimit = 30;
     public int storeLimitLevel = 0;
+    public int[] stlimlevel = new int[6] { 30, 36, 43, 52, 62, 75 };
 
     // 储存速度
     public int pushSpeed = 4;
     public int pushSpeedLevel = 0;
+    public int[] pushlevel = new int[6] { 4, 5, 6, 7, 8, 9 };
 
     // 取出速度
     public int popSpeed = 4;
     public int popSpeedLevel = 0;
+    public int[] poplevel = new int[6] { 4, 5, 6, 7, 8, 9 };
 
     //升级阳光花费
     public int[] upLevelCost = new int[4] { 0, 200, 400, 800 };
+
+
+    public void UpdateInfo()
+    {
+        storeLimit = stlimlevel[storeLimitLevel];
+        pushSpeed = pushlevel[pushSpeedLevel];
+        popSpeed = poplevel[popSpeedLevel];
+    }
 
     public bool upStoreLimitLevel(SunControl sunCtrl)
     {

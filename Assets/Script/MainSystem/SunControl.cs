@@ -14,6 +14,15 @@ public class SunControl : MonoBehaviour
     public int sunIncome;
     public int sunOutcome;
 
+    private void Start()
+    {
+        //thsSun = GetComponent<TextMeshProUGUI>();
+        //hunSun = GetComponent<TextMeshProUGUI>();
+        //tenSun = GetComponent<TextMeshProUGUI>();
+        //oneSun = GetComponent<TextMeshProUGUI>();
+
+    }
+
     private void Update()
     {
         UpdateSunCnt();

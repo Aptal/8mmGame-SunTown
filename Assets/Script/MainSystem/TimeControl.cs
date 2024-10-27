@@ -26,6 +26,11 @@ public class TimeControl : MonoBehaviour
         }
     }
 
+    public Canvas beginCanvas;
+    public Canvas endCanvas;
+
+    public CheckControl checkControl;
+
     public FaithControl faithCtrl;
     public HappyControl happyCtrl;
     public HubLevelControl hubLevelCtrl;
@@ -63,7 +68,7 @@ public class TimeControl : MonoBehaviour
     private void Awake()
     {
         Debug.Log("awake main");
-        if(Instance != null)
+        if (Instance != null)
         {
             initMainData = gameObject.GetComponent<LoadMainGameData>();
             if (initMainData != null)
@@ -75,6 +80,29 @@ public class TimeControl : MonoBehaviour
                 Debug.LogError("main game load error");
             }
         }
+
+        /*        if (Instance == null)
+                {
+                    Instance = this;
+                    initMainData = gameObject.GetComponent<LoadMainGameData>();
+                    if (initMainData != null)
+                    {
+                        initMainData.LoadData();
+                    }
+                    else
+                    {
+                        Debug.LogError("main game load error");
+                    }
+                }
+                else
+                {
+                    if (Instance != this)
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+                DontDestroyOnLoad(gameObject);*/
+
     }
 
     private void Start()
@@ -83,6 +111,27 @@ public class TimeControl : MonoBehaviour
         hasBuilding[0] = true;
         hasBuilding[1] = true;
         hasBuilding[2] = true;
+
+        if(PlayerPrefs.GetString("SceneInfo") == "FinishMiniGame")
+        {
+            hasMiniGame = false;
+            PlayerPrefs.DeleteKey("SceneInfo");
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            Debug.Log("totalsun + " + sunCtrl.totalSun);
+            checkControl.beginSunText.text = sunCtrl.totalSun.ToString();
+        }
+
+        if(hasMiniGame)
+        {
+            beginCanvas.gameObject.SetActive(true);
+        }   
+        else
+        {
+            endCanvas.gameObject.SetActive(true);
+        }
         
         int minigameSun = PlayerPrefs.GetInt("MiniGameGotSun");
         if (minigameSun >= 0)
@@ -92,8 +141,33 @@ public class TimeControl : MonoBehaviour
         }
         sunCtrl.sunIncome += minigameSun;
         sunCtrl.sunOutcome = minigameSun / 10;
+        sunCtrl.totalSun += minigameSun - sunCtrl.sunOutcome;
 
         UpdateUI();
+    }
+
+    private void Update()
+    {
+        // 进入白天, 一天开始
+        if (PlayerPrefs.GetString("animatN2D") == "yes")
+        {
+            PlayerPrefs.DeleteKey("animatN2D");
+            PlayerPrefs.Save();
+
+        }
+
+        // minigame结束
+        if (PlayerPrefs.GetString("animatD2N") == "yes")
+        {
+            PlayerPrefs.DeleteKey("animatD2N");
+            PlayerPrefs.Save();
+
+            if (!hasMiniGame)
+            {
+                checkControl.ShowDailyCheck();
+            }
+
+        }
     }
 
     public void NewDay()
@@ -107,6 +181,8 @@ public class TimeControl : MonoBehaviour
 
         UpdateUI();
 
+
+        saveMainData.SaveData1();
     }
 
     public void SaveMainData()

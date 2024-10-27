@@ -73,7 +73,9 @@ public class ReadyControl : MonoBehaviour
 
     public void GotoMiniGame()
     {
-        //InitMiniGameData();
+        InitMiniGameData();
+        //TimeControl.Instance.hasMiniGame = false;
+        Debug.Log(TimeControl.Instance.sunCtrl.totalSun);
         TimeControl.Instance.saveMainData.SaveData1();
     }
 
@@ -98,7 +100,7 @@ public class ReadyControl : MonoBehaviour
         TimeControl.Instance.roadCtrl.AddRoad();
         foreach (var road in TimeControl.Instance.roadCtrl.RoadList)
         {
-            Debug.Log(road.ID);
+            //Debug.Log(road.ID);
             badRoadButtons[road.ID].gameObject.SetActive(true);
             badRoadButtons[road.ID].onClick.AddListener(() => BadRoadButtonClicked(road.ID));
         }
@@ -157,10 +159,14 @@ public class ReadyControl : MonoBehaviour
     private string LogMiniGameData()
     {
         string info = "";
-        SheepLevelControl sheepInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<SheepLevelControl>();
-        StoreLevelControl storeInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<StoreLevelControl>();
-        HubLevelControl hubInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HubLevelControl>();
-        RoadControl roadInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<RoadControl>();
+        //SheepLevelControl sheepInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<SheepLevelControl>();
+        //StoreLevelControl storeInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<StoreLevelControl>();
+        //HubLevelControl hubInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HubLevelControl>();
+        //RoadControl roadInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<RoadControl>();
+        SheepLevelControl sheepInfo = TimeControl.Instance.sheepLevelCtrl;
+        StoreLevelControl storeInfo = TimeControl.Instance.storeLevelCtrl;
+        HubLevelControl hubInfo = TimeControl.Instance.hubLevelCtrl;
+        RoadControl roadInfo = TimeControl.Instance.roadCtrl;
 
         UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int)(sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
         StoreData storeData = new StoreData(storeInfo.storeLimit, storeInfo.pushSpeed, storeInfo.popSpeed);

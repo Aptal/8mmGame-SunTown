@@ -66,7 +66,6 @@ public class researchControl : MonoBehaviour
     private void UpdateText(TextMeshProUGUI text, string cost)
     {
         text.text = cost;
-        Debug.Log(cost);
     }
 
     public void ResearchButton()
@@ -181,13 +180,17 @@ public class researchControl : MonoBehaviour
         TimeControl.Instance.sheepLevelCtrl.moveSpeedLevel = researchLevel[0];
         TimeControl.Instance.sheepLevelCtrl.sunLimitLevel = researchLevel[1];
         TimeControl.Instance.sheepLevelCtrl.productSpeedLevel = researchLevel[2];
+        TimeControl.Instance.sheepLevelCtrl.UpdateInfo();
 
         TimeControl.Instance.storeLevelCtrl.storeLimitLevel = researchLevel[3];
         TimeControl.Instance.storeLevelCtrl.pushSpeedLevel = researchLevel[4];
         TimeControl.Instance.storeLevelCtrl.popSpeedLevel = researchLevel[5];
+        TimeControl.Instance.storeLevelCtrl.UpdateInfo();
 
         TimeControl.Instance.hubLevelCtrl.hubSpeedLevel = researchLevel[6];
+        TimeControl.Instance.hubLevelCtrl.UpdateInfo();
 
+        Debug.Log("upcost : " + upCost);
         TimeControl.Instance.researchOutcome += upCost;
         upCost = 0;
     }

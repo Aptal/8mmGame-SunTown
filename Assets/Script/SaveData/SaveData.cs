@@ -64,9 +64,18 @@ public class SaveData : MonoBehaviour
         HubLevelControl hubInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HubLevelControl>();
         HappyControl happyInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<HappyControl>();
         FaithControl faithInfo = GameObject.FindGameObjectWithTag("dataInfo").GetComponent<FaithControl>();
-        
-        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame);
+        //TimeControl timeInfo = TimeControl.Instance;
+        //SunControl sunInfo = TimeControl.Instance.sunCtrl;
+        //SheepLevelControl sheepInfo = TimeControl.Instance.sheepLevelCtrl;
+        //StoreLevelControl storeInfo = TimeControl.Instance.storeLevelCtrl;
+        //HubLevelControl hubInfo = TimeControl.Instance.hubLevelCtrl;
+        //HappyControl happyInfo = TimeControl.Instance.happyCtrl;
+        //FaithControl faithInfo = TimeControl.Instance.faithCtrl;
+
+
+        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame, timeInfo.eventOutcome, timeInfo.researchOutcome);
         MainSunData sunData = new MainSunData(sunInfo.totalSun);
+        Debug.Log("info level " + sheepInfo.sunLimitLevel);
         MainSheepData sheepData = new MainSheepData(sheepInfo.moveSpeed, sheepInfo.moveSpeedLevel, 
                                                     sheepInfo.sunLimit, sheepInfo.sunLimitLevel, 
                                                     sheepInfo.productSpeed, sheepInfo.productSpeedLevel);

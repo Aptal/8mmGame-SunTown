@@ -82,6 +82,12 @@ public class Unit : MonoBehaviour
 
     protected AudioSource audioSource; // ”√”⁄≤•∑≈“Ù∆µ
 
+    public void StopSounds()
+    {
+        if(audioSource != null)
+            audioSource.Stop();
+    }
+
     protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();

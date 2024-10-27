@@ -1023,6 +1023,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1520709045}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: FinishButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &172682588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2687,7 +2699,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 678671101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1520709045}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: GetSunButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &678671101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,7 +3186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &799918311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6878,6 +6902,7 @@ MonoBehaviour:
   remainingDuration: 0
   least30Sound: {fileID: 8300000, guid: f017f03fbff85304ebcfbe10befbf868, type: 3}
   gameOverSound: {fileID: 8300000, guid: 3027488b12489924d8e6e967fcd755eb, type: 3}
+  targetCanvas: {fileID: 799918314}
 --- !u!82 &1520709046
 AudioSource:
   m_ObjectHideFlags: 0

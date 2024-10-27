@@ -70,13 +70,31 @@ public class Timer : MonoBehaviour
     {
         uiTimeText.text = string.Format("{0:D2}:{1:D2}", seconds / 60, seconds % 60);
     }
-
+    public Canvas targetCanvas;
     public void End()
     {
         ResetTimer();
+        
         PlayerPrefs.SetInt("MiniGameGotSun", GameManager.Instance.hubTile.totalSun);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(1);
+        //PauseButton();
+        GameManager.Instance.StopAllAction();
+        GameManager.Instance.gameObject.SetActive(false);
+        targetCanvas.gameObject.SetActive(true);
+        //SceneManager.LoadScene(1);
+    }
+
+    public void GetSunButton()
+    {
+        GameManager.Instance.hubTile.totalSun = 500;
+        End();
+    }
+
+    
+    public void FinishButton()
+    {
+        PlayerPrefs.SetString("SceneInfo", "FinishMiniGame");
+        PlayerPrefs.Save();
     }
 
     private void OnDestroy()

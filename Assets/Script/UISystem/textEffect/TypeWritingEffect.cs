@@ -10,14 +10,14 @@ public class DOTweenTMPTypewriter : MonoBehaviour
     public TMP_Text textComponent1;
     public TMP_Text textComponent2;
     
-    string fullText1 = "辛苦啦！\n今日光能收入为：";
+    string fullText1 = "  辛苦啦！\n 今日光能收入为：";
     
 
     void Start()
     {
 
         // 获取NumberProviderScript组件的引用
-        int SunCnt = GameManager.Instance.hubTile.totalSun;
+        int SunCnt = PlayerPrefs.GetInt("MiniGameGotSun");
         StartCoroutine(DisplayTextSequentially());
         
         textComponent1.text = "";
@@ -31,7 +31,7 @@ public class DOTweenTMPTypewriter : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
             // 显示第二段TMP文字（使用数字变量）
-                string numberText = GameManager.Instance.hubTile.totalSun.ToString();
+                string numberText = SunCnt.ToString();
                 for (int j = 0; j < numberText.Length; j++)
                 {
                     textComponent2.text += numberText[j];

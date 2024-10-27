@@ -11,7 +11,6 @@ public class sceneJump : MonoBehaviour
     //ͨ�������ťʵ�ֽ�����ת
     public void JumpToMainScene()
     {
-        LoadInitData();
         SceneManager.LoadScene(1);
     }
     public void skipVideo()
@@ -93,12 +92,12 @@ public class sceneJump : MonoBehaviour
     private string InitMainGameData()
     {
         string info = "";
-        MainTimeData timeData = new MainTimeData(1, true);
+        MainTimeData timeData = new MainTimeData(1, true, 0, 0);
         MainSunData sunData = new MainSunData(200);
         MainSheepData sheepData = new MainSheepData(0.2f, 0,
-                                                    10, 0,
+                                                    20, 0,
                                                     4, 0);
-        MainStoreData storeData = new MainStoreData(10, 0,
+        MainStoreData storeData = new MainStoreData(30, 0,
                                                     4, 0,
                                                     4, 0);
         MainHubData hubData = new MainHubData(12, 0);
@@ -116,7 +115,7 @@ public class sceneJump : MonoBehaviour
         return info;
     }
     
-    private void LoadInitData()
+    public void LoadInitData()
     {
         string path = "Assets/Resources/UpdateData/SaveData";
         string name = "Data1.txt";
@@ -163,7 +162,7 @@ public class sceneJump : MonoBehaviour
     // 动画事件调用的函数
     public void JumpToMiniGameLater()
     {
-        JumpToMiniGame();
+        //JumpToMiniGame();
         StartCoroutine(LoadSceneAfterDelay());
     }
     // 协程用于延迟场景加载

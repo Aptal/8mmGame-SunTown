@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class AnimationControllerNightToDay : MonoBehaviour
 {
-    private Animation animation;
+    private Animator animator;
+    public GameObject timePassCanvas;
 
     void Start()
     {
-        animation = GetComponent<Animation>();
+        animator = GetComponent<Animator>();
     }
 
-    // TO play Animation
-    public void PlayAnimation()
+    private void Update()
     {
-        animation.Play("YourAnimationClipName");
-    }
-
-    // To stop Animation
-    public void StopAnimation()
-    {
-        animation.Stop();
-    }
-
-    // To check if Animation's playing or not
-    public bool IsAnimationPlaying()
-    {
-        return animation.isPlaying;
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.length > 0 && stateInfo.normalizedTime >= 1f)
+        {
+            // ∂Øª≠≤•∑≈ÕÍ±œ
+            Debug.Log("Animation completed!");
+            if (timePassCanvas != null)
+            {
+                PlayerPrefs.SetString("animatN2D", "yes");
+                PlayerPrefs.Save();
+                timePassCanvas.SetActive(false);
+            }
+        }
     }
 }
