@@ -12,6 +12,7 @@ public class ReadyControl : MonoBehaviour
     public Image[] sheepImg;
     public Button[] badRoadButtons;
     public Button roadFixButton;
+    public Button gotoMiniGame;
 
     public Image weatherImg;
     public Sprite[] weatherSprite;
@@ -40,6 +41,9 @@ public class ReadyControl : MonoBehaviour
                 }
             }
         }
+        //gotoMiniGame = GameObject.Find("button_startMinigame")?.gameObject.GetComponent<Button>();
+        gotoMiniGame.interactable = TimeControl.Instance.hasMiniGame;
+        
         roadFixButton = GameObject.Find("button_roadFix")?.gameObject.GetComponent<Button>();
         roadFixButton.interactable = TimeControl.Instance.canFix;
         isFixing = false;
@@ -70,6 +74,7 @@ public class ReadyControl : MonoBehaviour
     public void GotoMiniGame()
     {
         //InitMiniGameData();
+        TimeControl.Instance.saveMainData.SaveData1();
     }
 
     public void ReadyCanvasButton()
