@@ -13,6 +13,7 @@ public class SunControl : MonoBehaviour
 
     public int sunIncome;
     public int sunOutcome;
+    public int sunAuto;
 
     private void Start()
     {
