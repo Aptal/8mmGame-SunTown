@@ -30,6 +30,9 @@ public class TimeControl : MonoBehaviour
     public Canvas endCanvas;
 
     public CheckControl checkControl;
+    public EventControl event2Control;
+    public EventControl event3Control;
+
 
     public FaithControl faithCtrl;
     public HappyControl happyCtrl;
@@ -144,17 +147,17 @@ public class TimeControl : MonoBehaviour
         sunCtrl.totalSun += minigameSun - sunCtrl.sunOutcome;
 
         UpdateUI();
-        UpdateEvent();
+        //UpdateEvent();
     }
 
-    private void UpdateEvent()
+    private void Update()
     {
         // 进入白天, 一天开始
         if (PlayerPrefs.GetString("animatN2D") == "yes")
         {
             PlayerPrefs.DeleteKey("animatN2D");
             PlayerPrefs.Save();
-
+            event2Control.PlayPlot();
         }
 
         // minigame结束
