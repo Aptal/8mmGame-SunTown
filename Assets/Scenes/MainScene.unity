@@ -5417,8 +5417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FD9\u662F\u4E00\u6BB5\u5305\u542B<color=#FFA500>\u6A59\u8272</color>\u3001<b>\u7C97\u4F53</b>\u548C<i>\u659C\u4F53</i>\u6587\u5B57\u7684\u793A\u4F8B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10631,8 +10631,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728\uFF0C\u4E0D\u6559\u80E1\u9A6C\u5EA6\u9634\u5C71\uFF08\u53EF\u80FD\u4F1A\u51FA\u4E8B\u513F\uFF09"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17404,6 +17404,7 @@ MonoBehaviour:
   faithValue: 25
   faithMaxVal: 100
   faithChange: 0
+  autoAdd: 0
 --- !u!114 &1027531303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17533,6 +17534,7 @@ MonoBehaviour:
   oneSun: {fileID: 79909563}
   sunIncome: 0
   sunOutcome: 0
+  sunAuto: 0
 --- !u!114 &1027531310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17549,7 +17551,6 @@ MonoBehaviour:
   endCanvas: {fileID: 578717670}
   checkControl: {fileID: 2021755431}
   event2Control: {fileID: 1947047173}
-  event3Control: {fileID: 1693323272}
   faithCtrl: {fileID: 1027531302}
   happyCtrl: {fileID: 1027531303}
   hubLevelCtrl: {fileID: 1027531304}
@@ -17561,6 +17562,7 @@ MonoBehaviour:
   saveMainData: {fileID: 1027531301}
   dayText: {fileID: 299388178}
   dayCnt: 1
+  hasRunSheep: 0
   sheepCnt: 000000000000000000000000
   weatherType: 0
   weatherK: 1
@@ -17573,10 +17575,13 @@ MonoBehaviour:
   - {fileID: 223329803}
   - {fileID: 851231731}
   - {fileID: 1969772582}
+  hasBuilding: 000000
   canFix: 0
   hasMiniGame: 1
   eventOutcome: 0
   researchOutcome: 0
+  hasEvent: 010000000100000001000000010000000100000001000000000000000100000000000000010000000100000001000000010000000100000001000000000000000000000001000000010000000100000000000000010000000100000001000000000000000000000000000000010000000100000001000000010000000100000000000000010000000100000000000000000000000000000001000000000000000000000001000000
+  eventIndex: 0
 --- !u!1 &1028781707
 GameObject:
   m_ObjectHideFlags: 0
@@ -22162,8 +22167,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28742,12 +28747,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plot: []
   plotText: {fileID: 0}
-  plotCanvas: {fileID: 0}
+  plot2Canvas: {fileID: 0}
+  plot3Canvas: {fileID: 0}
   eventImg: {fileID: 0}
   backButton: {fileID: 0}
   nextButton: {fileID: 0}
   choiceButton: []
-  choiceText: []
+  buttonText: []
+  plotIndex: 0
+  clickedButton: -1
 --- !u!1 &1707460657
 GameObject:
   m_ObjectHideFlags: 0
@@ -32717,16 +32725,17 @@ MonoBehaviour:
   plot:
   - {fileID: 11400000, guid: 180eca08bc8949f4492db67bbd6888eb, type: 2}
   plotText: {fileID: 286143943}
-  plotCanvas: {fileID: 1947047168}
+  plot2Canvas: {fileID: 0}
+  plot3Canvas: {fileID: 0}
   eventImg: {fileID: 1028781709}
   backButton: {fileID: 671032463}
   nextButton: {fileID: 1640688747}
   choiceButton:
   - {fileID: 272520022}
   - {fileID: 2015675018}
-  choiceText:
-  - {fileID: 648104527}
-  - {fileID: 2062859952}
+  buttonText: []
+  plotIndex: 0
+  clickedButton: -1
 --- !u!1 &1947622895
 GameObject:
   m_ObjectHideFlags: 0
@@ -34949,8 +34958,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728\uFF0C\u4E0D\u6559\u80E1\u9A6C\u5EA6\u9634\u5C71\uFF08\u53EF\u80FD\u4F1A\u51FA\u4E8B\u513F\uFF09"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
