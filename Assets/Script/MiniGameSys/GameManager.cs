@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         // 毁坏一条路
         DestoryRoad();
 
-        timer1.SetDuration(180).Begin();
+        timer1.SetDuration(35).Begin();
 
         // 初始化羊的位置
         PlaceSheepOnGrass();
@@ -448,6 +448,12 @@ public class GameManager : MonoBehaviour
             {
                 resetSelectUnit();
             }
+        }
+
+        if(timer1.remainingDuration <= 0)
+        {
+            audioSource.Stop();
+            audioSourceGame.Stop();
         }
     }
 

@@ -2228,7 +2228,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 234159985}
   m_OnClick:
     m_PersistentCalls:
@@ -3669,7 +3669,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359030472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: ApplyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359030472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4238,7 +4250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &402222448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4623,6 +4635,7 @@ GameObject:
   - component: {fileID: 470388300}
   - component: {fileID: 470388299}
   - component: {fileID: 470388298}
+  - component: {fileID: 470388301}
   m_Layer: 5
   m_Name: TempleCanvas
   m_TagString: Untagged
@@ -4713,6 +4726,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &470388301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470388296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92af6df2bc9111e4c9870b48192a0f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherImg: {fileID: 1031816493}
+  nowWeatherType: -1
+  dayweatherType: -1
 --- !u!1 &493733255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +4898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 499343985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: ShadowButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &499343985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,7 +5128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 0}
+  m_AnchoredPosition: {x: -0.3, y: 0}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543494860
@@ -7468,7 +7508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 732131268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: CancelButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &732131268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8975,6 +9027,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1118557413}
+        m_TargetAssemblyTypeName: GoverControl, Assembly-CSharp
+        m_MethodName: GoverButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10779,7 +10843,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1018741033}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: SunnyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1018741033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11030,7 +11106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faithSlider: {fileID: 736596228}
-  faithValue: 25
+  faithValue: 90
   faithMaxVal: 100
 --- !u!114 &1027531303
 MonoBehaviour:
@@ -11171,6 +11247,16 @@ MonoBehaviour:
   sheepCnt: 000000000000000000000000
   weatherType: 0
   weatherK: 1
+  weatherImg: {fileID: 543494860}
+  weatherSprites:
+  - {fileID: 21300000, guid: 3677eee99226d3b49b5d6b5cc563901a, type: 3}
+  - {fileID: 21300000, guid: 1e01560833608664f9a2263fa2124826, type: 3}
+  - {fileID: 21300000, guid: 2e7738d58d4acc24898167fecc8aa6d2, type: 3}
+  buildingButton:
+  - {fileID: 223329803}
+  - {fileID: 851231731}
+  - {fileID: 1969772582}
+  canFix: 0
 --- !u!1 &1031816491
 GameObject:
   m_ObjectHideFlags: 0
@@ -12040,6 +12126,7 @@ GameObject:
   - component: {fileID: 1118557412}
   - component: {fileID: 1118557411}
   - component: {fileID: 1118557410}
+  - component: {fileID: 1118557413}
   m_Layer: 5
   m_Name: GoverCanvas
   m_TagString: Untagged
@@ -12130,6 +12217,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1118557413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118557408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8466de0116d1a47b303322dd5669d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageRoadFix: {fileID: 2019819320}
 --- !u!1 &1131113227
 GameObject:
   m_ObjectHideFlags: 0
@@ -12887,11 +12987,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1204492891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: ConfirmWeatherButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1204492891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15417,6 +15529,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 359392598}
+        m_TargetAssemblyTypeName: researchControl, Assembly-CSharp
+        m_MethodName: CancelButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1449874835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16010,7 +16134,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1497206269}
   m_OnClick:
     m_PersistentCalls:
@@ -17539,7 +17663,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1611781482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: RainButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1611781482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21007,6 +21143,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 470388301}
+        m_TargetAssemblyTypeName: TempleControl, Assembly-CSharp
+        m_MethodName: TempleButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GoverControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Image imageRoadFix;
+
+    private void Start()
     {
-        
+        //imageRoadFix = GameObject.Find("image_roadFix").GetComponent<Image>();
+        if (imageRoadFix == null)
+        {
+            Debug.LogError("image_roadFix not found!");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoverButton()
     {
-        
+        if (TimeControl.Instance.happyCtrl.happyValue >= 75)
+        {
+            imageRoadFix.enabled = true;
+            TimeControl.Instance.canFix = true;
+        }
+        else
+        {
+            imageRoadFix.enabled = false;
+        }
     }
 }

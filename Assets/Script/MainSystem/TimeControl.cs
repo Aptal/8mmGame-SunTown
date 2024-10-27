@@ -37,14 +37,23 @@ public class TimeControl : MonoBehaviour
     public SaveData saveMainData;
 
     public TextMeshProUGUI dayText;
-    public int dayCnt = 1;
+    public int dayCnt = -1;
 
     private bool hasShadowSheep = false;
     private bool hasRunSheep = false;
     public int[] sheepCnt = new int[3];
 
+    // weather
     public int weatherType = 0;
     public float weatherK = 1.0f;
+    public Image weatherImg;
+    public Sprite[] weatherSprites;
+
+    public Button[] buildingButton;
+    private bool[] hasBuilding = new bool[3];
+
+    public bool canFix = false;
+
 
     private void Awake()
     {
@@ -64,7 +73,21 @@ public class TimeControl : MonoBehaviour
 
     private void Start()
     {
+        hasBuilding[0] = true;
+        hasBuilding[1] = true;
+        hasBuilding[2] = true;
         UpdateUI();
+    }
+
+    public void NewDay()
+    {
+        if (dayCnt == -1) dayCnt = 1;
+        else dayCnt++;
+
+        // ÊÂ¼þÅÐ¶¨
+
+        UpdateUI();
+
     }
 
     public void SaveMainData()
@@ -75,12 +98,42 @@ public class TimeControl : MonoBehaviour
     public void UpdateUI()
     {
         UpdateDay();
+        UpdateBuilding();
+        faithCtrl.SliderCtrl();
+        happyCtrl.SliderCtrl();
+
         UpdateSheepCnt();
+        UpdateWeather();
     }
 
     public void UpdateDay()
     {
         dayText.text = dayCnt.ToString();
+    }
+
+    private void UpdateBuilding()
+    {
+        for (int i = 0; i < 3; ++i)
+        {
+            buildingButton[i].interactable = hasBuilding[i];
+        }
+    }
+
+    public void UpdateWeather()
+    {
+        if (weatherType == 0)
+        {
+            weatherK = 1.0f;
+        }
+        else if(weatherType == 1)
+        {
+            weatherK = 0.75f;
+        }
+        else
+        {
+            weatherK = 0.5f;
+        }
+        weatherImg.sprite = weatherSprites[weatherType];
     }
 
     public void UpdateSheepCnt()

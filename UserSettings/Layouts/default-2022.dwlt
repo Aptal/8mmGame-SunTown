@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
+<<<<<<< Updated upstream
   m_Title: Game
+=======
+  m_Title: Hierarchy
+>>>>>>> Stashed changes
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +124,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 14945
+=======
+  controlID: 127
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -226,7 +234,11 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 14860
+=======
+  controlID: 53
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -245,10 +257,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 493.33337
     height: 492.66666
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 741
+    height: 690
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -273,8 +292,8 @@ MonoBehaviour:
     y: 690
     width: 741
     height: 609
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -300,9 +319,15 @@ MonoBehaviour:
     y: 0
     width: 551
     height: 1299
+<<<<<<< Updated upstream
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 19}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
@@ -788,9 +813,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 905.1958, y: 601.0396, z: -2.85768}
     speed: 2
     m_Value: {x: 905.1958, y: 601.0396, z: -2.85768}
+=======
+    m_Target: {x: 863.6915, y: 520.1506, z: 2742.9036}
+    speed: 2
+    m_Value: {x: 863.6915, y: 520.1506, z: 2742.9036}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -840,9 +871,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 295.7667
     speed: 2
     m_Value: 295.7667
+=======
+    m_Target: 54.34899
+    speed: 2
+    m_Value: 54.34899
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1110,20 +1147,26 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 1cfbffff726f0000806f0000a46f0000de6f00001e7000002870000058700000
+=======
+      m_SelectedIDs: 6ac40000
+      m_LastClickedID: 50282
+      m_ExpandedIDs: 84c9ffff74caffff76ecffff1afbffff067100000e750000fe8e0000788f0000dac00000e4c000003cc3000044c70000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GoverPanel
-        m_OriginalName: GoverPanel
+        m_Name: image_weatherIcon_1
+        m_OriginalName: image_weatherIcon_1
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 246616
+        m_UserData: 49948
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1181,7 +1224,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
     - Assets/UI/Sound
+=======
+    - Assets/UI/MainScene
+>>>>>>> Stashed changes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1189,30 +1236,41 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< Updated upstream
   - Assets/UI/Sound
+=======
+  - Assets/UI/MainScene
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Unity\Project\SumSheep
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 267.66666}
     m_SelectedIDs: 6c730000
     m_LastClickedID: 29548
     m_ExpandedIDs: 0000000026730000287300002a73000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 284}
+    m_SelectedIDs: d07a0000
+    m_LastClickedID: 31440
+    m_ExpandedIDs: 00000000647a0000667a0000687a00006a7a00006c7a00006e7a0000707a0000727a0000747a0000767a0000787a00007a7a00007c7a000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GoverPanel
-      m_OriginalName: GoverPanel
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 45558
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -1226,7 +1284,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 0000000026730000287300002a73000000ca9a3b
+=======
+    m_ExpandedIDs: 00000000647a0000667a0000687a00006a7a00006c7a00006e7a0000707a0000727a0000747a0000767a0000787a00007a7a00007c7a0000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1251,10 +1313,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< Updated upstream
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000e7900005686000076860000a2860000ce860000d2790000e485000036340000be2b01006c7b0000b07b000020720000be890000b87100005eedffff
+=======
+    m_SelectedInstanceIDs: 6ac40000
+    m_LastClickedInstanceID: 50282
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300000e7900005686000076860000a2860000ce860000d2790000e4850000e879000036340000be2b01006c7b0000b07b000020720000be890000b87100005a7b0000367b0000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

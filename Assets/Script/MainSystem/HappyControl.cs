@@ -10,21 +10,12 @@ public class HappyControl : MonoBehaviour
     public float happyValue = 25;
     public float happyMaxVal = 100;
 
-    private void Awake()
-    {
-    }
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        SliderCtrl();
+        //SliderCtrl();
     }
 
-    void SliderCtrl()
+    public void SliderCtrl()
     {
         happyValue = Mathf.Min(happyMaxVal, happyValue);
         happySlider.fillAmount = happyValue / happyMaxVal;

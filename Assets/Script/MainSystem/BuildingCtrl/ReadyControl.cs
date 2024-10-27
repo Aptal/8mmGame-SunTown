@@ -39,8 +39,9 @@ public class ReadyControl : MonoBehaviour
                     badRoadButtons[i].gameObject.SetActive(false);
                 }
             }
-            roadFixButton = mapObject.transform.Find("button_roadFix")?.gameObject.GetComponent<Button>();
         }
+        roadFixButton = GameObject.Find("button_roadFix")?.gameObject.GetComponent<Button>();
+        roadFixButton.interactable = TimeControl.Instance.canFix;
         isFixing = false;
     }
 
@@ -55,7 +56,15 @@ public class ReadyControl : MonoBehaviour
 
     public void FixButton()
     {
-        isFixing = true;
+        if (!isFixing)
+        {
+            isFixing = true;
+            roadFixButton.interactable = false;
+        }
+        else
+        {
+            roadFixButton.interactable = false;
+        }
     }
 
     public void GotoMiniGame()
@@ -80,8 +89,8 @@ public class ReadyControl : MonoBehaviour
         }
 
         // show road
-        //TimeControl.Instance.roadCtrl.badRoadCnt = 2;
-        //TimeControl.Instance.roadCtrl.AddRoad();
+        TimeControl.Instance.roadCtrl.badRoadCnt = 2;
+        TimeControl.Instance.roadCtrl.AddRoad();
         foreach (var road in TimeControl.Instance.roadCtrl.RoadList)
         {
             Debug.Log(road.ID);

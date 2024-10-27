@@ -10,11 +10,6 @@ public class FaithControl : MonoBehaviour
     public float faithValue = 25;
     public float faithMaxVal = 100;
 
-    private void Awake()
-    {
-        //faithSlider = transform.GetChild(3).GetComponent<Image>();
-    }
-
     void Start()
     {
         
@@ -22,10 +17,10 @@ public class FaithControl : MonoBehaviour
 
     void Update()
     {
-        SliderCtrl();
+        //SliderCtrl();
     }
 
-    void SliderCtrl()
+    public void SliderCtrl()
     {
         faithValue = Mathf.Min(faithMaxVal, faithValue);
         faithSlider.fillAmount = faithValue / faithMaxVal;

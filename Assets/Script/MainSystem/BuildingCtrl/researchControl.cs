@@ -45,15 +45,39 @@ public class researchControl : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i < researchLevel.Length; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.sheepLevelCtrl.upLevelCost[researchLevel[i]]))
+            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.sheepLevelCtrl.upLevelCost[researchLevel[i] + 1]))
             {
-                upButton[i].enabled = true;
+                upButton[i].interactable = true;
             }
             else
             {
-                upButton[i].enabled = false;
+                upButton[i].interactable = false;
+            }
+        }
+
+        for (int i = 3; i < 5; i++)
+        {
+            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.storeLevelCtrl.upLevelCost[researchLevel[i + 1]]))
+            {
+                upButton[i].interactable = true;
+            }
+            else
+            {
+                upButton[i].interactable = false;
+            }
+        }
+
+        for (int i = 6; i < 7; i++)
+        {
+            if (TimeControl.Instance.sunCtrl.QueryUp(TimeControl.Instance.hubLevelCtrl.upLevelCost[researchLevel[i] + 1]))
+            {
+                upButton[i].interactable = true;
+            }
+            else
+            {
+                upButton[i].interactable = false;
             }
         }
 
@@ -96,20 +120,6 @@ public class researchControl : MonoBehaviour
             UpdateText(researchCost[i], TimeControl.Instance.hubLevelCtrl.upLevelCost[researchLevel[i] + 1].ToString());
         }
 
-
-        /*        UpdateImg(sheepSpeedImg, fiveLevelSprite[sheepSpeedLevel]);
-        UpdateImg(sheepLimitImg, fiveLevelSprite[sheepLimitLevel]);
-        UpdateImg(sheepProdVImg, fiveLevelSprite[sheepProdVLevel]);
-        UpdateText(sheepSpeedCost, TimeControl.Instance.sheepLevelCtrl.upLevelCost[sheepSpeedLevel + 1].ToString());
-        UpdateText(sheepLimitCost, TimeControl.Instance.sheepLevelCtrl.upLevelCost[sheepLimitLevel + 1].ToString());
-        UpdateText(sheepProdVCost, TimeControl.Instance.sheepLevelCtrl.upLevelCost[sheepProdVLevel + 1].ToString());
-
-
-        storeLimitLevel = TimeControl.Instance.storeLevelCtrl.storeLimitLevel;
-        storePushLevel = TimeControl.Instance.storeLevelCtrl.pushSpeedLevel;
-        storePopLevel = TimeControl.Instance.storeLevelCtrl.popSpeedLevel;
-
-        hubSpeedLevel = TimeControl.Instance.hubLevelCtrl.hubSpeedLevel;*/
     }
 
     public void SheepSpeedButton()

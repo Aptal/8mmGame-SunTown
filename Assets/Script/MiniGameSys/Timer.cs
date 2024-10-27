@@ -12,9 +12,7 @@ public class Timer : MonoBehaviour
 
     public int Duration { get; private set; }
 
-    [Header("��Ϸ����ʱ��")]
-    [SerializeField]
-    private int remainingDuration;
+    public int remainingDuration;
 
     [SerializeField] private AudioClip least30Sound;
     [SerializeField] private AudioClip gameOverSound;
