@@ -19,4 +19,14 @@ public class PlotNode
 
     [TextArea]
     public string choiceCtext;
+
+    [TextArea]
+    public string buttonAtext;
+
+    [TextArea]
+    public string buttonBtext;
+
+    [TextArea]
+    public string buttonCtext;
+
 }

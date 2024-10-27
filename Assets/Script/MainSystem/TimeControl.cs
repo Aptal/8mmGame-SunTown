@@ -66,7 +66,13 @@ public class TimeControl : MonoBehaviour
 
     public int eventOutcome;
     public int researchOutcome;
-
+    public int[] hasEvent = new int[42] { 1, 1, 1, 1, 1, 1, 0, 
+                                          1, 0, 1, 1, 1, 1, 1,
+                                          1, 0, 0, 1, 1, 1, 0,
+                                          1, 1, 1, 0, 0, 0, 1,
+                                          1, 1, 1, 1, 0, 1, 1,
+                                          0, 0, 0, 1, 0, 0, 1};
+    public int eventIndex = 0;
 
     private void Awake()
     {
@@ -158,6 +164,9 @@ public class TimeControl : MonoBehaviour
             PlayerPrefs.DeleteKey("animatN2D");
             PlayerPrefs.Save();
             event2Control.PlayPlot();
+
+            if(even)
+
         }
 
         // minigame½áÊø

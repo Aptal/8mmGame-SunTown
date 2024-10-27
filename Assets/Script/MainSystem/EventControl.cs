@@ -24,18 +24,54 @@ public class EventControl : MonoBehaviour
     public Button backButton;
     public Button nextButton;
     public Button[] choiceButton;
-    public TextMeshProUGUI[] choiceText;
+    public TextMeshProUGUI[] buttonText;
 
     protected int index;
     public int plotIndex;
+    public int clickedButton = -1;
+
+    private void Update()
+    {
+        if(clickedButton != -1 && backButton.gameObject.activeSelf)
+        {
+            backButton.gameObject.SetActive(false);
+        }
+    }
 
     public void PlayPlot()
     {
-        plotCanvas.SetActive(true);
+        if(plotCanvas.activeSelf == false) plotCanvas.SetActive(true);
 
         PlotNode plotnode = plot[plotIndex].plots[Mathf.Clamp(index, 0, plot[plotIndex].plots.Length - 1)];
 
-        plotText.text = plotnode.content;
+        if(clickedButton == -1)
+        {
+            plotText.text = plotnode.content;
+        }
+        else
+        {
+            if(clickedButton == 0)
+            {
+                plotText.text = plotnode.choiceAtext;
+            }
+            if(clickedButton == 1)
+            {
+                plotText.text = plotnode.choiceBtext;
+            }
+            if(clickedButton == 2)
+            {
+                plotText.text = plotnode.choiceCtext;
+            }
+        }
+
+        for (int i = 0; i < choiceButton.Length; i++)
+        {
+            if (plotnode.buttonAtext != "")
+            {
+                choiceButton[i].interactable = true;
+                //choiceText[i].gameObject.SetActive(true);
+            }
+        }
 
         if (index == plot[plotIndex].plots.Length-1)
         {
@@ -44,7 +80,7 @@ public class EventControl : MonoBehaviour
                 if (choiceButton[i] != null)
                 {
                     choiceButton[i].interactable = true;
-                    choiceText[i].gameObject.SetActive(true);
+                    //choiceText[i].gameObject.SetActive(true);
                 }
             }
         }
@@ -55,7 +91,7 @@ public class EventControl : MonoBehaviour
                 if (choiceButton[i] != null)
                 {
                     choiceButton[i].interactable = false;
-                    choiceText[i].gameObject.SetActive(false);
+                    //choiceText[i].gameObject.SetActive(false);
                 }
             }
         }
