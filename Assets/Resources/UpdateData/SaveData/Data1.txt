@@ -8,6 +8,6 @@
 
 {"sheep2hubSpeed":12,"hubSpeedLevel":0}
 
-{"happyValue":25.0}
+{"happyValue":25}
 
-{"faithValue":25.0}
+{"faithValue":25}
