@@ -19,7 +19,9 @@ public class InitMiniGameData : MonoBehaviour
 
     public void LoadData()
     {
+#if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
+#endif
         loadData = Resources.Load<TextAsset>("UpdateData/MoveSence/MoveMiniGame");
         if (loadData != null)
         {

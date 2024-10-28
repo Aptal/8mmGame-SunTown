@@ -74,7 +74,7 @@ public class SaveData : MonoBehaviour
 
 
         MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame, timeInfo.eventOutcome, timeInfo.researchOutcome, timeInfo.eventIndex, timeInfo.hasShadowSheep, timeInfo.hasRunSheep, timeInfo.hasBuilding, timeInfo.hasEvent);
-        MainSunData sunData = new MainSunData(sunInfo.totalSun);
+        MainSunData sunData = new MainSunData(sunInfo.totalSun, sunInfo.preSun);
         Debug.Log("info level " + sheepInfo.sunLimitLevel);
         MainSheepData sheepData = new MainSheepData(sheepInfo.moveSpeed, sheepInfo.moveSpeedLevel, 
                                                     sheepInfo.sunLimit, sheepInfo.sunLimitLevel, 

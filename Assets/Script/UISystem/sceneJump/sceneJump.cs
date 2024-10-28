@@ -164,8 +164,14 @@ public class sceneJump : MonoBehaviour
     // 协程用于延迟场景加载
     private System.Collections.IEnumerator LoadSceneAfterDelay()
     {
+        /*        yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene(2);*/
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(2);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(2);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
     public void JumpToVideoPlay()
     {

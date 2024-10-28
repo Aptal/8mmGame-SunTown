@@ -16,7 +16,9 @@ public class LoadMainGameData : MonoBehaviour
 
     public void LoadData()
     {
+#if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
+#endif
         loadData = Resources.Load<TextAsset>("UpdateData/SaveData/Data1");
         if (loadData != null)
         {
@@ -59,6 +61,8 @@ public class LoadMainGameData : MonoBehaviour
 
 
             TimeControl.Instance.sunCtrl.totalSun = sunData.totalSun;
+            TimeControl.Instance.sunCtrl.preSun = sunData.preSun;
+
 
             TimeControl.Instance.sheepLevelCtrl.moveSpeed = sheepData.moveSpeed;
             TimeControl.Instance.sheepLevelCtrl.moveSpeedLevel = sheepData.moveSpeedLevel;
