@@ -28,6 +28,8 @@ public class CheckControl : MonoBehaviour
     {
         if (checkCanvas == null) return;
 
+        TimeControl.Instance.UpdateUI();
+
         checkCanvas.gameObject.SetActive(true);
 
         if(TimeControl.Instance.happyCtrl.happyChange > 0)

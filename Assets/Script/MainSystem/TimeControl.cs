@@ -30,6 +30,8 @@ public class TimeControl : MonoBehaviour
     public Canvas endCanvas;
 
     public CheckControl checkControl;
+    public EventControl event2Control;
+
 
     public FaithControl faithCtrl;
     public HappyControl happyCtrl;
@@ -46,7 +48,7 @@ public class TimeControl : MonoBehaviour
     public int dayCnt = -1;
 
     private bool hasShadowSheep = false;
-    private bool hasRunSheep = false;
+    public bool hasRunSheep = false;
     public int[] sheepCnt = new int[3];
 
     // weather
@@ -56,14 +58,20 @@ public class TimeControl : MonoBehaviour
     public Sprite[] weatherSprites;
 
     public Button[] buildingButton;
-    private bool[] hasBuilding = new bool[3];
+    public bool[] hasBuilding = new bool[3];
 
     public bool canFix = false;
     public bool hasMiniGame = true;
 
     public int eventOutcome;
     public int researchOutcome;
-
+    public int[] hasEvent = new int[42] { 1, 1, 1, 1, 1, 1, 0, 
+                                          1, 0, 1, 1, 1, 2, 1,
+                                          1, 0, 0, 1, 1, 1, 0,
+                                          1, 1, 1, 0, 0, 0, 1,
+                                          1, 1, 1, 1, 0, 1, 1,
+                                          0, 0, 0, 1, 0, 0, 1};
+    public int eventIndex = 0;
 
     private void Awake()
     {
@@ -108,9 +116,6 @@ public class TimeControl : MonoBehaviour
     private void Start()
     {
         Debug.Log("start main");
-        hasBuilding[0] = true;
-        hasBuilding[1] = true;
-        hasBuilding[2] = true;
 
         if(PlayerPrefs.GetString("SceneInfo") == "FinishMiniGame")
         {
@@ -144,6 +149,7 @@ public class TimeControl : MonoBehaviour
         sunCtrl.totalSun += minigameSun - sunCtrl.sunOutcome;
 
         UpdateUI();
+        //UpdateEvent();
     }
 
     private void Update()
@@ -153,16 +159,232 @@ public class TimeControl : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("animatN2D");
             PlayerPrefs.Save();
+            event2Control.PlayPlot();
+
+            if (eventIndex == 0)
+            {
+                event2Control.plotIndex = 1;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 2)
+            {
+                event2Control.plotIndex = 3;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 4)
+            {
+                event2Control.plotIndex = 5;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 6)
+            {
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 8)
+            {
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 0;
+                hasShadowSheep = true;
+            }
+            else if (eventIndex == 10)
+            {
+                event2Control.plotIndex = 9;
+                weatherType = 2;
+                roadCtrl.badRoadCnt = 3;
+            }
+            else if (eventIndex == 12)
+            {
+                event2Control.plotIndex = 11;
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 14)
+            {
+                event2Control.plotIndex = 14;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 16)
+            {
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 18)
+            {
+                event2Control.plotIndex = 16;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 20)
+            {
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 22)
+            {
+                event2Control.plotIndex = 19;
+                weatherType = 2;
+                roadCtrl.badRoadCnt = 3;
+            }
+            else if (eventIndex == 24)
+            {
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 26)
+            {
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 1;
+            }
+            else if (eventIndex == 28)
+            {
+                event2Control.plotIndex = 22;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 1;
+            }
+            else if (eventIndex == 30)
+            {
+                event2Control.plotIndex = 24;
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 3;
+            }
+            else if (eventIndex == 32)
+            {
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 0;
+            }
+            else if (eventIndex == 34)
+            {
+                event2Control.plotIndex = 27;
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 36)
+            {
+                weatherType = 0;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 38)
+            {
+                event2Control.plotIndex = 28;
+                weatherType = 1;
+                roadCtrl.badRoadCnt = 2;
+            }
+            else if (eventIndex == 40)
+            {
+                weatherType = 2;
+                roadCtrl.badRoadCnt = 3;
+            }
+
+            if (hasEvent[eventIndex] > 0)
+            {
+                event2Control.PlayPlot();
+            }
 
         }
 
-        // minigame½áÊø
+
+
+        // minigame½áÊø, ÍíÉÏ
         if (PlayerPrefs.GetString("animatD2N") == "yes")
         {
             PlayerPrefs.DeleteKey("animatD2N");
             PlayerPrefs.Save();
 
-            if (!hasMiniGame)
+            if (eventIndex == 1)
+            {
+                event2Control.plotIndex = 2;
+            }
+            else if (eventIndex == 3)
+            {
+                event2Control.plotIndex = 4;
+            }
+            else if (eventIndex == 5)
+            {
+                event2Control.plotIndex = 6;
+            }
+            else if (eventIndex == 7)
+            {
+                event2Control.plotIndex = 7;
+            }
+            else if (eventIndex == 9)
+            {
+                event2Control.plotIndex = 8;
+            }
+            else if (eventIndex == 11)
+            {
+                event2Control.plotIndex = 10;
+            }
+            else if (eventIndex == 13)
+            {
+                event2Control.plotIndex = 13;
+            }
+            else if (eventIndex == 15)
+            {
+
+            }
+            else if (eventIndex == 17)
+            {
+                event2Control.plotIndex = 15;
+            }
+            else if (eventIndex == 19)
+            {
+                event2Control.plotIndex = 17;
+            }
+            else if (eventIndex == 21)
+            {
+                event2Control.plotIndex = 18;
+            }
+            else if (eventIndex == 23)
+            {
+                event2Control.plotIndex = 20;
+            }
+            else if (eventIndex == 25)
+            {
+                
+            }
+            else if (eventIndex == 27)
+            {
+                event2Control.plotIndex = 21;
+            }
+            else if (eventIndex == 29)
+            {
+                event2Control.plotIndex = 23;
+            }
+            else if (eventIndex == 31)
+            {
+                event2Control.plotIndex = 25;
+            }
+            else if (eventIndex == 33)
+            {
+                event2Control.plotIndex = 26;
+            }
+            else if (eventIndex == 35)
+            {
+
+            }
+            else if (eventIndex == 37)
+            {
+
+            }
+            else if (eventIndex == 39)
+            {
+
+            }
+            else if (eventIndex == 41)
+            {
+                event2Control.plotIndex = 29;
+            }
+
+            if (hasEvent[eventIndex] > 0)
+            {
+                event2Control.PlayPlot();
+            }
+            else if (!hasMiniGame)
             {
                 checkControl.ShowDailyCheck();
             }

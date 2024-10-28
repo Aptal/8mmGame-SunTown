@@ -96,8 +96,11 @@ public class ReadyControl : MonoBehaviour
         }
 
         // show road
-        TimeControl.Instance.roadCtrl.badRoadCnt = 2;
-        TimeControl.Instance.roadCtrl.AddRoad();
+        if (TimeControl.Instance.roadCtrl.badRoadCnt > 0 )
+        {
+            TimeControl.Instance.roadCtrl.hasFix = true;
+            TimeControl.Instance.roadCtrl.AddRoad();
+        }
         foreach (var road in TimeControl.Instance.roadCtrl.RoadList)
         {
             //Debug.Log(road.ID);
@@ -106,7 +109,6 @@ public class ReadyControl : MonoBehaviour
         }
 
         weatherImg.sprite = weatherSprite[TimeControl.Instance.weatherType];
-
 
     }
 

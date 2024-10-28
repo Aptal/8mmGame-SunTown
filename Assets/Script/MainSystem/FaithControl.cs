@@ -11,6 +11,7 @@ public class FaithControl : MonoBehaviour
     public int faithMaxVal = 100;
 
     public int faithChange = 0;
+    public int autoAdd = 0;
 
     void Start()
     {
