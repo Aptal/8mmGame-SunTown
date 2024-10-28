@@ -126,7 +126,7 @@ public class TimeControl : MonoBehaviour
         else
         {
             Debug.Log("totalsun + " + sunCtrl.totalSun);
-            checkControl.beginSunText.text = sunCtrl.totalSun.ToString();
+            //checkControl.beginSunText.text = sunCtrl.totalSun.ToString();
         }
 
         if(hasMiniGame)

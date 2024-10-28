@@ -64,6 +64,7 @@ public class CheckControl : MonoBehaviour
         eventOutcomeText.text = TimeControl.Instance.eventOutcome.ToString();
         researchOutcomeText.text = TimeControl.Instance.researchOutcome.ToString();
 
+        beginSunText.text = TimeControl.Instance.sunCtrl.preSun.ToString();
         endSunText.text = TimeControl.Instance.sunCtrl.totalSun.ToString();
         //beginSunText.text = (TimeControl.Instance.sunCtrl.totalSun -
         //                    (TimeControl.Instance.sunCtrl.sunIncome - TimeControl.Instance.sunCtrl.sunOutcome)).ToString();
@@ -77,6 +78,8 @@ public class CheckControl : MonoBehaviour
         TimeControl.Instance.sunCtrl.sunOutcome = 0;
         TimeControl.Instance.eventOutcome = 0;
         TimeControl.Instance.researchOutcome = 0;
+        TimeControl.Instance.sunCtrl.preSun = TimeControl.Instance.sunCtrl.totalSun;
+
         checkCanvas.gameObject.SetActive(false);
 
         //TimeControl.Instance.n2day.PlayAnimation();

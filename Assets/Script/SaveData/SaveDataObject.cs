@@ -57,10 +57,12 @@ public class MainTimeData
 public class MainSunData
 {
     public int totalSun;
+    public int preSun;
 
-    public MainSunData(int initialTotalSun = 0)
+    public MainSunData(int initialTotalSun = 0, int preSun = 0)
     {
         totalSun = initialTotalSun;
+        this.preSun = preSun;
     }
 }
 

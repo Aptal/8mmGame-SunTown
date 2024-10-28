@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SunControl : MonoBehaviour
 {
-    public int totalSun = 200;
+    public int preSun = 0;
+    public int totalSun = 0;
     public TextMeshProUGUI thsSun;
     public TextMeshProUGUI hunSun;
     public TextMeshProUGUI tenSun;
