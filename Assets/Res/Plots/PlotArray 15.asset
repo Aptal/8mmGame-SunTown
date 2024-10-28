@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlotArray 15
   m_EditorClassIdentifier: 
   plots:
-  - picture: {fileID: 0}
+  - picture: {fileID: 21300000, guid: 7c7ca728129c8b048a289916d4cdd5a7, type: 3}
     content: "\u8FD9\u5929\u65E9\u4E0A\uFF0C\u4E00\u4F4D\u4ECE\u57CE\u5E02\u91CC\u6765\u7684\u5546\u4EBA\u627E\u4E0A\u4E86\u4F60\uFF0C\u4ED6\u8BF4\u4ED6\u80FD\u63D0\u4F9B\u4E00\u4E9B\u5C0F\u9547\u53EF\u80FD\u9700\u8981\u7684\u8D27\u7269\uFF0C\u4ED6\u53EA\u9700\u8981\u4E00\u4E9B\u4FBF\u643A\u5F0F\u5149\u80FD\u4F5C\u4E3A\u4EA4\u6362\uFF0C\u673A\u4E0D\u53EF\u5931\u5931\u4E0D\u518D\u6765\uFF01"
     choiceAtext: 
     choiceBtext: 
@@ -23,7 +23,7 @@ MonoBehaviour:
     buttonBtext: "\u9700\u8981\u4E00\u4E9B\u4E66\u7C4D\uFF0C\u6350\u8D60\u7ED9\u51DD\u5149\u6BBF\r\n(<color=red>
       \u82B1\u8D39\u8F83\u591A\u5149\u80FD\uFF0C\u4FE1\u4EF0\u503C\u63D0\u5347</color>)"
     buttonCtext: "\u4EC0\u4E48\u90FD\u4E0D\u9700\u8981"
-  - picture: {fileID: 0}
+  - picture: {fileID: 21300000, guid: 7c7ca728129c8b048a289916d4cdd5a7, type: 3}
     content: 
     choiceAtext: "\u5927\u5BB6\u90FD\u5F88\u6EE1\u610F\uFF0C\u5546\u4EBA\u8868\u793A\u4F1A\u518D\u6765\r\n(<color=red>\u82B1\u8D39
       1000 \u5149\u80FD\uFF0C \u6EE1\u610F\u5EA6\u63D0\u5347 15</color>)"
@@ -33,7 +33,7 @@ MonoBehaviour:
     buttonAtext: 
     buttonBtext: 
     buttonCtext: 
-  - picture: {fileID: 0}
+  - picture: {fileID: 21300000, guid: 7c7ca728129c8b048a289916d4cdd5a7, type: 3}
     content: 
     choiceAtext: "\u5927\u5BB6\u90FD\u5F88\u6EE1\u610F\uFF0C\u5546\u4EBA\u8868\u793A\u4F1A\u518D\u6765\r\n(<color=red>\u82B1\u8D39
       1000 \u5149\u80FD\uFF0C \u6EE1\u610F\u5EA6\u63D0\u5347 15</color>)"
