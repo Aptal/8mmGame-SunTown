@@ -73,9 +73,10 @@ public class ReadyControl : MonoBehaviour
 
     public void GotoMiniGame()
     {
+        //Debug.Log("minigame init data : " + TimeControl.Instance.sheepLevelCtrl.sunLimitLevel + "  " + TimeControl.Instance.sheepLevelCtrl.limlevel[0]);
         InitMiniGameData();
         //TimeControl.Instance.hasMiniGame = false;
-        Debug.Log(TimeControl.Instance.sunCtrl.totalSun);
+        //Debug.Log(TimeControl.Instance.sunCtrl.totalSun);
         TimeControl.Instance.saveMainData.SaveData1();
     }
 
@@ -169,6 +170,10 @@ public class ReadyControl : MonoBehaviour
         StoreLevelControl storeInfo = TimeControl.Instance.storeLevelCtrl;
         HubLevelControl hubInfo = TimeControl.Instance.hubLevelCtrl;
         RoadControl roadInfo = TimeControl.Instance.roadCtrl;
+
+        sheepInfo.UpdateInfo();
+        storeInfo.UpdateInfo();
+        hubInfo.UpdateInfo();
 
         UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int)(sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
         StoreData storeData = new StoreData(storeInfo.storeLimit, storeInfo.pushSpeed, storeInfo.popSpeed);

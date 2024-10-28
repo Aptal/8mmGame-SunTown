@@ -16,13 +16,20 @@ public class AnimationControllerNightToDay : MonoBehaviour
         if (stateInfo.length > 0 && stateInfo.normalizedTime >= 1f)
         {
             // ∂Øª≠≤•∑≈ÕÍ±œ
-            Debug.Log("Animation completed!");
+            //Debug.Log("n2d Animation completed!");
             if (timePassCanvas != null)
             {
                 PlayerPrefs.SetString("animatN2D", "yes");
                 PlayerPrefs.Save();
                 timePassCanvas.SetActive(false);
             }
+        }
+    }
+    public void PlayAnimation()
+    {
+        if (animator != null)
+        {
+            timePassCanvas.SetActive(true);
         }
     }
 }

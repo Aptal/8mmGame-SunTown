@@ -2,11 +2,11 @@
 
 {"totalSun":0}
 
-{"moveSpeed":0.20000000298023225,"moveSpeedLevel":0,"sunLimit":20,"sunLimitLevel":0,"productSpeed":4,"productSpeedLevel":0}
+{"moveSpeed":0.5,"moveSpeedLevel":0,"sunLimit":30,"sunLimitLevel":0,"productSpeed":2,"productSpeedLevel":0}
 
-{"storeLimit":30,"storeLimitLevel":0,"pushSpeed":4,"pushSpeedLevel":0,"popSpeed":4,"popSpeedLevel":0}
+{"storeLimit":60,"storeLimitLevel":0,"pushSpeed":5,"pushSpeedLevel":0,"popSpeed":5,"popSpeedLevel":0}
 
-{"sheep2hubSpeed":12,"hubSpeedLevel":0}
+{"sheep2hubSpeed":50,"hubSpeedLevel":0}
 
 {"happyValue":0}
 

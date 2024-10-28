@@ -5,22 +5,22 @@ using UnityEngine;
 public class SheepLevelControl : MonoBehaviour
 {
     // 羊群速度
-    public float moveSpeed = 0.2f;
+    public float moveSpeed = 0.5f;
     public int moveSpeedLevel = 0;
-    public float[] speedlevel = new float[6] {0.2f, 0.24f, 0.288f, 0.35f, 0.41f, 0.5f};
+    public float[] speedlevel = new float[6] {0.6f, 0.72f, 0.86f, 1.0f, 1.2f, 1.5f};
 
     // 存储上限
-    public int sunLimit = 20;
-    public int[] limlevel = new int[6] { 20, 24, 29, 35, 41, 50 };
+    public int sunLimit = 30;
+    public int[] limlevel = new int[6] { 30, 36, 43, 52, 62, 75 };
     public int sunLimitLevel = 0;
 
     // 产出速度
-    public int productSpeed = 4;
-    public int[] prolevel = new int[6] { 4, 5, 6, 7, 8, 9 };
+    public int productSpeed = 2;
+    public int[] prolevel = new int[6] { 3, 4, 5, 6, 7, 8 };
     public int productSpeedLevel = 0;
 
     //升级阳光花费
-    public int[] upLevelCost = new int[6] {0, 100, 200, 400, 800, 1500 };
+    public int[] upLevelCost = new int[6] {0, 500, 1000, 1500, 2000, 2500 };
 
     public void UpdateInfo()
     {

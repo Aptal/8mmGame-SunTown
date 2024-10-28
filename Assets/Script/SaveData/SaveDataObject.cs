@@ -79,9 +79,9 @@ public class MainSheepData
     public int productSpeed;
     public int productSpeedLevel;
 
-    public MainSheepData(float initialMoveSpeed = 0.2f, int initialMoveSpeedLevel = 0,
-                         int initialSunLimit = 20, int initialSunLimitLevel = 0,
-                         int initialProductSpeed = 4, int initialProductSpeedLevel = 0)
+    public MainSheepData(float initialMoveSpeed = 0.5f, int initialMoveSpeedLevel = 0,
+                         int initialSunLimit = 30, int initialSunLimitLevel = 0,
+                         int initialProductSpeed = 2, int initialProductSpeedLevel = 0)
     {
         moveSpeed = initialMoveSpeed;
         moveSpeedLevel = initialMoveSpeedLevel;
@@ -106,9 +106,9 @@ public class MainStoreData
     public int popSpeed;
     public int popSpeedLevel;
 
-    public MainStoreData(int initialStoreLimit = 30, int initialStoreLimitLevel = 0,
-                         int initialPushSpeed = 4, int initialPushSpeedLevel = 0,
-                         int initialPopSpeed = 4, int initialPopSpeedLevel = 0)
+    public MainStoreData(int initialStoreLimit = 60, int initialStoreLimitLevel = 0,
+                         int initialPushSpeed = 5, int initialPushSpeedLevel = 0,
+                         int initialPopSpeed = 5, int initialPopSpeedLevel = 0)
     {
         storeLimit = initialStoreLimit;
         storeLimitLevel = initialStoreLimitLevel;
@@ -125,7 +125,7 @@ public class MainHubData
     public int sheep2hubSpeed;
     public int hubSpeedLevel;
 
-    public MainHubData(int initialSheep2hubSpeed = 12, int initialHubSpeedLevel = 0)
+    public MainHubData(int initialSheep2hubSpeed = 50, int initialHubSpeedLevel = 0)
     {
         sheep2hubSpeed = initialSheep2hubSpeed;
         hubSpeedLevel = initialHubSpeedLevel;

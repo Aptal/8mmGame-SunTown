@@ -32,7 +32,6 @@ public class TimeControl : MonoBehaviour
     public CheckControl checkControl;
     public EventControl event2Control;
 
-
     public FaithControl faithCtrl;
     public HappyControl happyCtrl;
     public HubLevelControl hubLevelCtrl;
@@ -120,6 +119,7 @@ public class TimeControl : MonoBehaviour
         if(PlayerPrefs.GetString("SceneInfo") == "FinishMiniGame")
         {
             hasMiniGame = false;
+            eventIndex++;
             PlayerPrefs.DeleteKey("SceneInfo");
             PlayerPrefs.Save();
         }
@@ -153,6 +153,12 @@ public class TimeControl : MonoBehaviour
     }
 
     private void Update()
+    {
+        JudgeDayEvent();
+        JudgeNightEvent();
+    }
+
+    public void JudgeDayEvent()
     {
         // 进入白天, 一天开始
         if (PlayerPrefs.GetString("animatN2D") == "yes")
@@ -280,6 +286,8 @@ public class TimeControl : MonoBehaviour
                 roadCtrl.badRoadCnt = 3;
             }
 
+            UpdateUI();
+
             if (hasEvent[eventIndex] > 0)
             {
                 event2Control.PlayPlot();
@@ -287,8 +295,10 @@ public class TimeControl : MonoBehaviour
 
         }
 
+    }
 
-
+    public void JudgeNightEvent()
+    {
         // minigame结束, 晚上
         if (PlayerPrefs.GetString("animatD2N") == "yes")
         {
@@ -345,7 +355,7 @@ public class TimeControl : MonoBehaviour
             }
             else if (eventIndex == 25)
             {
-                
+
             }
             else if (eventIndex == 27)
             {
@@ -400,13 +410,16 @@ public class TimeControl : MonoBehaviour
         else dayCnt++;
         hasMiniGame = true;
 
+        eventIndex++;
 
         // 锟铰硷拷锟叫讹拷
 
         UpdateUI();
 
-
         saveMainData.SaveData1();
+        
+        JudgeDayEvent();
+
     }
 
     public void SaveMainData()
@@ -469,7 +482,7 @@ public class TimeControl : MonoBehaviour
             {
                 sheepCnt[0] = sheepCnt[1] = 1;
                 sheepCnt[0] += Random.Range(0, 7);
-                sheepCnt[1] += Random.Range(0, 7 - sheepCnt[0]);
+                sheepCnt[1] += 7 - sheepCnt[0];
             }
         }
         else
@@ -477,7 +490,7 @@ public class TimeControl : MonoBehaviour
             sheepCnt[0] = sheepCnt[1] = 1;
             sheepCnt[2] = Random.Range(1, 3);
             sheepCnt[0] += Random.Range(0, 7 - sheepCnt[2]);
-            sheepCnt[1] += Random.Range(0, 7 - sheepCnt[2] - sheepCnt[0]);
+            sheepCnt[1] += 7 - sheepCnt[2] - sheepCnt[0];
         }
     }
 }

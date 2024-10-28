@@ -1084,8 +1084,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1380
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3624,7 +3624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 187781330}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693323272}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: NextText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &187781330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10153,8 +10165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 6320
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12065,8 +12077,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3290
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13366,8 +13378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1380
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16567,8 +16579,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1380
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17676,12 +17688,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb013fb3cd232d343a827b8de0346ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheep2hubSpeed: 3
+  sheep2hubSpeed: 50
   hubSpeedLevel: 0
-  hublevel: 0c0000000e0000001100000015000000190000001e000000
+  hublevel: 3200000064000000c80000000f2700000f2700000f270000
   fixSunCost: 0
   delSunCost: 0
-  upLevelCost: 00000000e8030000d0070000
+  upLevelCost: 00000000b80b000070170000
 --- !u!114 &1027531305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17720,22 +17732,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3734746375c7cf3448ac87e08bc1438e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
+  moveSpeed: 0.5
   moveSpeedLevel: 0
   speedlevel:
-  - 0.2
-  - 0.24
-  - 0.288
-  - 0.35
-  - 0.41
-  - 0.5
-  sunLimit: 10
-  limlevel: 14000000180000001d000000230000002900000032000000
+  - 0.6
+  - 0.72
+  - 0.86
+  - 1
+  - 1.2
+  - 1.5
+  sunLimit: 30
+  limlevel: 1e000000240000002b000000340000003e0000004b000000
   sunLimitLevel: 0
-  productSpeed: 4
-  prolevel: 040000000500000006000000070000000800000009000000
+  productSpeed: 2
+  prolevel: 030000000400000005000000060000000700000008000000
   productSpeedLevel: 0
-  upLevelCost: 0000000064000000c80000009001000020030000dc050000
+  upLevelCost: 00000000f4010000e8030000dc050000d0070000c4090000
 --- !u!114 &1027531308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17748,16 +17760,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fb04dbb6e56c548a537ebf8e496662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeLimit: 10
+  storeLimit: 60
   storeLimitLevel: 0
-  stlimlevel: 1e000000240000002b000000340000003e0000004b000000
-  pushSpeed: 4
+  stlimlevel: 3c0000004b0000005d0000007500000092000000b7000000
+  pushSpeed: 5
   pushSpeedLevel: 0
-  pushlevel: 040000000500000006000000070000000800000009000000
-  popSpeed: 4
+  pushlevel: 050000000600000008000000090000000a0000000c000000
+  popSpeed: 5
   popSpeedLevel: 0
-  poplevel: 040000000500000006000000070000000800000009000000
-  upLevelCost: 00000000c80000009001000020030000
+  poplevel: 050000000600000008000000090000000a0000000c000000
+  upLevelCost: 00000000e8030000d0070000b80b0000
 --- !u!114 &1027531309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17770,7 +17782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b938aeaac181d498e520290e1a0182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalSun: 200
+  totalSun: 0
   thsSun: {fileID: 1530395781}
   hunSun: {fileID: 1930524899}
   tenSun: {fileID: 1115463405}
@@ -29110,7 +29122,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fbad8c286b0414882cd5086292d8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plot: []
+  plot:
+  - {fileID: 11400000, guid: 180eca08bc8949f4492db67bbd6888eb, type: 2}
+  - {fileID: 11400000, guid: f85d19f32daa3b64ebf5d43963d9a3a2, type: 2}
+  - {fileID: 11400000, guid: 3f2c767f84a205845bbe93e93fd39e05, type: 2}
+  - {fileID: 11400000, guid: 16f0e7740b8ffc44193a80357a52414d, type: 2}
+  - {fileID: 11400000, guid: 82678223b60c86e4c89d23536e740181, type: 2}
+  - {fileID: 11400000, guid: c4f9f8438ed99494ab5cf86f83126319, type: 2}
+  - {fileID: 11400000, guid: 9bb689fe783380b419f99f5fd5796e0b, type: 2}
+  - {fileID: 11400000, guid: 46ca916134611eb4c875c6612a73ae3a, type: 2}
+  - {fileID: 11400000, guid: 52a53d2b91dc0ed4b9a87a5f0a5155a2, type: 2}
+  - {fileID: 11400000, guid: d39b35ae2d338d6449b0941b9f4f0832, type: 2}
+  - {fileID: 11400000, guid: a9be86e333f46264da7a5d35f1a9e717, type: 2}
+  - {fileID: 11400000, guid: 7964699590ebcad428e2fc4ce9829f01, type: 2}
+  - {fileID: 11400000, guid: 582fd1115ea7a474b84a0bda61494308, type: 2}
+  - {fileID: 11400000, guid: dcc196cd504c7854aad30aeaf3b6728c, type: 2}
+  - {fileID: 11400000, guid: d74adcbdacf7bf84894ed2a2e61b4cff, type: 2}
+  - {fileID: 11400000, guid: bcb1d04f7bc35ef4ea78b6021b06319e, type: 2}
+  - {fileID: 11400000, guid: 6ca604d0d510ced4bb430044d0712506, type: 2}
+  - {fileID: 11400000, guid: c33d36e94be71b640bdfed448529e575, type: 2}
+  - {fileID: 11400000, guid: 2918b57f0d3e22f47bb77b262f08b346, type: 2}
+  - {fileID: 11400000, guid: 39fd633d767e3694182d29bcf8de054a, type: 2}
+  - {fileID: 11400000, guid: 9318451ea26aab346a19095509f78b14, type: 2}
+  - {fileID: 11400000, guid: 59c705f9ee2233146982d571312c7964, type: 2}
+  - {fileID: 11400000, guid: d8b408efcdb14084ea7edfc90cf5771c, type: 2}
+  - {fileID: 11400000, guid: c40966b998faa84409be8d923fe68e38, type: 2}
+  - {fileID: 11400000, guid: 1b208c2275ad1e64c8653f1b1db3328f, type: 2}
+  - {fileID: 11400000, guid: b3685c179fdf86741a6df2b2a4814f29, type: 2}
+  - {fileID: 11400000, guid: ad4f462f794c8d34780908bfdb605b5a, type: 2}
+  - {fileID: 11400000, guid: 62f6b79c8045b8b4baae10004f4ab0cf, type: 2}
+  - {fileID: 11400000, guid: bd64a5831c9df384fa5cfeed5d6a65a2, type: 2}
+  - {fileID: 11400000, guid: 016c13a16e50e8445990b77724681cb2, type: 2}
   plotText: {fileID: 1298938865}
   plot2Canvas: {fileID: 1947047168}
   plot3Canvas: {fileID: 1693323267}
@@ -32000,8 +32042,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1380
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
-  m_sharedMaterial: {fileID: -784372265235059336, guid: 5e627409465d0e645ac7526823d4e78c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
+  m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33098,6 +33140,33 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 180eca08bc8949f4492db67bbd6888eb, type: 2}
   - {fileID: 11400000, guid: f85d19f32daa3b64ebf5d43963d9a3a2, type: 2}
   - {fileID: 11400000, guid: 3f2c767f84a205845bbe93e93fd39e05, type: 2}
+  - {fileID: 11400000, guid: 16f0e7740b8ffc44193a80357a52414d, type: 2}
+  - {fileID: 11400000, guid: 82678223b60c86e4c89d23536e740181, type: 2}
+  - {fileID: 11400000, guid: c4f9f8438ed99494ab5cf86f83126319, type: 2}
+  - {fileID: 11400000, guid: 9bb689fe783380b419f99f5fd5796e0b, type: 2}
+  - {fileID: 11400000, guid: 46ca916134611eb4c875c6612a73ae3a, type: 2}
+  - {fileID: 11400000, guid: 52a53d2b91dc0ed4b9a87a5f0a5155a2, type: 2}
+  - {fileID: 11400000, guid: d39b35ae2d338d6449b0941b9f4f0832, type: 2}
+  - {fileID: 11400000, guid: a9be86e333f46264da7a5d35f1a9e717, type: 2}
+  - {fileID: 11400000, guid: 7964699590ebcad428e2fc4ce9829f01, type: 2}
+  - {fileID: 11400000, guid: 582fd1115ea7a474b84a0bda61494308, type: 2}
+  - {fileID: 11400000, guid: dcc196cd504c7854aad30aeaf3b6728c, type: 2}
+  - {fileID: 11400000, guid: d74adcbdacf7bf84894ed2a2e61b4cff, type: 2}
+  - {fileID: 11400000, guid: bcb1d04f7bc35ef4ea78b6021b06319e, type: 2}
+  - {fileID: 11400000, guid: 6ca604d0d510ced4bb430044d0712506, type: 2}
+  - {fileID: 11400000, guid: c33d36e94be71b640bdfed448529e575, type: 2}
+  - {fileID: 11400000, guid: 2918b57f0d3e22f47bb77b262f08b346, type: 2}
+  - {fileID: 11400000, guid: 39fd633d767e3694182d29bcf8de054a, type: 2}
+  - {fileID: 11400000, guid: 9318451ea26aab346a19095509f78b14, type: 2}
+  - {fileID: 11400000, guid: 59c705f9ee2233146982d571312c7964, type: 2}
+  - {fileID: 11400000, guid: d8b408efcdb14084ea7edfc90cf5771c, type: 2}
+  - {fileID: 11400000, guid: c40966b998faa84409be8d923fe68e38, type: 2}
+  - {fileID: 11400000, guid: 1b208c2275ad1e64c8653f1b1db3328f, type: 2}
+  - {fileID: 11400000, guid: b3685c179fdf86741a6df2b2a4814f29, type: 2}
+  - {fileID: 11400000, guid: ad4f462f794c8d34780908bfdb605b5a, type: 2}
+  - {fileID: 11400000, guid: 62f6b79c8045b8b4baae10004f4ab0cf, type: 2}
+  - {fileID: 11400000, guid: bd64a5831c9df384fa5cfeed5d6a65a2, type: 2}
+  - {fileID: 11400000, guid: 016c13a16e50e8445990b77724681cb2, type: 2}
   plotText: {fileID: 286143943}
   plot2Canvas: {fileID: 1947047168}
   plot3Canvas: {fileID: 1693323267}
@@ -36681,7 +36750,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2132977709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693323272}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: BackText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2132977709
 MonoBehaviour:
   m_ObjectHideFlags: 0

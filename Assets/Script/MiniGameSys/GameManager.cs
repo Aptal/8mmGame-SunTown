@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     //public int destoryRoadpos1 = -1;
     //public int destoryRoadpos2 = -1;
 
+    bool resetVal = false;
 
     private void Awake()
     {
@@ -81,11 +82,12 @@ public class GameManager : MonoBehaviour
         // 毁坏一条路
         DestoryRoad();
 
-        timer1.SetDuration(35).Begin();
+        timer1.SetDuration(120).Begin();
 
         // 初始化羊的位置
         PlaceSheepOnGrass();
     }
+
 
     // 随机将羊分配到草地上
     private void PlaceSheepOnGrass()
@@ -377,6 +379,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!resetVal)
+        {
+            resetVal = true;
+            initData.setValue();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

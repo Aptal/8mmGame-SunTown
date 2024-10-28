@@ -145,7 +145,7 @@ public class EventControl : MonoBehaviour
     {
         if(plotCanvas == null)
         {
-            Debug.Log("init plot plane");
+            /*Debug.Log("init plot plane");
             if (plotIndex == 10 || plotIndex == 15 || plotIndex == 25 || plotIndex == 19 ) // 21 3-1
             {
                 plotCanvas = plot3Canvas;
@@ -153,14 +153,16 @@ public class EventControl : MonoBehaviour
             else
             {
                 plotCanvas = plot2Canvas;
-            }
-            
+            }*/
+            plotCanvas = plot2Canvas;
             plotCanvas.SetActive(true);
             backButton.interactable = true;
             InitTitle();
         }
-        Debug.Log("123:  "+plotIndex);
+        //Debug.Log("plotIndex:  " + plotIndex);
         PlotNode plotnode = plot[plotIndex].plots[Mathf.Clamp(index, 0, plot[plotIndex].plots.Length - 1)];
+
+        eventImg.sprite = plotnode.picture;
 
         if(clickedButton == -1)
         {
@@ -445,8 +447,6 @@ public class EventControl : MonoBehaviour
             // 事件面板关闭
             plotCanvas.gameObject.SetActive(false);
 
-            TimeControl.Instance.eventIndex++;
-
             TimeControl.Instance.UpdateUI();
             // 夜晚进入结算
             if(TimeControl.Instance.eventIndex % 2 != 0)
@@ -455,8 +455,9 @@ public class EventControl : MonoBehaviour
             }
             else
             {
-                
+                //TimeControl.Instance.eventIndex++;
             }
+
         }
     }
 
