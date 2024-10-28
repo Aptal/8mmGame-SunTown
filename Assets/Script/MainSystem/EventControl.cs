@@ -42,16 +42,17 @@ public class EventControl : MonoBehaviour
 
     public void PlayPlot()
     {
-        if(plotCanvas.activeSelf == null)
+        if(plotCanvas == null)
         {
-            if (TimeControl.Instance.eventIndex == 1)
-            {
-                plotCanvas = plot2Canvas;
-            }
-            else
+            if (plotIndex == 10 || plotIndex == 15 || plotIndex == 25 || plotIndex == 19 ) // 21 3-1
             {
                 plotCanvas = plot3Canvas;
             }
+            else
+            {
+                plotCanvas = plot2Canvas;
+            }
+            
             plotCanvas.SetActive(true);
         }
 
@@ -77,41 +78,38 @@ public class EventControl : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < choiceButton.Length; i++)
+        buttonText[0].text = plotnode.buttonAtext;
+        buttonText[1].text = plotnode.buttonBtext;
+
+        if (plotnode.buttonAtext != "")
         {
-            
-            if(plotnode.buttonAtext != "")
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-
-        if (index == plot[plotIndex].plots.Length-1)
-        {
-            for(int i = 0; i < choiceButton.Length; i++)
-            {
-                if (choiceButton[i] != null)
-                {
-                    choiceButton[i].interactable = true;
-                    //choiceText[i].gameObject.SetActive(true);
-                }
-            }
+            choiceButton[0].interactable = true;
         }
         else
         {
-            for (int i = 0; i < choiceButton.Length; i++)
+            choiceButton[0].interactable = false;
+        }
+        if (plotnode.buttonBtext != "")
+        {
+            choiceButton[1].interactable = true;
+        }
+        else
+        {
+            choiceButton[1].interactable = false;
+        }
+        if(choiceButton.Length == 3)
+        {
+            buttonText[2].text = plotnode.buttonCtext;
+            if (plotnode.buttonCtext != "")
             {
-                if (choiceButton[i] != null)
-                {
-                    choiceButton[i].interactable = false;
-                    //choiceText[i].gameObject.SetActive(false);
-                }
+                choiceButton[2].interactable = true;
+            }
+            else
+            {
+                choiceButton[2].interactable = false;
             }
         }
+
 
         // 退出, 事件结束
         if (plotnode.buttonAtext == "退出")

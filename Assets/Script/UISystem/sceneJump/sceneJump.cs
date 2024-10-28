@@ -93,7 +93,7 @@ public class sceneJump : MonoBehaviour
     {
         string info = "";
         MainTimeData timeData = new MainTimeData(1, true, 0, 0);
-        MainSunData sunData = new MainSunData(200);
+        MainSunData sunData = new MainSunData(0);
         MainSheepData sheepData = new MainSheepData(0.2f, 0,
                                                     20, 0,
                                                     4, 0);
@@ -101,8 +101,8 @@ public class sceneJump : MonoBehaviour
                                                     4, 0,
                                                     4, 0);
         MainHubData hubData = new MainHubData(12, 0);
-        MainHappyData happyData = new MainHappyData(25);
-        MainFaithData faithData = new MainFaithData(25);
+        MainHappyData happyData = new MainHappyData(0);
+        MainFaithData faithData = new MainFaithData(0);
 
         // convert
         info = JsonUtility.ToJson(timeData) + "\n\n";
