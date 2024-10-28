@@ -73,7 +73,7 @@ public class ReadyControl : MonoBehaviour
 
     public void GotoMiniGame()
     {
-        Debug.Log("minigame init data : " + TimeControl.Instance.sheepLevelCtrl.sunLimitLevel + "  " + TimeControl.Instance.sheepLevelCtrl.limlevel[0]);
+        //Debug.Log("minigame init data : " + TimeControl.Instance.sheepLevelCtrl.sunLimitLevel + "  " + TimeControl.Instance.sheepLevelCtrl.limlevel[0]);
         InitMiniGameData();
         //TimeControl.Instance.hasMiniGame = false;
         //Debug.Log(TimeControl.Instance.sunCtrl.totalSun);
@@ -174,7 +174,6 @@ public class ReadyControl : MonoBehaviour
         sheepInfo.UpdateInfo();
         storeInfo.UpdateInfo();
         hubInfo.UpdateInfo();
-        Debug.Log(sheepInfo.sunLimitLevel + " --- limit : " + sheepInfo.sunLimit);
 
         UnitData unitData = new UnitData(sheepInfo.moveSpeed, (int)(sheepInfo.productSpeed * TimeControl.Instance.weatherK + 0.5f), sheepInfo.sunLimit, TimeControl.Instance.sheepCnt);
         StoreData storeData = new StoreData(storeInfo.storeLimit, storeInfo.pushSpeed, storeInfo.popSpeed);

@@ -1,8 +1,8 @@
-{"dayCnt":1,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":0,"hasShadowSheep":false,"hasRunSheep":false,"hasBuilding":[false,false,false],"hasEvent":[0,1,1,1,1,1,0,1,0,1,1,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
+{"dayCnt":1,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":0,"hasShadowSheep":false,"hasRunSheep":false,"hasBuilding":[false,false,false],"hasEvent":[1,1,1,1,1,1,0,1,0,1,1,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
 
 {"totalSun":0}
 
-{"moveSpeed":0.6000000238418579,"moveSpeedLevel":0,"sunLimit":30,"sunLimitLevel":0,"productSpeed":3,"productSpeedLevel":0}
+{"moveSpeed":0.5,"moveSpeedLevel":0,"sunLimit":30,"sunLimitLevel":0,"productSpeed":2,"productSpeedLevel":0}
 
 {"storeLimit":60,"storeLimitLevel":0,"pushSpeed":5,"pushSpeedLevel":0,"popSpeed":5,"popSpeedLevel":0}
 
