@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VideoPlayer.unity
     guid: bc3656d3202e25a46828e5e5e018f8a6
+  - enabled: 1
+    path: Assets/Scenes/CastingPlay.unity
+    guid: a821f42b614867f4d86b524c7bcfd091
   m_configObjects: {}
