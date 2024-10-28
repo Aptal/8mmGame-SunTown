@@ -171,4 +171,9 @@ public class sceneJump : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+
+    public void JumpToCast()
+    {
+        SceneManager.LoadScene(5);
+    }
 }

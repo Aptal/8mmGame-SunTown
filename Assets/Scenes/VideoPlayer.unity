@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: S
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
   m_sharedMaterial: {fileID: 2982560897922598051, guid: 9d424b761e8f6534e95791f69a7a1af4, type: 2}
@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 2082845085}
   - component: {fileID: 2082845084}
   - component: {fileID: 2082845083}
+  - component: {fileID: 2082845086}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -993,6 +994,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082845081}
   m_CullTransparentMesh: 1
+--- !u!114 &2082845086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082845081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff223fa249ebe8a4e8e76d1a7e638ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  video_img: {fileID: 2082845081}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
