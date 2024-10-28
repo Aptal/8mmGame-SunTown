@@ -92,17 +92,13 @@ public class sceneJump : MonoBehaviour
     private string InitMainGameData()
     {
         string info = "";
-        MainTimeData timeData = new MainTimeData(1, true, 0, 0);
-        MainSunData sunData = new MainSunData(0);
-        MainSheepData sheepData = new MainSheepData(0.2f, 0,
-                                                    20, 0,
-                                                    4, 0);
-        MainStoreData storeData = new MainStoreData(30, 0,
-                                                    4, 0,
-                                                    4, 0);
-        MainHubData hubData = new MainHubData(12, 0);
-        MainHappyData happyData = new MainHappyData(0);
-        MainFaithData faithData = new MainFaithData(0);
+        MainTimeData timeData = new MainTimeData();
+        MainSunData sunData = new MainSunData();
+        MainSheepData sheepData = new MainSheepData();
+        MainStoreData storeData = new MainStoreData();
+        MainHubData hubData = new MainHubData();
+        MainHappyData happyData = new MainHappyData();
+        MainFaithData faithData = new MainFaithData();
 
         // convert
         info = JsonUtility.ToJson(timeData) + "\n\n";

@@ -50,6 +50,13 @@ public class LoadMainGameData : MonoBehaviour
             TimeControl.Instance.hasMiniGame = timeData.hasMiniGame;
             TimeControl.Instance.eventOutcome = timeData.eventOutcome;
             TimeControl.Instance.researchOutcome = timeData.researchOutcome;
+            TimeControl.Instance.eventIndex = timeData.eventIndex;
+            Debug.Log("load data: " + timeData.eventIndex);
+            TimeControl.Instance.hasShadowSheep = timeData.hasShadowSheep;
+            TimeControl.Instance.hasRunSheep = timeData.hasRunSheep;
+            TimeControl.Instance.hasBuilding = timeData.hasBuilding;
+            TimeControl.Instance.hasEvent = timeData.hasEvent;
+
 
             TimeControl.Instance.sunCtrl.totalSun = sunData.totalSun;
 
