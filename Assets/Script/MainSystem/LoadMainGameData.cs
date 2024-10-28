@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class LoadMainGameData : MonoBehaviour
 {
@@ -18,7 +20,6 @@ public class LoadMainGameData : MonoBehaviour
     {
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
-#endif
         loadData = Resources.Load<TextAsset>("UpdateData/SaveData/Data1");
         if (loadData != null)
         {
@@ -37,6 +38,42 @@ public class LoadMainGameData : MonoBehaviour
         {
             Debug.Log("no load data");
         }
+#else
+        string path = Path.Combine(Application.persistentDataPath, "Data1.txt");
+
+        if (File.Exists(path))
+        {
+            try
+            {
+                // 读取文件内容
+                string loadData = File.ReadAllText(path);
+
+                // 将内容分割为多个 JSON 数据
+                string[] dataStringList = loadData.Split(new string[] { "\n\n" }, StringSplitOptions.None);
+
+                // 反序列化为对应的数据结构
+                timeData = JsonUtility.FromJson<MainTimeData>(dataStringList[0]);
+                sunData = JsonUtility.FromJson<MainSunData>(dataStringList[1]);
+                sheepData = JsonUtility.FromJson<MainSheepData>(dataStringList[2]);
+                storeData = JsonUtility.FromJson<MainStoreData>(dataStringList[3]);
+                hubData = JsonUtility.FromJson<MainHubData>(dataStringList[4]);
+                happyData = JsonUtility.FromJson<MainHappyData>(dataStringList[5]);
+                faithData = JsonUtility.FromJson<MainFaithData>(dataStringList[6]);
+
+                // 设置读取到的数据
+                setValue();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("读取或解析文件失败: " + e.Message);
+            }
+        }
+        else
+        {
+            Debug.Log("未找到存档文件，路径: " + path);
+        }
+#endif
+
     }
 
     public void setValue()
