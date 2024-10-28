@@ -12,4 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1de7f1b0094284abacf4bad6999333, type: 3}
   m_Name: PlotArray 22
   m_EditorClassIdentifier: 
-  plots: []
+  plots:
+  - picture: {fileID: 21300000, guid: fba6c97d68b0a334898e077540822e0b, type: 3}
+    content: "\u7B2C\u4E8C\u5929\u65E9\u4E0A\uFF0C\u5C0F\u9547\u7684\u6CBB\u5B89\u8B66\u5BDF\u4FBF\u767B\u95E8\u62DC\u8BBF\uFF0C\u5411\u4F60\u63CF\u8FF0\u4E86\u51E0\u4E2A\u91CD\u8981\u7684\u60C5\u51B5\uFF1A\n\u4E00\uFF0C<color=red><color=orange>
+      \u5DF4\u5C14</color>\u5373\u5C06\u5728\u4E8C\u5929\u540E\u8FCE\u63A5\u516C\u5F00\u5BA1\u5224\uFF0C\u73B0\u5728\u9080\u8BF7\u4F60\u4F5C\u4E3A\u8BC1\u4EBA\uFF0C\u4EE5\u4FBF\u88C1\u51B3\u3002</color>"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: fba6c97d68b0a334898e077540822e0b, type: 3}
+    content: "\u4E8C\uFF0C\u4ED6\u4EEC\u5728\u795E\u79D8\u4EBA\u7684\u85CF\u533F\u5730\u70B9\u53D1\u73B0\u4E86\u5927\u91CF
+      <color=red> \u79D1\u7814\u6587\u4EF6</color>\uFF0C\u4EE5\u53CA\u5173\u4E8E
+      <color=purple> \u9A86\u4E39\u7236\u6BCD</color>\u7684\u4FE1\u606F\uFF0C\u4ED6\u4EEC\u628A\u8FD9\u4E9B\u7EBF\u7D22\u548C\u6587\u4EF6\u63D0\u4F9B\u7ED9\u4E86\n\u4F60\uFF0C\u5E0C\u671B\u5BF9\u4F60\u6709\u6240\u5E2E\u52A9\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: fba6c97d68b0a334898e077540822e0b, type: 3}
+    content: "\u4E09\uFF0C\u76EE\u524D\u5DF2\u8BC1\u5B9E <color=red> \u5B81\u59C6\u62C9\u739B</color>\u4E0E\u51DD\u5149\u6BBF\u7684\u795E\u804C\u4EBA\u5458\u4E0E\u795E\u79D8\u4EBA\u53D1\u8D77\u7684\u88AD\u51FB\u65E0\u5173\uFF0C\u795E\u79D8\u4EBA\u7684
+      <color=purple> \u7236\u6BCD</color>\u662F\u6781\u7AEF\u4FE1\u5F92\uFF0C\u5728\u4ED6\u5C0F\u65F6\u5019\u56E0\u4E3A\u795E\u50CF\u7684\u62C6\u9664\uFF0C\u4EE5\u8EAB\u6B89\u6559\uFF0C\u6240\u4EE5\u5F15\u8D77\u4ED6\u504F\u6267\u626D\u66F2\u7684\u5FC3\u7406\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: fba6c97d68b0a334898e077540822e0b, type: 3}
+    content: "\u8B66\u5BDF\u8D70\u540E\uFF0C\u6628\u665A\u7684\u4E8B\u513F\u4F9D\u7136\u8426\u7ED5\u7740\u4F60\uFF0C\u4F46\u4F60\u4E5F\u7BA1\u4E0D\u4E86\u8FD9\u4E48\u591A\u4E86\uFF0C\u4E0D\u77E5\u4E0D\u89C9\uFF0C\u9A6C\u4E0A\u5C31\u8981\u5230
+      <color=red>21 \u5929\u4E86</color>\uFF0C\u51B3\u5B9A\u4F60\u672A\u6765\u7684\u65F6\u5019\u3002\n(<color=red>
+      \u6EE1\u610F\u5EA6 +10</color>)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: fba6c97d68b0a334898e077540822e0b, type: 3}
+    content: "\u8B66\u5BDF\u8D70\u540E\uFF0C\u6628\u665A\u7684\u4E8B\u513F\u4F9D\u7136\u8426\u7ED5\u7740\u4F60\uFF0C\u4F46\u4F60\u4E5F\u7BA1\u4E0D\u4E86\u8FD9\u4E48\u591A\u4E86\uFF0C\u4E0D\u77E5\u4E0D\u89C9\uFF0C\u9A6C\u4E0A\u5C31\u8981\u5230
+      <color=red>21 \u5929\u4E86</color>\uFF0C\u51B3\u5B9A\u4F60\u672A\u6765\u7684\u65F6\u5019\u3002\n(<color=red>
+      \u6EE1\u610F\u5EA6 +10</color>)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: "\u9000\u51FA"
+    buttonBtext: 
+    buttonCtext: 
