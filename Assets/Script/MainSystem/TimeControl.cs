@@ -47,7 +47,7 @@ public class TimeControl : MonoBehaviour
     public TextMeshProUGUI dayText;
     public int dayCnt = -1;
 
-    private bool hasShadowSheep = false;
+    public bool hasShadowSheep = false;
     public bool hasRunSheep = false;
     public int[] sheepCnt = new int[3];
 
@@ -159,7 +159,7 @@ public class TimeControl : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("animatN2D");
             PlayerPrefs.Save();
-            event2Control.PlayPlot();
+            //event2Control.PlayPlot();
 
             if (eventIndex == 0)
             {
@@ -386,6 +386,8 @@ public class TimeControl : MonoBehaviour
             }
             else if (!hasMiniGame)
             {
+                //PlayerPrefs.DeleteKey("animatD2N");
+                //PlayerPrefs.Save();
                 checkControl.ShowDailyCheck();
             }
 

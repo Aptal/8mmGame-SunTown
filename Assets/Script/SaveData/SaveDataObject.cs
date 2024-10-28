@@ -13,13 +13,43 @@ public class MainTimeData
     public bool hasMiniGame;
     public int eventOutcome;
     public int researchOutcome;
+    public int eventIndex;
+    public bool hasShadowSheep = false;
+    public bool hasRunSheep = false;
+    public bool[] hasBuilding = new bool[3];
+    public int[] hasEvent = new int[42];
 
-    public MainTimeData(int initialDayCnt, bool hasMiniGame, int eventOutcome, int researchOutcome)
+    public MainTimeData()
     {
-        dayCnt = initialDayCnt;
+        dayCnt = 1;
+        hasMiniGame = true;
+        eventOutcome = 0;
+        researchOutcome = 0;
+        eventIndex = 0;
+        hasShadowSheep = false;
+        hasRunSheep = false;
+        hasBuilding[0] = false;
+        hasBuilding[1] = false;
+        hasBuilding[2] = false;
+        hasEvent = new int[42] { 1, 1, 1, 1, 1, 1, 0,
+                                1, 0, 1, 1, 1, 2, 1,
+                                1, 0, 0, 1, 1, 1, 0,
+                                1, 1, 1, 0, 0, 0, 1,
+                                1, 1, 1, 1, 0, 1, 1,
+                                0, 0, 0, 1, 0, 0, 1};
+    }
+
+    public MainTimeData(int initialDayCnt, bool hasMiniGame, int eventOutcome, int researchOutcome, int eventIndex, bool hasShadowSheep, bool hasRunSheep, bool[] hasBuilding, int[] hasEvent)
+    {
+        this.dayCnt = initialDayCnt;
         this.hasMiniGame = hasMiniGame;
         this.eventOutcome = eventOutcome;
         this.researchOutcome = researchOutcome;
+        this.eventIndex = eventIndex;
+        this.hasShadowSheep = hasShadowSheep;
+        this.hasRunSheep = hasRunSheep;
+        this.hasBuilding = hasBuilding;
+        this.hasEvent = hasEvent;
     }
 }
 
@@ -28,7 +58,7 @@ public class MainSunData
 {
     public int totalSun;
 
-    public MainSunData(int initialTotalSun)
+    public MainSunData(int initialTotalSun = 0)
     {
         totalSun = initialTotalSun;
     }
@@ -49,9 +79,9 @@ public class MainSheepData
     public int productSpeed;
     public int productSpeedLevel;
 
-    public MainSheepData(float initialMoveSpeed, int initialMoveSpeedLevel,
-                         int initialSunLimit, int initialSunLimitLevel,
-                         int initialProductSpeed, int initialProductSpeedLevel)
+    public MainSheepData(float initialMoveSpeed = 0.2f, int initialMoveSpeedLevel = 0,
+                         int initialSunLimit = 20, int initialSunLimitLevel = 0,
+                         int initialProductSpeed = 4, int initialProductSpeedLevel = 0)
     {
         moveSpeed = initialMoveSpeed;
         moveSpeedLevel = initialMoveSpeedLevel;
@@ -76,9 +106,9 @@ public class MainStoreData
     public int popSpeed;
     public int popSpeedLevel;
 
-    public MainStoreData(int initialStoreLimit, int initialStoreLimitLevel,
-                         int initialPushSpeed, int initialPushSpeedLevel,
-                         int initialPopSpeed, int initialPopSpeedLevel)
+    public MainStoreData(int initialStoreLimit = 30, int initialStoreLimitLevel = 0,
+                         int initialPushSpeed = 4, int initialPushSpeedLevel = 0,
+                         int initialPopSpeed = 4, int initialPopSpeedLevel = 0)
     {
         storeLimit = initialStoreLimit;
         storeLimitLevel = initialStoreLimitLevel;
@@ -95,7 +125,7 @@ public class MainHubData
     public int sheep2hubSpeed;
     public int hubSpeedLevel;
 
-    public MainHubData(int initialSheep2hubSpeed, int initialHubSpeedLevel)
+    public MainHubData(int initialSheep2hubSpeed = 12, int initialHubSpeedLevel = 0)
     {
         sheep2hubSpeed = initialSheep2hubSpeed;
         hubSpeedLevel = initialHubSpeedLevel;
@@ -106,7 +136,7 @@ public class MainHappyData
 {
     public int happyValue;
 
-    public MainHappyData(int initialHappyValue)
+    public MainHappyData(int initialHappyValue = 0)
     {
         happyValue = initialHappyValue;
     }
@@ -116,7 +146,7 @@ public class MainFaithData
 {
     public int faithValue;
 
-    public MainFaithData(int initialFaithValue)
+    public MainFaithData(int initialFaithValue = 0)
     {
         faithValue = initialFaithValue;
     }

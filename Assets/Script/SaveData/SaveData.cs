@@ -73,7 +73,7 @@ public class SaveData : MonoBehaviour
         //FaithControl faithInfo = TimeControl.Instance.faithCtrl;
 
 
-        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame, timeInfo.eventOutcome, timeInfo.researchOutcome);
+        MainTimeData timeData = new MainTimeData(timeInfo.dayCnt, timeInfo.hasMiniGame, timeInfo.eventOutcome, timeInfo.researchOutcome, timeInfo.eventIndex, timeInfo.hasShadowSheep, timeInfo.hasRunSheep, timeInfo.hasBuilding, timeInfo.hasEvent);
         MainSunData sunData = new MainSunData(sunInfo.totalSun);
         Debug.Log("info level " + sheepInfo.sunLimitLevel);
         MainSheepData sheepData = new MainSheepData(sheepInfo.moveSpeed, sheepInfo.moveSpeedLevel, 

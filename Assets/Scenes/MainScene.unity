@@ -5090,7 +5090,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 272520023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947047173}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: ClickA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &272520023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10789,7 +10801,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 654729477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693323272}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: ClickB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &654729477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18429,7 +18453,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072984014}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1072984016
 Camera:
   m_ObjectHideFlags: 0
@@ -21190,7 +21214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1287223401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693323272}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: ClickC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287223401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28750,6 +28786,7 @@ MonoBehaviour:
   plotText: {fileID: 1298938865}
   plot2Canvas: {fileID: 1947047168}
   plot3Canvas: {fileID: 1693323267}
+  eventTitle: {fileID: 1500929972}
   eventImg: {fileID: 1844634256}
   backButton: {fileID: 2132977708}
   nextButton: {fileID: 187781329}
@@ -32736,6 +32773,7 @@ MonoBehaviour:
   plotText: {fileID: 286143943}
   plot2Canvas: {fileID: 1947047168}
   plot3Canvas: {fileID: 1693323267}
+  eventTitle: {fileID: 1340116533}
   eventImg: {fileID: 1028781709}
   backButton: {fileID: 671032463}
   nextButton: {fileID: 1640688747}
@@ -34346,7 +34384,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2015675019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947047173}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: ClickB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2015675019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34467,7 +34517,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2016858984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693323272}
+        m_TargetAssemblyTypeName: EventControl, Assembly-CSharp
+        m_MethodName: ClickA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2016858984
 MonoBehaviour:
   m_ObjectHideFlags: 0
