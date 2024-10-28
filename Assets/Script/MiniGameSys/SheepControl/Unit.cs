@@ -16,20 +16,17 @@ public enum PosType
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField]
-    public float moveSpeed = 0.2f;
+    public float moveSpeed = 0.6f;
     [Header("kStore(羊在草地和仓库间的系数，speed*k)")]
-    [SerializeField]
-    protected float kStore = 0.5f;
+
+    protected float kStore = 0.8f;
     [Header("kHub(羊在中枢和仓库间的系数，speed*k)")]
-    [SerializeField]
-    protected float kHub = 0.25f;
+
+    protected float kHub = 0.6f;
     protected Coroutine moveCoroutine;
 
-    [SerializeField]
     public int productV = 1;
 
-    [SerializeField]
     public int sunLimit = 10;
 
     [SerializeField]

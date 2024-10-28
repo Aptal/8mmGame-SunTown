@@ -154,6 +154,10 @@ public class TimeControl : MonoBehaviour
 
     private void Update()
     {
+        for(int i = 0; i < 6; ++i)
+        {
+            Debug.Log(sheepLevelCtrl.limlevel[i] + "   ");
+        }
         JudgeDayEvent();
         JudgeNightEvent();
     }

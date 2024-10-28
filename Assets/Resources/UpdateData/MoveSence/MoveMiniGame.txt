@@ -1,7 +1,7 @@
-{"moveSpeed":0.23999999463558198,"productV":2,"sunLimit":24,"sheepCnt":[5,1,0]}
+{"moveSpeed":0.6000000238418579,"productV":3,"sunLimit":30,"sheepCnt":[8,0,0]}
 
-{"storeLimit":30,"pushSpeed":4,"popSpeed":4}
+{"storeLimit":60,"pushSpeed":5,"popSpeed":5}
 
-{"sheep2hubSpeed":12,"gotSun":0}
+{"sheep2hubSpeed":50,"gotSun":0}
 
-{"cnt":3,"ID":[11,17,8],"U":[3,5,3],"V":[5,10,8]}
+{"cnt":0,"ID":[],"U":[],"V":[]}

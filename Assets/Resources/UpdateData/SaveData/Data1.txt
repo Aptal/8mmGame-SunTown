@@ -1,13 +1,13 @@
-{"dayCnt":6,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":10,"hasShadowSheep":true,"hasRunSheep":false,"hasBuilding":[true,true,false],"hasEvent":[0,0,0,0,0,0,0,0,0,0,0,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
+{"dayCnt":1,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":0,"hasShadowSheep":false,"hasRunSheep":false,"hasBuilding":[false,false,false],"hasEvent":[0,1,1,1,1,1,0,1,0,1,1,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
 
-{"totalSun":1900}
+{"totalSun":0}
 
-{"moveSpeed":0.23999999463558198,"moveSpeedLevel":1,"sunLimit":24,"sunLimitLevel":1,"productSpeed":4,"productSpeedLevel":0}
+{"moveSpeed":0.6000000238418579,"moveSpeedLevel":0,"sunLimit":30,"sunLimitLevel":0,"productSpeed":3,"productSpeedLevel":0}
 
-{"storeLimit":30,"storeLimitLevel":0,"pushSpeed":4,"pushSpeedLevel":0,"popSpeed":4,"popSpeedLevel":0}
+{"storeLimit":60,"storeLimitLevel":0,"pushSpeed":5,"pushSpeedLevel":0,"popSpeed":5,"popSpeedLevel":0}
 
-{"sheep2hubSpeed":12,"hubSpeedLevel":0}
+{"sheep2hubSpeed":50,"hubSpeedLevel":0}
 
-{"happyValue":15}
+{"happyValue":0}
 
 {"faithValue":0}

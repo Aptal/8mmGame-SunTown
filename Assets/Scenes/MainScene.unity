@@ -17470,12 +17470,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb013fb3cd232d343a827b8de0346ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheep2hubSpeed: 3
+  sheep2hubSpeed: 50
   hubSpeedLevel: 0
-  hublevel: 0c0000000e0000001100000015000000190000001e000000
+  hublevel: 3200000064000000c80000000f2700000f2700000f270000
   fixSunCost: 0
   delSunCost: 0
-  upLevelCost: 00000000e8030000d0070000
+  upLevelCost: 00000000b80b000070170000
 --- !u!114 &1027531305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17514,22 +17514,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3734746375c7cf3448ac87e08bc1438e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
+  moveSpeed: 0.5
   moveSpeedLevel: 0
   speedlevel:
-  - 0.2
-  - 0.24
-  - 0.288
-  - 0.35
-  - 0.41
-  - 0.5
-  sunLimit: 10
-  limlevel: 14000000180000001d000000230000002900000032000000
+  - 0.6
+  - 0.72
+  - 0.86
+  - 1
+  - 1.2
+  - 1.5
+  sunLimit: 30
+  limlevel: 1e000000240000002b000000340000003e0000004b000000
   sunLimitLevel: 0
-  productSpeed: 4
-  prolevel: 040000000500000006000000070000000800000009000000
+  productSpeed: 2
+  prolevel: 030000000400000005000000060000000700000008000000
   productSpeedLevel: 0
-  upLevelCost: 0000000064000000c80000009001000020030000dc050000
+  upLevelCost: 00000000f4010000e8030000dc050000d0070000c4090000
 --- !u!114 &1027531308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17542,16 +17542,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fb04dbb6e56c548a537ebf8e496662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeLimit: 10
+  storeLimit: 60
   storeLimitLevel: 0
-  stlimlevel: 1e000000240000002b000000340000003e0000004b000000
-  pushSpeed: 4
+  stlimlevel: 3c0000004b0000005d0000007500000092000000b7000000
+  pushSpeed: 5
   pushSpeedLevel: 0
-  pushlevel: 040000000500000006000000070000000800000009000000
-  popSpeed: 4
+  pushlevel: 050000000600000008000000090000000a0000000c000000
+  popSpeed: 5
   popSpeedLevel: 0
-  poplevel: 040000000500000006000000070000000800000009000000
-  upLevelCost: 00000000c80000009001000020030000
+  poplevel: 050000000600000008000000090000000a0000000c000000
+  upLevelCost: 00000000e8030000d0070000b80b0000
 --- !u!114 &1027531309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17564,7 +17564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b938aeaac181d498e520290e1a0182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalSun: 200
+  totalSun: 0
   thsSun: {fileID: 1530395781}
   hunSun: {fileID: 1930524899}
   tenSun: {fileID: 1115463405}

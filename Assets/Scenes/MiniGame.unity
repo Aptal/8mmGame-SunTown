@@ -7876,7 +7876,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 75819, y: 42797, z: 0}
-  m_LocalScale: {x: 34.663055, y: 28.39291, z: 77.75799}
+  m_LocalScale: {x: 35, y: 28, z: 77.75799}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1827299114}
@@ -7991,8 +7991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowImg: {fileID: 1577777857}
-  defaultRotationSpeed: 5
-  rotationSpeed: 0
+  defaultRotationSpeed: 2.5
+  rotationSpeed: 2.5
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -8017,9 +8017,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  randomEffectStart1: 175
+  randomEffectStart1: 140
   randomEffectStart2: 100
-  effectRecoverStart1: 145
+  effectRecoverStart1: 110
   effectRecoverStart2: 70
   effectIcon: {fileID: 730899280}
   vFastSound: {fileID: 8300000, guid: 6d929fbee593178458820bad13486d16, type: 3}
