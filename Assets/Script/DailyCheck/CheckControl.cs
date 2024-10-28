@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CheckControl : MonoBehaviour
 {
     public Canvas checkCanvas;
+    public Canvas n2DayCanvas;
 
     public Sprite[] slidSprite;
     public Image happyImg;
@@ -78,6 +79,7 @@ public class CheckControl : MonoBehaviour
         TimeControl.Instance.researchOutcome = 0;
         checkCanvas.gameObject.SetActive(false);
 
+        n2DayCanvas.gameObject.SetActive(true);
         TimeControl.Instance.NewDay();
     }
 }

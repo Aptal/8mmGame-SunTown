@@ -12,4 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1de7f1b0094284abacf4bad6999333, type: 3}
   m_Name: PlotArray 17
   m_EditorClassIdentifier: 
-  plots: []
+  plots:
+  - picture: {fileID: 21300000, guid: cd4e78d62623e244b9c4cf478aaff20f, type: 3}
+    content: "\u591C\u665A\u7761\u4E0D\u7740\u7684\u4F60\u8FD8\u5728\u5E8A\u4E0A\u56DE\u60F3\u8FD9\u51E0\u5929\u53D1\u751F\u7684\u4E8B\u513F\uFF0C\u795E\u79D8\u7684\u9ED1\u8863\u4EBA\u5230\u5E95\u662F\u8C01\uFF1F\u90A3\u7EA2\u53D1\u5C11\u5973\u4E3A\u4EC0\u4E48\u8FD9\u4E48\u4E86\u89E3\u4F60\uFF1F\u8FD9\u65F6\uFF0C\u4E00\u4E2A\u58F0\u97F3\u76F4\u63A5\u4ECE\u4F60\u7684\u79FB\u52A8\u8BBE\u5907\u4E2D\u4F20\u6765\n\u4E0D\u7528\u60F3\uFF0C\u8FD9\u6837\u975E\u8BF7\u5C31\u6765\u7684\u7535\u8BDD\uFF0C\u53EA\u80FD\u662F
+      <color=purple> \u9A86\u4E39</color>\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: cd4e78d62623e244b9c4cf478aaff20f, type: 3}
+    content: "\u9A86\u4E39\uFF1A\u662F\u6B63\u4E8B\u513F\uFF01\u4E0A\u6B21\u4F60\u9047\u5230\u7684\u9ED1\u8863\u4EBA\uFF0C\u6211\u627E\u5230\u4ED6\u7684\u4F4D\u7F6E\u4E86\uFF01\u4ED6\u5C31\u85CF\u5728\u7267\u533A\u7684\u4E00\u4E2A\u5E9F\u5F03\u4ED3\u5E93\u91CC\u3002\n\u4F60\u51B3\u5B9A\u660E\u665A\u51FA\u53D1\u3002\n(\u660E\u665A\u4E5F\u8BB8\u4F1A\u6709
+      < color=red> \u60CA\u559C</color>\u53D1\u751F\u5462)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: cd4e78d62623e244b9c4cf478aaff20f, type: 3}
+    content: "\u9A86\u4E39\uFF1A\u662F\u6B63\u4E8B\u513F\uFF01\u4E0A\u6B21\u4F60\u9047\u5230\u7684\u9ED1\u8863\u4EBA\uFF0C\u6211\u627E\u5230\u4ED6\u7684\u4F4D\u7F6E\u4E86\uFF01\u4ED6\u5C31\u85CF\u5728\u7267\u533A\u7684\u4E00\u4E2A\u5E9F\u5F03\u4ED3\u5E93\u91CC\u3002\n\u4F60\u51B3\u5B9A\u660E\u665A\u51FA\u53D1\u3002\n(\u660E\u665A\u4E5F\u8BB8\u4F1A\u6709
+      < color=red> \u60CA\u559C</color>\u53D1\u751F\u5462)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: "\u9000\u51FA"
+    buttonBtext: 
+    buttonCtext: 

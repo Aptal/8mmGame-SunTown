@@ -445,8 +445,6 @@ public class EventControl : MonoBehaviour
             // 事件面板关闭
             plotCanvas.gameObject.SetActive(false);
 
-            TimeControl.Instance.eventIndex++;
-
             TimeControl.Instance.UpdateUI();
             // 夜晚进入结算
             if(TimeControl.Instance.eventIndex % 2 != 0)
@@ -457,6 +455,8 @@ public class EventControl : MonoBehaviour
             {
                 
             }
+
+            TimeControl.Instance.eventIndex++;
         }
     }
 

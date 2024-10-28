@@ -12,4 +12,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1de7f1b0094284abacf4bad6999333, type: 3}
   m_Name: PlotArray 12
   m_EditorClassIdentifier: 
-  plots: []
+  plots:
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "\u4F60\u79BB\u5F00\u795E\u5E99\u540E <color=purple> \u9A86\u4E39</color>\u5C31\u7B2C\u4E00\u65F6\u95F4\u7ED9\u4F60\u53D1\u4E86\u6D88\u606F\uFF0C\u8BA9\u4F60\u6765\u89C1\u4ED6\u3002\n\u4F60\u8D76\u5230\u4E86\u7814\u7A76\u6240
+      <color=purple> \u9A86\u4E39</color>\u7684\u5B9E\u9A8C\u5BA4\uFF0C<color=purple>
+      \u9A86\u4E39</color>\u4F3C\u4E4E\u6CA1\u6CE8\u610F\u5230\u4F60\uFF0C\u4ED6\u6B63\u770B\u7740\u4E00\u5F20\u5408\u7167\uFF0C\u6B63\u662F\u4F60\u6628\u665A\u53BB\u7684\u623F\u5B50\u91CC\u7684\u90A3\u4E00\u5BB6\u4E09\u53E3\u7684\u7167\u7247\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "<color=purple> \u9A86\u4E39</color>\uFF1A\u4F60\u53EF\u80FD\u5DF2\u7ECF\u53D1\u73B0\u4E86\uFF0C\u4F60\u53BB\u7684\uFF0C\u662F\u6211\u4EE5\u524D\u7684\u5BB6\u3002<color=red>
+      \u7238\u7238\u5988\u5988</color>\u5931\u8E2A\u4EE5\u540E\uFF0C\u6211\u5C31\u642C\u6765\u8FD9\u513F\u4E86\u2026
+      \u4E0D\u8FC7\u4E5F\u633A\u597D\u7684\uFF0C\u65B9\u4FBF\u505A\u7814\u7A76\u561B\u2026\n\u4F60\u770B\u5230
+      <color=purple> \u9A86\u4E39</color>\u773C\u91CC\uFF0C\u4F3C\u4E4E\u95EA\u70C1\u7740\u4E00\u4E9B\u6CEA\u5149\uFF0C\u8BED\u6C14\u4E5F\u4E0D\u5982\u4EE5\u5F80\u575A\u5B9A\u679C\u51B3\uFF0C\u5C31\u50CF\u662F\u4ED6\u8FD9\u4E48\u5927\u5B69\u5B50\u8BE5\u6709\u7684\u60B2\u4F24\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "<color=purple> \u9A86\u4E39</color>\uFF1A\u6211\u60F3\u8BF7\u4F60\u5E2E\u4E2A\u5FD9\u3002\u627E\u5230\u4ED6\u4EEC\uFF01\u4E0D\u4EC5\u4EC5\u662F\u4E3A\u4E86\u6211\uFF0C\u6211\u7238\u7238\u662F\u8BBE\u8BA1
+      <color=red> \u5149\u80FD\u4E2D\u67A2</color>\u7684\u4EBA\uFF0C\u4ED6\u638C\u63E1\u7740
+      <color=red> \u5149\u80FD\u4E2D\u67A2</color>\u7684\u6838\u5FC3\u6280\u672F\uFF0C\u6216\u8BB8\u80FD\u5E2E\u5230\u4F60\u3002\n\u4F60\u70B9\u4E86\u70B9\u5934\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "<color=purple> \u9A86\u4E39</color>\uFF1A\u4ED6\u4EEC\u5728\u51E0\u4E2A\u6708\u524D\u5931\u8E2A\uFF0C\u968F\u540E\u5149\u4F0F\u677F\u4FBF\u906D\u635F\u574F\u3002\u6211\u4E0D\u76F8\u4FE1\u662F\u6240\u8C13\u795E\u7684\u5929\u8C34\uFF0C\u56E0\u6B64\u8C03\u53D6\u4E86\u5468\u8FB9\u6240\u6709\u76D1\u63A7\uFF0C\u53D1\u73B0\u4E00\u4E2A\u4EBA\u5F71\uFF0C\u6B63\u662F\u6628\u665A\u7684\u9ED1\u8863\u4EBA\u3002\u73B0\u5728\u770B\u6765\uFF0C\u4ED6\u4E5F\u5728\u5BFB\u627E\u6211\u7238\u7238\uFF0C\u90A3\u4ED6\u6216\u8BB8\u77E5\u9053\u6211\u7238\u7238\u7684\u4E0B\u843D\u3002\u82E5\u6709\u65B0\u7EBF\u7D22\u6211\u4F1A\u8054\u7CFB\u4F60\uFF0C\u8FD9\u4E9B\u4E1C\u897F\u7ED9\u4F60\uFF0C\u6216\u8BB8\u5BF9\u4F60\u6709\u7528\u3002"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "\u4ED6\u9001\u7ED9\u4F60\u4E86 500 \u70B9\u4FBF\u643A\u5F0F <color=red>
+      \u5149\u80FD</color>\uFF0C\u4E00\u628A\u6CF0\u745F\u67AA\uFF0C\u4EE5\u53CA\u4E00\u5757\u5149\u4F0F\u677F\u539F\u4EF6\n(\u4F60\u83B7\u5F97\u4E86
+      500 \u70B9 < color=red> \u5149\u80FD</color>)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: 
+    buttonBtext: 
+    buttonCtext: 
+  - picture: {fileID: 21300000, guid: 5aa080670303e5941866c85522fdbb7f, type: 3}
+    content: "\u4ED6\u9001\u7ED9\u4F60\u4E86 500 \u70B9\u4FBF\u643A\u5F0F <color=red>
+      \u5149\u80FD</color>\uFF0C\u4E00\u628A\u6CF0\u745F\u67AA\uFF0C\u4EE5\u53CA\u4E00\u5757\u5149\u4F0F\u677F\u539F\u4EF6\n(\u4F60\u83B7\u5F97\u4E86
+      500 \u70B9 < color=red> \u5149\u80FD</color>)"
+    choiceAtext: 
+    choiceBtext: 
+    choiceCtext: 
+    buttonAtext: "\u9000\u51FA"
+    buttonBtext: 
+    buttonCtext: 

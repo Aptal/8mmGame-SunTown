@@ -1,4 +1,4 @@
-{"dayCnt":2,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":1}
+{"dayCnt":2,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":2,"hasShadowSheep":false,"hasRunSheep":false,"hasBuilding":[false,false,false],"hasEvent":[0,0,1,1,1,1,0,1,0,1,1,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
 
 {"totalSun":450}
 
