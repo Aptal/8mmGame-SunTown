@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         // 毁坏一条路
         DestoryRoad();
 
-        timer1.SetDuration(35).Begin();
+        timer1.SetDuration(120).Begin();
 
         // 初始化羊的位置
         PlaceSheepOnGrass();

@@ -7,7 +7,7 @@ public class ShadowControl : MonoBehaviour
     [SerializeField] private SpriteRenderer shadowImg;
     [SerializeField]
     [Header("旋转速度（度数/秒）")]
-    private float defaultRotationSpeed = -3f; // 默认速度：逆时针，3度/秒
+    private float defaultRotationSpeed = -1.5f; // 默认速度：逆时针，3度/秒
 
     [SerializeField]
     [Header("当前旋转速度（度数/秒）")]

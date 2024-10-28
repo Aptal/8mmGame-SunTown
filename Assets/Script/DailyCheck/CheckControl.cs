@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CheckControl : MonoBehaviour
 {
     public Canvas checkCanvas;
-    public Canvas n2DayCanvas;
 
     public Sprite[] slidSprite;
     public Image happyImg;
@@ -79,7 +79,8 @@ public class CheckControl : MonoBehaviour
         TimeControl.Instance.researchOutcome = 0;
         checkCanvas.gameObject.SetActive(false);
 
-        n2DayCanvas.gameObject.SetActive(true);
+        //TimeControl.Instance.n2day.PlayAnimation();
         TimeControl.Instance.NewDay();
+        SceneManager.LoadScene(1);
     }
 }

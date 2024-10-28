@@ -159,8 +159,10 @@ public class EventControl : MonoBehaviour
             backButton.interactable = true;
             InitTitle();
         }
-        Debug.Log("123:  "+plotIndex);
+        Debug.Log("plotIndex:  " + plotIndex);
         PlotNode plotnode = plot[plotIndex].plots[Mathf.Clamp(index, 0, plot[plotIndex].plots.Length - 1)];
+
+        eventImg.sprite = plotnode.picture;
 
         if(clickedButton == -1)
         {
@@ -453,10 +455,9 @@ public class EventControl : MonoBehaviour
             }
             else
             {
-                
+                //TimeControl.Instance.eventIndex++;
             }
 
-            TimeControl.Instance.eventIndex++;
         }
     }
 

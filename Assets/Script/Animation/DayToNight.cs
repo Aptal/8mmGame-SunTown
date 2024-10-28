@@ -16,7 +16,7 @@ public class AnimationControllerDayToNight : MonoBehaviour
         if (stateInfo.length > 0 && stateInfo.normalizedTime >= 1f)
         {
             // ∂Øª≠≤•∑≈ÕÍ±œ
-            Debug.Log("Animation completed!");
+            Debug.Log("d2n Animation completed!");
             if (timePassCanvas != null)
             {
                 PlayerPrefs.SetString("animatD2N", "yes");

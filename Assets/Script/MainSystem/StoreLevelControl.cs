@@ -5,22 +5,22 @@ using UnityEngine;
 public class StoreLevelControl : MonoBehaviour
 {
     // 存储上限
-    public int storeLimit = 30;
+    public int storeLimit = 60;
     public int storeLimitLevel = 0;
-    public int[] stlimlevel = new int[6] { 30, 36, 43, 52, 62, 75 };
+    public int[] stlimlevel = new int[6] { 60, 75, 93, 117, 146, 183 };
 
     // 储存速度
-    public int pushSpeed = 4;
+    public int pushSpeed = 5;
     public int pushSpeedLevel = 0;
-    public int[] pushlevel = new int[6] { 4, 5, 6, 7, 8, 9 };
+    public int[] pushlevel = new int[6] { 5, 6, 8, 9, 10, 12 };
 
     // 取出速度
-    public int popSpeed = 4;
+    public int popSpeed = 5;
     public int popSpeedLevel = 0;
-    public int[] poplevel = new int[6] { 4, 5, 6, 7, 8, 9 };
+    public int[] poplevel = new int[6] { 5, 6, 8, 9, 10, 12 };
 
     //升级阳光花费
-    public int[] upLevelCost = new int[4] { 0, 200, 400, 800 };
+    public int[] upLevelCost = new int[4] { 0, 1000, 2000, 3000 };
 
 
     public void UpdateInfo()
