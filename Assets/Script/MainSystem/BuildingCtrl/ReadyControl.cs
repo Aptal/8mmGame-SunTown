@@ -190,7 +190,11 @@ public class ReadyControl : MonoBehaviour
 
     public void InitMiniGameData()
     {
-        string path = "Assets/Resources/UpdateData/MoveSence";
+#if UNITY_EDITOR
+        string path = "Assets/Resources/UpdateData/SaveData";
+#else
+        string path = Application.persistentDataPath;
+#endif
         string name = "MoveMiniGame.txt";
         string info = LogMiniGameData();
 

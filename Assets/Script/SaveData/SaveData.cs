@@ -31,15 +31,11 @@ public class SaveData : MonoBehaviour
     {
         try
         {
-            StreamWriter sw;
-            FileInfo fi = new FileInfo(path + "//" + name);
-
-            // rewrite info, add info can use fi.AppendText()
-            sw = fi.CreateText();
-
-            sw.WriteLine(info);
-            sw.Close();
-            sw.Dispose();
+            string fullPath = Path.Combine(path, name);
+            using (StreamWriter sw = new StreamWriter(fullPath, false))  // 覆盖写入
+            {
+                sw.WriteLine(info);
+            }
             return true;
         }
         catch (UnauthorizedAccessException)
@@ -47,9 +43,9 @@ public class SaveData : MonoBehaviour
             Debug.LogError("创建或打开文件失败，没有足够权限访问文件路径：" + path);
             return false;
         }
-        catch (FileNotFoundException)
+        catch (Exception ex)
         {
-            Debug.LogError("创建或打开文件失败，文件不存在：" + path);
+            Debug.LogError("创建或打开文件失败，错误信息：" + ex.Message);
             return false;
         }
     }
@@ -102,7 +98,11 @@ public class SaveData : MonoBehaviour
     public void SaveData1()
     {
         // create file before continue Game
+#if UNITY_EDITOR
         string path = "Assets/Resources/UpdateData/SaveData";
+#else
+        string path = Application.persistentDataPath;
+#endif
         string name = "Data1.txt";
         string info = LogMainGameData();
 

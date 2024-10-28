@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 public class InitMiniGameData : MonoBehaviour
 {
@@ -21,16 +23,42 @@ public class InitMiniGameData : MonoBehaviour
     {
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
-#endif
         loadData = Resources.Load<TextAsset>("UpdateData/MoveSence/MoveMiniGame");
         if (loadData != null)
         {
-            string[] dataStringList = loadData.text.Split(new string[] {"\n\n"}, System.StringSplitOptions.None);
+            string[] dataStringList = loadData.text.Split(new string[] { "\n\n" }, System.StringSplitOptions.None);
             unitData = JsonUtility.FromJson<UnitData>(dataStringList[0]);
             storeData = JsonUtility.FromJson<StoreData>(dataStringList[1]);
             hubData = JsonUtility.FromJson<HubData>(dataStringList[2]);
             roadData = JsonUtility.FromJson<RoadData>(dataStringList[3]);
         }
+#else
+        string path = Path.Combine(Application.persistentDataPath, "MoveMiniGame.txt");
+
+        if (File.Exists(path))
+        {
+            try
+            {
+                string loadData = File.ReadAllText(path);
+                string[] dataStringList = loadData.Split(new string[] { "\n\n" }, System.StringSplitOptions.None);
+
+                // Deserialize each segment of JSON data
+                unitData = JsonUtility.FromJson<UnitData>(dataStringList[0]);
+                storeData = JsonUtility.FromJson<StoreData>(dataStringList[1]);
+                hubData = JsonUtility.FromJson<HubData>(dataStringList[2]);
+                roadData = JsonUtility.FromJson<RoadData>(dataStringList[3]);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("读取或解析文件失败: " + e.Message);
+            }
+        }
+        else
+        {
+            Debug.LogError("数据文件未找到，路径: " + path);
+        }
+#endif
+
     }
 
     public void setValue()

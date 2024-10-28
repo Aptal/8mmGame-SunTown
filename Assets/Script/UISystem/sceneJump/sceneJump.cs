@@ -113,7 +113,11 @@ public class sceneJump : MonoBehaviour
     
     public void LoadInitData()
     {
+#if UNITY_EDITOR
         string path = "Assets/Resources/UpdateData/SaveData";
+#else
+        string path = Application.persistentDataPath;
+#endif
         string name = "Data1.txt";
         string info = InitMainGameData();
 
@@ -136,7 +140,11 @@ public class sceneJump : MonoBehaviour
     // button click
     public void JumpToMiniGame()
     {
-        string path = "Assets/Resources/UpdateData/MoveSence";
+#if UNITY_EDITOR
+        string path = "Assets/Resources/UpdateData/SaveData";
+#else
+        string path = Application.persistentDataPath;
+#endif
         string name = "MoveMiniGame.txt";
         string info = LogMiniGameData();
 
