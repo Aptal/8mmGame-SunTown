@@ -5540,7 +5540,7 @@ MonoBehaviour:
     SL \u516C\u53F8\u6807\u5FD7\uFF0C\u9634\u5F71\u906E\u853D\u534A\u4E2A\u5C0F\u9547\u3002\u65E0\u4EBA\u77E5\u6653\u4F60\u7684\u5230\u6765\uFF0C\u6B63\u5F53\u4F60\u65E0\u6240\u9002\u4ECE\uFF0C\u4E00\u58F0\u72D7\u53EB\u6253\u65AD\u4E86\u4F60\u7684\u6CE8\u89C6\u3002"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
-  m_sharedMaterial: {fileID: 4224046015095895931, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
+  m_sharedMaterial: {fileID: 6694491273272982069, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10754,7 +10754,7 @@ MonoBehaviour:
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728\uFF0C\u4E0D\u6559\u80E1\u9A6C\u5EA6\u9634\u5C71\uFF08\u53EF\u80FD\u4F1A\u51FA\u4E8B\u513F\uFF09"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
-  m_sharedMaterial: {fileID: 4224046015095895931, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
+  m_sharedMaterial: {fileID: 6694491273272982069, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22070,7 +22070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1327689254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22424,7 +22424,7 @@ MonoBehaviour:
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
-  m_sharedMaterial: {fileID: 4224046015095895931, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
+  m_sharedMaterial: {fileID: 6694491273272982069, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -32998,7 +32998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1947047169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35469,7 +35469,7 @@ MonoBehaviour:
   m_text: "\u4F46\u4F7F\u9F99\u57CE\u98DE\u5C06\u5728\uFF0C\u4E0D\u6559\u80E1\u9A6C\u5EA6\u9634\u5C71\uFF08\u53EF\u80FD\u4F1A\u51FA\u4E8B\u513F\uFF09"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
-  m_sharedMaterial: {fileID: 4224046015095895931, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
+  m_sharedMaterial: {fileID: 6694491273272982069, guid: 9eb8f1c151279634194af0770c6494a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

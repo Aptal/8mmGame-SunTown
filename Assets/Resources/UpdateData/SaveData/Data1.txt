@@ -1,6 +1,6 @@
-{"dayCnt":2,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":1}
+{"dayCnt":1,"hasMiniGame":true,"eventOutcome":0,"researchOutcome":0,"eventIndex":0,"hasShadowSheep":false,"hasRunSheep":false,"hasBuilding":[false,false,false],"hasEvent":[1,1,1,1,1,1,0,1,0,1,1,1,2,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1]}
 
-{"totalSun":450}
+{"totalSun":0}
 
 {"moveSpeed":0.20000000298023225,"moveSpeedLevel":0,"sunLimit":20,"sunLimitLevel":0,"productSpeed":4,"productSpeedLevel":0}
 
