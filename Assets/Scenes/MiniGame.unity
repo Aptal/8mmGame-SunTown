@@ -7991,8 +7991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowImg: {fileID: 1577777857}
-  defaultRotationSpeed: 2.5
-  rotationSpeed: 2.5
+  defaultRotationSpeed: 1.5
+  rotationSpeed: 1.5
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -8017,10 +8017,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  randomEffectStart1: 140
-  randomEffectStart2: 100
-  effectRecoverStart1: 110
-  effectRecoverStart2: 70
+  randomEffectStart1: 130
+  randomEffectStart2: 70
+  effectRecoverStart1: 100
+  effectRecoverStart2: 40
   effectIcon: {fileID: 730899280}
   vFastSound: {fileID: 8300000, guid: 6d929fbee593178458820bad13486d16, type: 3}
   vLowSound: {fileID: 8300000, guid: 6d929fbee593178458820bad13486d16, type: 3}

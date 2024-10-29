@@ -141,7 +141,7 @@ public class sceneJump : MonoBehaviour
     public void JumpToMiniGame()
     {
 #if UNITY_EDITOR
-        string path = "Assets/Resources/UpdateData/SaveData";
+        string path = "Assets/Resources/UpdateData/MoveSence";
 #else
         string path = Application.persistentDataPath;
 #endif

@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: bda90b3d8cc50fd41b9462ee2dcaa84c, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -104,7 +106,7 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
-  fullscreenMode: 1
+  fullscreenMode: 3
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -745,11 +747,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5a27e1bb-1e37-4b02-8d09-03b0c9f661ee
+  cloudProjectId: fcff9f98-843f-4e64-b8e3-b27da08971d4
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: SumSheepTown
-  organizationId: wechat_os_qy01hawlklvdpixzgjcsnxobs
+  projectName: SumSheep
+  organizationId: wechat_os_qy04dyns0c9wlm_g6e4_h0rkg
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

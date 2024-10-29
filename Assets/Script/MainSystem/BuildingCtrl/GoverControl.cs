@@ -18,7 +18,7 @@ public class GoverControl : MonoBehaviour
 
     public void GoverButton()
     {
-        if (TimeControl.Instance.happyCtrl.happyValue >= 75)
+        if (TimeControl.Instance.happyCtrl.happyValue >= 50)
         {
             imageRoadFix.enabled = true;
             TimeControl.Instance.canFix = true;
