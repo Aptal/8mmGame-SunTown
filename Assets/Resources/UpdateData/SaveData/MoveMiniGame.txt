@@ -1,0 +1,7 @@
+{"moveSpeed":0.6000000238418579,"productV":3,"sunLimit":30,"sheepCnt":[8,0,0]}
+
+{"storeLimit":60,"pushSpeed":5,"popSpeed":5}
+
+{"sheep2hubSpeed":50,"gotSun":0}
+
+{"cnt":0,"ID":[],"U":[],"V":[]}

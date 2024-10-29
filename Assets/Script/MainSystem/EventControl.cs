@@ -41,100 +41,99 @@ public class EventControl : MonoBehaviour
             backButton.interactable = false;
         }
     }
-
     void InitTitle()
     {
         switch (plotIndex)
         {
             case 1:
-                eventTitle.text = "Ô¶µÀ¶øÀ´";
+                eventTitle.text = "è¿œé“è€Œæ¥";
                 break;
             case 2:
-                eventTitle.text = "ÖÚÊ¸Ö®µÄ";
+                eventTitle.text = "å¥½å¥½ä¼‘æ¯";
                 break;
             case 3:
-                eventTitle.text = "¹âµÄ×ÓÃñ";
+                eventTitle.text = "å…‰çš„å­æ°‘";
                 break;
             case 4:
-                eventTitle.text = "ÄÃ¾ÆÀ´£¡";
+                eventTitle.text = "æ‹¿é…’æ¥ï¼";
                 break;
             case 5:
-                eventTitle.text = "Ìì²Å³öÉÙÄê";
+                eventTitle.text = "å¤©æ‰å‡ºå°‘å¹´";
                 break;
             case 6:
-                eventTitle.text = "¡°È¥£¬¼ñ»ØÀ´¡±";
+                eventTitle.text = "å»ï¼Œæ¡å›æ¥";
                 break;
             case 7:
-                eventTitle.text = "ÂäÆÇµÄÓ¢ĞÛ";
+                eventTitle.text = "è½é­„çš„è‹±é›„";
                 break;
             case 8:
-                eventTitle.text = "ÒÅÁôµÄ²Æ²ú";
+                eventTitle.text = "é—ç•™çš„è´¢äº§";
                 break;
             case 9:
-                eventTitle.text = "°§µ¿";
+                eventTitle.text = "å“€æ‚¼";
                 break;
             case 10:
-                eventTitle.text = "½ô¼±µÄ¿ìµİ";
+                eventTitle.text = "ç´§æ€¥çš„å¿«é€’";
                 break;
             case 11:
-                eventTitle.text = "Àë¹â×î½üµÄµØ·½";
+                eventTitle.text = "ç¦»å…‰æœ€è¿‘çš„åœ°æ–¹";
                 break;
             case 12:
-                eventTitle.text = "Ôø¾­µÄĞÒ¸£";
+                eventTitle.text = "æ›¾ç»çš„å¹¸ç¦";
                 break;
             case 13:
-                eventTitle.text = "ÑòÓëÈ®";
+                eventTitle.text = "ç¾Šä¸çŠ¬";
                 break;
             case 14:
-                eventTitle.text = "¿µ¸´Èç³õ";
+                eventTitle.text = "åº·å¤å¦‚åˆ";
                 break;
             case 15:
-                eventTitle.text = "Ò»±ÊÖµµÃµÄ½»Ò×";
+                eventTitle.text = "ä¸€ç¬”å€¼å¾—çš„äº¤æ˜“";
                 break;
             case 16:
-                eventTitle.text = "²¢·Ç²»¿ÉÄÜ";
+                eventTitle.text = "å¹¶éä¸å¯èƒ½";
                 break;
             case 17:
-                eventTitle.text = "ĞÂµÄÏßË÷";
+                eventTitle.text = "æ–°çš„çº¿ç´¢";
                 break;
             case 18:
-                eventTitle.text = "±Æ½üÕæÏà";
+                eventTitle.text = "é€¼è¿‘çœŸç›¸";
                 break;
             case 19:
-                eventTitle.text = "Ö¸ÒıÄãµÄ¹â";
+                eventTitle.text = "æŒ‡å¼•ä½ çš„å…‰";
                 break;
             case 20:
-                eventTitle.text = "ÄãµÄÉí±ß";
+                eventTitle.text = "ä½ çš„èº«è¾¹";
                 break;
             case 21:
-                eventTitle.text = "ÈÕÂä½ğ»Æ";
+                eventTitle.text = "æ—¥è½é‡‘é»„-æ—¶å…‰æµé€-ä¸å¯é¥¶æ•";
                 break;
             case 22:
-                eventTitle.text = "İÓÈÆµÄĞÄĞ÷";
+                eventTitle.text = "è¦ç»•çš„å¿ƒç»ª";
                 break;
             case 23:
-                eventTitle.text = "Ò£Ô¶µÄÔ¶·½";
+                eventTitle.text = "é¥è¿œçš„è¿œæ–¹";
                 break;
             case 24:
-                eventTitle.text = "×îºóÒ»Ãæ";
+                eventTitle.text = "æœ€åä¸€é¢";
                 break;
             case 25:
-                eventTitle.text = "Ò»±Ê¸üÖµµÃµÄ½»Ò×";
+                eventTitle.text = "ä¸€ç¬”æ›´å€¼å¾—çš„äº¤æ˜“";
                 break;
             case 26:
-                eventTitle.text = "¹âµÄÄ§·¨";
+                eventTitle.text = "å…‰çš„é­”æ³•";
                 break;
             case 27:
-                eventTitle.text = "ÉóÅĞ";
+                eventTitle.text = "å®¡åˆ¤";
                 break;
             case 28:
-                eventTitle.text = "ÖÕÇú1";
+                eventTitle.text = "ç»ˆæ›²1";
                 break;
             case 29:
-                eventTitle.text = "ÖÕÇú2";
+                eventTitle.text = "ç»ˆæ›²2";
                 break;
             default:
-                eventTitle.text = "ÄÁ¹âÖ®µØ";
+                eventTitle.text = "æ— äº‹å‘ç”Ÿ";
                 break;
         }
         Debug.Log("index " + plotIndex + "   text " + eventTitle.text);
@@ -184,7 +183,7 @@ public class EventControl : MonoBehaviour
             }
         }
 
-        if(plotnode.buttonAtext != "ÍË³ö")
+        if(plotnode.buttonAtext != "é€€å‡º")
         {
             buttonText[0].text = plotnode.buttonAtext;
             if (plotnode.buttonAtext != "")
@@ -199,7 +198,7 @@ public class EventControl : MonoBehaviour
             }
         }
 
-        if (plotnode.buttonBtext != "ÍË³ö")
+        if (plotnode.buttonBtext != "é€€å‡º")
         {
             buttonText[1].text = plotnode.buttonBtext;
             if (plotnode.buttonBtext != "")
@@ -214,7 +213,7 @@ public class EventControl : MonoBehaviour
             }
         }
             
-        if(choiceButton.Length == 3 && plotnode.choiceCtext != "ÍË³ö")
+        if(choiceButton.Length == 3 && plotnode.choiceCtext != "é€€å‡º")
         {
             buttonText[2].text = plotnode.buttonCtext;
             if (plotnode.buttonCtext != "")
@@ -230,27 +229,27 @@ public class EventControl : MonoBehaviour
         }
 
 
-        // ÍË³ö, ÊÂ¼ş½áÊø
-        if ( (plotnode.buttonAtext == "ÍË³ö" && clickedButton <= 0 )  || (plotnode.buttonBtext == "ÍË³ö" && clickedButton == 1) || (plotnode.buttonCtext == "ÍË³ö" && clickedButton == 2))
+        // ï¿½Ë³ï¿½, ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
+        if ( (plotnode.buttonAtext == "é€€å‡º" && clickedButton <= 0 )  || (plotnode.buttonBtext == "é€€å‡º" && clickedButton == 1) || (plotnode.buttonCtext == "é€€å‡º" && clickedButton == 2))
         {
             TimeControl.Instance.hasEvent[TimeControl.Instance.eventIndex]--;
 
-            // ½áËãÊÂ¼şĞ§¹û
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Ğ§ï¿½ï¿½
             if(plotIndex == 3)
             {
-                // ½âËø¹æ»®¾Ö
+                // ï¿½ï¿½ï¿½ï¿½ï¿½æ»®ï¿½ï¿½
                 TimeControl.Instance.hasBuilding[1] = true;
                 TimeControl.Instance.happyCtrl.happyValue = 10;
             }
             else if (plotIndex == 4)
             {
-                // Ñ¡ÔñA
+                // Ñ¡ï¿½ï¿½A
                 if(clickedButton == 0)
                 {
                     TimeControl.Instance.sunCtrl.CostSun(50);
                     TimeControl.Instance.eventOutcome += 50;
                 }
-                // Ñ¡ÔñB 
+                // Ñ¡ï¿½ï¿½B 
                 else if(clickedButton == 1)
                 {
                     TimeControl.Instance.happyCtrl.happyValue += 10;
@@ -258,9 +257,9 @@ public class EventControl : MonoBehaviour
             }
             else if(plotIndex == 5)
             {
-                // ½âËøÑĞ¾¿Ëù
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¾ï¿½ï¿½ï¿½
                 TimeControl.Instance.hasBuilding[0] = true;
-                // È¥Éı¼¶Ãæ°å
+                // È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             }
             else if(plotIndex == 7)
             {
@@ -270,7 +269,7 @@ public class EventControl : MonoBehaviour
                 }
                 else if(clickedButton == 1)
                 {
-                    // Ñ¡ÔñBÎŞÊÂ·¢Éú
+                    // Ñ¡ï¿½ï¿½Bï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½
                 }
             }
             else if (plotIndex == 8)
@@ -281,7 +280,7 @@ public class EventControl : MonoBehaviour
                     TimeControl.Instance.eventOutcome += 100;
                     TimeControl.Instance.happyCtrl.happyValue += 15;
                 }
-                // Ñ¡Ôñ B»ñµÃ200Ñô¹â
+                // Ñ¡ï¿½ï¿½ Bï¿½ï¿½ï¿½200ï¿½ï¿½ï¿½
                 else if(clickedButton == 1)
                 {
                     TimeControl.Instance.sunCtrl.CostSun(-200);
@@ -298,7 +297,7 @@ public class EventControl : MonoBehaviour
                 {
                     TimeControl.Instance.faithCtrl.autoAdd = 5;
                 }*/
-                // ½âËøÉñÃí
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 TimeControl.Instance.hasBuilding[2] = true;
                 TimeControl.Instance.faithCtrl.faithValue = 10;
 
@@ -306,7 +305,7 @@ public class EventControl : MonoBehaviour
                 plotCanvas.gameObject.SetActive(false);
                 TimeControl.Instance.UpdateUI();
 
-                //½Ó×Å¿ªÆôÊÂ¼ş12
+                //ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½ï¿½Â¼ï¿½12
                 TimeControl.Instance.event2Control.plotIndex = 12;
 
                 TimeControl.Instance.event2Control.PlayPlot();
@@ -330,7 +329,7 @@ public class EventControl : MonoBehaviour
             }
             else if(plotIndex == 14)
             {
-                // ½âËøÅÜÑóÑó
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 TimeControl.Instance.hasRunSheep = true;
             }
             else if(plotIndex==15)
@@ -410,7 +409,7 @@ public class EventControl : MonoBehaviour
                 }
                 else if(clickedButton == 2)
                 {
-                    // ½á¾Ö£¿£¿£¿£¿
+                    // ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 }
             }
             else if (plotIndex == 25)
@@ -436,7 +435,7 @@ public class EventControl : MonoBehaviour
             {
                 if (clickedButton == 0)
                 {
-                    // ÅĞ¶ÏĞÅÑö70
+                    // ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½70
                 }
                 else if (clickedButton == 1)
                 {
@@ -444,11 +443,11 @@ public class EventControl : MonoBehaviour
                 }
             }
 
-            // ÊÂ¼şÃæ°å¹Ø±Õ
+            // ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ø±ï¿½
             plotCanvas.gameObject.SetActive(false);
 
             TimeControl.Instance.UpdateUI();
-            // Ò¹Íí½øÈë½áËã
+            // Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if(TimeControl.Instance.eventIndex % 2 != 0)
             {
                 TimeControl.Instance.checkControl.ShowDailyCheck();
