@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 976
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -787,9 +787,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 950.74274, y: 575.87634, z: 0.9881722}
+    m_Target: {x: 918.8558, y: 524.88416, z: 5.9787636}
     speed: 2
-    m_Value: {x: 950.74274, y: 575.87634, z: 0.9881722}
+    m_Value: {x: 918.8558, y: 524.88416, z: 5.9787636}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -839,9 +839,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 622.2903
+    m_Target: 503.57645
     speed: 2
-    m_Value: 622.2903
+    m_Value: 503.57645
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1142,24 +1142,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 193.33334}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffffd46f0000dc720000aa780000
+      scrollPos: {x: 0, y: 433.33334}
+      m_SelectedIDs: 0c760000
+      m_LastClickedID: 30220
+      m_ExpandedIDs: 0a58ffff0478ffff4e7affff6e82ffff3e9dffff429dffff469dffff489dffffbeaeffff8aafffff8eafffff92afffff94afffff98afffffb6b3ffffbcb3ffffc0b3ffffc2b3ffff3ceafffff4faffff1a700000b47000006e710000b4710000ec71000042720000f0720000607400007074000014750000447500004c750000ea7500000c7600004c7600000a770000be780000507a0000607a0000ee7a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GudianceCanvas
-        m_OriginalName: GudianceCanvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 28628
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1214,7 +1214,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script/ButtonList
+    - Assets/UI/Temple
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1222,16 +1222,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Script/ButtonList
+  - Assets/UI/Temple
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\BeeEgg\Desktop\8mmGame-SunTown
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 159.66666}
-    m_SelectedIDs: b8800000
-    m_LastClickedID: 32952
-    m_ExpandedIDs: 000000008c8000008e8000009080000000ca9a3b
+    scrollPos: {x: 0, y: 295.66666}
+    m_SelectedIDs: e8800000
+    m_LastClickedID: 33000
+    m_ExpandedIDs: 0000000092800000948000009680000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1259,7 +1259,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c8000008e80000090800000
+    m_ExpandedIDs: 00000000928000009480000096800000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
