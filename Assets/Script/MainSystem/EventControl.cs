@@ -128,10 +128,10 @@ public class EventControl : MonoBehaviour
                 eventTitle.text = "ÉóÅÐ";
                 break;
             case 28:
-                eventTitle.text = "ÊÂ¼þ£ºÖÕÇú1";
+                eventTitle.text = "ÖÕÇú1";
                 break;
             case 29:
-                eventTitle.text = "ÊÂ¼þ£ºÖÕÇú2";
+                eventTitle.text = "ÖÕÇú2";
                 break;
             default:
                 eventTitle.text = "ÄÁ¹âÖ®µØ";
@@ -463,16 +463,58 @@ public class EventControl : MonoBehaviour
 
     public void ClickA()
     {
-        clickedButton = 0;
-        backButton.interactable = false;
-        NextText();
+        if(plotIndex == 26)
+        {
+            if(TimeControl.Instance.faithCtrl.faithValue >= 70)
+            {
+                clickedButton = 0;
+                backButton.interactable = false;
+                NextText();
+            }
+        }
+        else if(plotIndex == 4)
+        {
+            if (TimeControl.Instance.sunCtrl.totalSun >= 50)
+            {
+                clickedButton = 0;
+                backButton.interactable = false;
+                NextText();
+            }
+        }
+        else if(plotIndex == 8)
+        {
+            if (TimeControl.Instance.sunCtrl.totalSun >= 100)
+            {
+                clickedButton = 0;
+                backButton.interactable = false;
+                NextText();
+            }
+        }
+        else
+        {
+            clickedButton = 0;
+            backButton.interactable = false;
+            NextText();
+        }
     }
 
     public void ClickB()
     {
-        clickedButton = 1;
-        backButton.interactable = false;
-        NextText();
+        if (plotIndex == 13)
+        {
+            if (TimeControl.Instance.sunCtrl.totalSun >= 200)
+            {
+                clickedButton = 1;
+                backButton.interactable = false;
+                NextText();
+            }
+        }
+        else
+        {
+            clickedButton = 1;
+            backButton.interactable = false;
+            NextText();
+        }
     }
     public void ClickC()
     {
@@ -484,12 +526,14 @@ public class EventControl : MonoBehaviour
     public void NextText()
     {
         index++;
+        index = Mathf.Clamp(index, 0, plot[plotIndex].plots.Length - 1);
         PlayPlot();
     }
 
     public void BackText()
     {
         index--;
+        index = Mathf.Clamp(index, 0, plot[plotIndex].plots.Length - 1);
         PlayPlot();
     }
 }

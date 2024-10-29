@@ -259,6 +259,6 @@ MonoBehaviour:
       \u201C\u5149\u4EAE\u201D \u4E86\uFF0C\u54EA\u6015\u5C31\u662F\u653E\u7F8A\uFF0C\u6BD5\u7ADF\uFF0C\u8FD9\u662F\u4F60
       < color=red > \u6700\u540E\u7684\u8F6C\u673A</color>"
     choiceCtext: 
-    buttonAtext: "\u9000\u51FA"
-    buttonBtext: 
+    buttonAtext: 
+    buttonBtext: "\u9000\u51FA"
     buttonCtext: 
