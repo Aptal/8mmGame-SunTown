@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-8564276430045377348
+--- !u!28 &-3001753682033786665
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: FZYTK SDF
   m_EditorClassIdentifier: 
   hashCode: -979698453
-  material: {fileID: 4224046015095895931}
+  material: {fileID: 6694491273272982069}
   materialHashCode: 154816875
   m_Version: 1.1.0
   m_SourceFontFileGUID: 861fa14c25f7b38468568c6f47380855
@@ -2191,6 +2191,81 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 86
+    m_Metrics:
+      m_Width: 35.15625
+      m_Height: 54.140625
+      m_HorizontalBearingX: 4.921875
+      m_HorizontalBearingY: 47.8125
+      m_HorizontalAdvance: 45
+    m_GlyphRect:
+      m_X: 109
+      m_Y: 953
+      m_Width: 37
+      m_Height: 55
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 16.515625
+      m_Height: 25.3125
+      m_HorizontalBearingX: 3.171875
+      m_HorizontalBearingY: 67.859375
+      m_HorizontalAdvance: 22.5
+    m_GlyphRect:
+      m_X: 321
+      m_Y: 757
+      m_Width: 17
+      m_Height: 26
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 15
+    m_Metrics:
+      m_Width: 9.5
+      m_Height: 10.90625
+      m_HorizontalBearingX: 6.328125
+      m_HorizontalBearingY: 6.328125
+      m_HorizontalAdvance: 22.5
+    m_GlyphRect:
+      m_X: 901
+      m_Y: 718
+      m_Width: 10
+      m_Height: 12
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 78
+    m_Metrics:
+      m_Width: 58
+      m_Height: 54.15625
+      m_HorizontalBearingX: 5.984375
+      m_HorizontalBearingY: 49.578125
+      m_HorizontalAdvance: 69.96875
+    m_GlyphRect:
+      m_X: 165
+      m_Y: 953
+      m_Width: 59
+      m_Height: 55
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 79
+    m_Metrics:
+      m_Width: 34.109375
+      m_Height: 53.796875
+      m_HorizontalBearingX: 5.625
+      m_HorizontalBearingY: 49.21875
+      m_HorizontalAdvance: 45
+    m_GlyphRect:
+      m_X: 243
+      m_Y: 953
+      m_Width: 35
+      m_Height: 55
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -2752,8 +2827,28 @@ MonoBehaviour:
     m_Unicode: 112
     m_GlyphIndex: 81
     m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 117
+    m_GlyphIndex: 86
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 34
+    m_GlyphIndex: 3
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 46
+    m_GlyphIndex: 15
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 109
+    m_GlyphIndex: 78
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 110
+    m_GlyphIndex: 79
+    m_Scale: 1
   m_AtlasTextures:
-  - {fileID: -8564276430045377348}
+  - {fileID: -3001753682033786665}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
@@ -4323,7 +4418,7 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!21 &4224046015095895931
+--- !u!21 &6694491273272982069
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -4359,7 +4454,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -8564276430045377348}
+        m_Texture: {fileID: -3001753682033786665}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
